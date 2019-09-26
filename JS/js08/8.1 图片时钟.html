@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #time{
+            width: 750px;
+            height: 207px;
+            background: url("img/bg.jpg") no-repeat;
+            text-align: center;
+            line-height: 100px;
+            letter-spacing: 10px;
+            margin: 50px auto;
+        }
+        #time img{
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="time">
+        <img src="img/0.png" alt="">
+        <img src="img/1.png" alt="">
+        <img src="img/-.png" alt="">
+        <img src="img/2.png" alt="">
+        <img src="img/0.png" alt="">
+        <img src="img/-.png" alt="">
+        <img src="img/2.png" alt="">
+        <img src="img/0.png" alt="">
+    </div>
+    <script>
+        var aImg = document.getElementById("time").getElementsByTagName("img");
+        function addZero(num){
+            return num >= 10 ? "" + num : "0" + num;
+        }
+        function loadTime(){
+            var oDate = new Date(),
+//                    iYear = oDate.getFullYear(),
+//                    iMonth = addZero(oDate.getMonth() + 1),
+//                    iDay = addZero(oDate.getDate()),
+//                    iWeek = oDate.getDay(),
+                iHour = addZero(oDate.getHours()),
+                iMinute = addZero(oDate.getMinutes()),
+                iSecond = addZero(oDate.getSeconds());
+            var sTime = iHour + "-" + iMinute + "-" + iSecond;
+            for(var i = 0, len = aImg.length; i < len; i++){
+                aImg[i].src = "img/" + sTime[i] + ".png";
+            }
+        }
+        setInterval(loadTime, 1000);
+        loadTime();
+
+    </script>
+</body>
+</html>

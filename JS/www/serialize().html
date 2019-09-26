@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button>读取表单内容</button>
+    <p id="results"><b>Results: </b> </p>
+    <form>
+        <select name="birth">
+            <option value="1990">1990</option>
+            <option value="2000">2000</option>
+        </select>
+        <input type="checkbox" name="hobby" value="games"/> 游戏
+        <input type="checkbox" name="hobby" value="ball" checked="checked"/> 看球
+        <input type="radio" name="sex" value="male" checked="checked"/> 男
+        <input type="radio" name="sex" value="female"/> 女
+    </form>
+    <!--<script src="jquery-1.12.2.min.js"></script>-->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(function(){
+            $('button').on("click", function(){
+                $("#results").append( "<span>" + $("form").serialize() + "</span>" );
+//                console.log($("form").serializeArray());
+            });
+        });
+    </script>
+</body>
+</html>

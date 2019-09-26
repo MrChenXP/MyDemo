@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+//        （1）从数组arr = [6, 9, 4, 10, 14, 22, 19]中，随机选出 n = 3 个不同的数
+        var arr = [6, 9, 4, 10, 14, 22, 19], aNew = [], temp = 0, bState;
+        for(var i = 0; i < 3; i++){
+            bState = true;
+            temp = Math.floor(Math.random() * arr.length);
+            for(var j = 0; j < aNew.length; j++){
+                if(arr[temp] === aNew[j]){
+                    bState = false;
+                }
+            }
+            if(bState){
+                aNew.push(arr[temp]);
+            }else{
+                i--;
+            }
+        }
+
+        document.writeln(aNew);
+    </script>
+    <style type="text/css">
+        div {
+            width: 222px;
+            height: 222px;
+            color: rgba(0, 0, 0, 0.5);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#2D96B9DC, endColorstr=#2D96B9DC);
+
+        }
+    </style>
+</head>
+<body>
+    <div><span>打法</span></div>
+</body>
+</html>

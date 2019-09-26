@@ -1,0 +1,29 @@
+1、写一个changeStyle函数可以实现下面的参数方式
+    changeStyle(oDiv, {backgroundColor: "red"});  设置oDiv的背景变红
+    changeStyle(oDiv, {background-color: "red"});  设置oDiv的背景变红
+    changeStyle(oDiv, {background-color: "red", width: "200px"});  设置oDiv的背景变红且宽度变为200像素
+    changeStyle(oDiv, {background-color: "red", width: 200});  设置oDiv的背景变红且宽度变为200像素
+
+2、写一个函数输出数组的最大值（不要用数组sort方法）
+
+3、写一个函数去掉字符串所有的空格字符;
+
+4、 将数组内容乱序，编写函数 random
+    满足random([1,2,3,4]);    // 输出的可能是 [1,2,3,4] 或 [1,3,4,2] 或 [3,4,1,2] 等等随机可能
+
+5、将数组元素按 age 字段的值，从小到大排序
+   编写函数 sortAge,满足
+      sortAge([
+          {age: 19, name:'Jack'},
+          {age: 5, name:'Apple'},
+          {age: 12, name:'Lynn'},
+          {age: 25, name:'David'}
+      ]);
+  输出
+      [
+          {age: 5, name:'Apple'},
+          {age: 12, name:'Lynn'},
+          {age: 19, name:'Jack'},
+          {age: 25, name:'David'}
+      ]
+

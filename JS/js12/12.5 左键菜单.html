@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ol{
+            position: absolute;
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 150px;
+            list-style-position: inside;
+            display: none;
+        }
+        ol li{
+            line-height: 30px;
+            height: 30px;
+            width: 150px;
+            text-align: center;
+            cursor: pointer;
+        }
+        ol li:hover{
+            background-color: darkgreen;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body style="width: 3000px; height: 3000px;">
+    <ol>
+        <li>111111111</li>
+        <li>222222222</li>
+        <li>333333333</li>
+        <li>444444444</li>
+        <li>555555555</li>
+    </ol>
+    <script>
+        var oOl = document.querySelector("ol");
+
+        document.onclick = function( ev ){
+            var oEvent =  ev || event;
+            oOl.style.display = "block";
+            oOl.style.left = oEvent.clientX + document.documentElement.scrollLeft + "px";
+            oOl.style.top = oEvent.clientY + document.documentElement.scrollTop + "px";
+//            oOl.style.left = oEvent.pageX + "px";   //高级浏览器 pageX = clientX + document.documentElement.scrollLeft
+//            oOl.style.top = oEvent.pageY + "px";    //  pageY = clientY + document.documentElement.scrollTop
+
+//            oOl.style.left = getPosition(oEvent).X + "px";
+//            oOl.style.top = getPosition(oEvent).Y + "px";
+        };
+
+        function getPosition( oEvent ){
+            if(oEvent.pageX){
+                return {X: oEvent.pageX, Y: oEvent.pageY};
+            }else{
+                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop,
+                    scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+                return{X: oEvent.clientX + scrollLeft, Y: oEvent.clientY + scrollTop};
+            }
+        }
+    </script>
+</body>
+</html>

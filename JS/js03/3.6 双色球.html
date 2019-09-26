@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .redBox{
+            width: 470px;
+            margin: 100px auto;
+            border: 1px solid #999;
+            padding: 20px;
+            text-align: center;
+        }
+        #redBall{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: 470px;
+            height: 140px;
+        }
+        #redBall li{
+            background-color: #ccc;
+            font-weight: bold;
+            line-height: 30px;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            float: left;
+            margin: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="redBox">
+        <ul id="redBall">
+            <li>01</li><li>02</li><li>03</li><li>04</li><li>05</li><li>06</li><li>07</li><li>08</li>
+            <li>09</li><li>10</li><li>11</li><li>12</li><li>13</li><li>14</li><li>15</li><li>16</li>
+            <li>17</li><li>18</li><li>19</li><li>20</li><li>21</li><li>22</li><li>23</li><li>24</li>
+            <li>25</li><li>26</li><li>27</li><li>28</li><li>29</li><li>30</li><li>31</li><li>32</li><li>33</li>
+        </ul>
+        <div class="control">
+            <select id="ballCount">
+                <option >6</option>
+                <option >7</option>
+                <option >8</option>
+                <option >9</option>
+                <option >10</option>
+            </select>
+            <button id="choose">机选红球</button>
+            <button id="clear"> 清 空 </button>
+        </div>
+    </div>
+    <script>
+        var oChoose = document.getElementById("choose"),
+            oClear = document.getElementById("clear"),
+            aBall = document.getElementById("redBall").getElementsByTagName("li");
+
+        oChoose.onclick = function(){
+            for(var i = 0; i < aBall.length; i++){
+                aBall[i].style.backgroundColor = "";
+            }
+            var iCount = parseInt(document.getElementById("ballCount").value), arr = [], temp, bHas;
+
+            for(i = 0; i < iCount; i++){
+                bHas = true;
+                temp = Math.floor(Math.random() * 33);
+                for(var j = 0; j < arr.length; j++){
+                    if(temp === arr[j]){
+                        bHas = false;
+                        i--;
+                        break;
+                    }
+                }
+                if(bHas){
+                    arr.push(temp);
+                }
+            }
+//            console.log(arr);
+            for(i = 0; i < iCount; i++){
+                aBall[arr[i]].style.backgroundColor = "red";
+            }
+        };
+        oClear.onclick = function(){
+            for(var i = 0; i < aBall.length; i++){
+                aBall[i].style.backgroundColor = "";
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+（注：完成前面没有做完的作业题）
+1、输入字符串,统计所有英文字符的个数
+2、给定某个整型数组,计算该数组所有偶数的和。
+3、找到数组array1中出现，而在数组array2中没有出现的数字。
+4、编程实现对键盘输入的英文名句子进行加密。(提示："a".charCodeAt(0) === 97, String.fromCharCode(65,66,67) ===abc)
+    用加密方法为：  当内容为英文字母时，用26字母中的其后三个字母代替该字母，（xyz保持不变）
+                    若为其它字符时不变。比如37a5A6y加密后是37bcd5BCD6y
+5、随机生成4个验证码功能
+6、var sJson =  '{ "sites": [ { "name":"菜鸟教程" , "url":"www.runoob.com" },
+                { "name":"google" , "url":"www.google.com" }, { "name":"微博" , "url":"www.weibo.com" } ] } ';
+   将上述的JSON字符串里的键值对分别给a标签（键名name 给a的内容，键值url给a的href）
+   如： <a href = "http://www.runoob.com">菜鸟教程<a/>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script>
+		function a(){
+			//获取input
+        let fileInput = document.querySelector('.c_ddjs_add_xzbody_ddjsbody_img_addInput');
+        let fileList = fileInput.files;//获取图片所有信息
+        let reader = new FileReader();//创建h5对象
+        //添加input值改变 事件绑定
+        fileInput.addEventListener('change',function (e) {
+        	//如果选择了图片就运行
+          if(fileList.length){
+            // 对文件进行处理，下面会讲解checkFile()会做什么
+            checkFile(fileList);
+          }
+        });
+        // 图片处理 一张图片
+        function checkFile(files){
+          //获取第一张图片
+          let file = files[0];
+          //创建H5对象  FileReader
+          let reader = new FileReader();
+          //获取file basel64码 
+          reader.readAsDataURL(file);
+          // onload是异步操作 当读取成功时运行
+          reader.onload = function(e){
+          	//把这个码 给img的src属性
+            console.log(e.target.result)
+          };
+        }
+        //多张图片
+        function duo(files){
+        	let i=0;
+        	var func = function(){
+	        if(i>=files.length){
+	            // 若已经读取完毕，则把html添加页面中
+	            show.innerHTML = html;
+	        }
+	        var file = files[i];
+	        var reader = new FileReader();
+	
+	        reader.onload = function(e){
+	            html += '<img src="'+e.target.result+'" alt="img">';
+	            i++;
+	            func(); //选取下一张图片
+	        }
+	        reader.readAsDataURL(file);
+	    	}
+	    	func();
+	    }
+      }
+		</script>
+	</body>
+</html>

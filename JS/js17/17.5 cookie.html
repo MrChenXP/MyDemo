@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+//        var oDate = new Date();
+//        oDate.setDate(oDate.getDate() + 10);
+//        document.cookie = "user=qq;expires = " + oDate;
+//        document.cookie = "pwd=123456";
+//---------------------------设置cookie-------------------------
+        function setCookie(cookieName, cookieValue, cookieTime){
+            if(cookieName !== ""){
+                if(typeof cookieTime === "undefined"){
+                    document.cookie = cookieName + "=" + escape(cookieValue);
+                }else if(typeof cookieTime === "number"){
+                    var oDate = new Date();
+                    oDate.setDate(oDate.getDate() + cookieTime);
+                    document.cookie = cookieName + "=" + escape(cookieValue) + ";expires = " + oDate;
+                }
+            }
+        }
+//        setCookie("jj", "12456", 10);
+//        setCookie("gg", "1456");
+//-----------------------------读取cookie-----------------------------
+//        alert(document.cookie);
+//        user=qq; jj=12456; gg=5555
+
+        function getCookie(cookieName){
+            var aCookie = document.cookie.split(/; |=/);
+            for(var i = 0, len = aCookie.length; i < len; i += 2){
+                if(aCookie[i] === cookieName){
+                    return unescape(aCookie[i + 1]);
+                }
+            }
+            return null;
+        }
+//        alert(getCookie("jj"));
+//        -----------------------删除cookie---------------------------
+        function removeCookie(cookieName){
+            setCookie(cookieName, null, -1);
+        }
+//        removeCookie("jj");
+//        -------------------------清空cookie----------------------------------
+        function clearCookie(){
+            var aCookie = document.cookie.split(/; |=/);
+            for(var i = 0, len = aCookie.length; i < len; i += 2){
+                setCookie(aCookie[i], null, -1);
+            }
+        }
+        setCookie("ee","22",10);
+        alert(getCookie("ee"));
+//        setCookie("uu",568,10);
+//        clearCookie();
+    </script>
+</head>
+<body>
+    <h2>cookie特征：</h2>
+    <p>1、有同源策略（同一协议、同一域名、同一端口）的限制</p>
+    <p>2、有大小限制（4k左右、20-50条）</p>
+    <p>3、有过期时间限制</p>
+</body>
+</html>

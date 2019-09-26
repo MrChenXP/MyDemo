@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .move{
+            width: 200px;
+            height: 200px;
+            background-color: darkblue;
+            position: absolute;
+            left: 0;
+            top: 0;
+            cursor: move;
+        }
+    </style>
+</head>
+<body>
+    <div class="move"></div>
+    <script>
+        function Drag(){
+            this.oMove = document.querySelector(".move");
+            this.oMove.onmousedown = function(){
+                this.mousedown();
+            }
+        }
+        Drag.prototype.mousedown = function( ev ){
+            var oEvent = ev || event;
+            this.differX = oEvent.pageX - this.oMove.offsetLeft;
+            this.differY = oEvent.pageY - this.oMove.offsetTop;
+            document.onmousemove = this.mousemove;
+            document.onmouseup = this.mouseup;
+        };
+        Drag.prototype.mousemove = function( ev ){
+            var oEvent = ev || event;
+            this.oMove.style.left = oEvent.pageX - this.differX + "px";
+            this.oMove.style.top = oEvent.pageY - this.differY + "px";
+        };
+        Drag.prototype.mouseup = function(){
+            document.onmousemove = null;
+            document.onmouseup = null;
+        };
+        new Drag();
+    </script>
+</body>
+</html>

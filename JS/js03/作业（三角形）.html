@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>检测三角形</h2>
+    a边：<input type="text" id="a"><br/>
+    b边：<input type="text" id="b"><br/>
+    c边：<input type="text" id="c"><br/>
+    <button id="test"> 检 测 </button><br/>
+    <input type="text" disabled id="show" size="30">
+
+    <script>
+        var oTest = document.getElementById("test"),
+            oShow = document.getElementById("show");
+
+        oTest.onclick = function(){
+            oShow.value = "";
+            var a = Number(document.getElementById("a").value),
+                b = Number(document.getElementById("b").value),
+                c = Number(document.getElementById("c").value);
+            if(!isNaN(a) && !isNaN(b) && !isNaN(c)){        // 判断输入为数字
+                if((a + b > c) && (b + c > a) && (a + c > b)){      //构成三角形的条件（任意两边之和大于第三边）
+                    if(a === b || a === c || b === c){      //等腰三角形的条件
+                        if(a === b && b === c){
+                            oShow.value = "等边";
+                        }else{
+                            oShow.value = "等腰";
+                        }
+                    }
+                    var aa = Math.pow(a, 2), bb = Math.pow(b, 2), cc = Math.pow(c, 2), p = (a + b + c)/ 2, s;
+                    if(aa + bb === cc || bb + cc === aa || aa + cc === bb){
+                        oShow.value += "直角三角形";
+                    }else if(aa + bb < cc || bb + cc < aa || aa + cc < bb){
+                        oShow.value += "钝角三角形";
+                    }else{
+                        oShow.value += "锐角三角形";
+                    }
+                    s = Math.sqrt(p * (p - a) * (p - b) * (p - c)).toFixed(2);
+                    oShow.value += " 面积为：" + s;
+                }else{
+                    oShow.value = "不能构成三角形";
+                }
+            }else{
+                oShow.value = "输入有非数字";
+            }
+
+        };
+    </script>
+</body>
+</html>

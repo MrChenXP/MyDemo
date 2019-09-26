@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div style="width: 150px;height: 150px; background-color: darkgreen; position: absolute;"></div>
+    <script>
+        var oDiv = document.querySelector("div");
+
+        var oState = {
+            arrowL: false,
+            arrowR: false,
+            arrowT: false,
+            arrowB: false
+        };
+        function eventHandle( ev ){
+            var oEvent = ev || event;
+            var bState = false;
+            if(oEvent.type === "keydown"){
+                bState = true;
+            }
+            switch (oEvent.keyCode){
+                case 37 : oState.arrowL = bState;break;
+                case 38 : oState.arrowT = bState;break;
+                case 39 : oState.arrowR = bState;break;
+                case 40 : oState.arrowB = bState;break;
+            }
+        }
+        document.onkeydown = document.onkeyup = eventHandle;
+
+        setInterval(function(){
+            if(oState.arrowL){
+                oDiv.style.left = oDiv.offsetLeft - 5 + "px";
+            }
+            if(oState.arrowR){
+                oDiv.style.left = oDiv.offsetLeft + 5 + "px";
+            }
+            if(oState.arrowT){
+                oDiv.style.top = oDiv.offsetTop - 5 + "px";
+            }
+            if(oState.arrowB){
+                oDiv.style.top = oDiv.offsetTop + 5 + "px";
+            }
+        },30);
+    </script>
+</body>
+</html>

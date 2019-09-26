@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    RGB：<input type="text" id="rgb">
+    <button style="color: #ff0000;"> 转 换 </button>
+    HEX：<input type="text" id="hex">
+    <script>
+        var oRGB = document.querySelector("#rgb");
+        var oHEX = document.querySelector("#hex");
+        var oBtn = document.querySelector("button");
+        oRGB.oninput = function(){
+            if(oRGB.value !== ""){
+                oHEX.value = "";
+            }
+        };
+        oHEX.oninput = function(){
+            if(oHEX.value !== ""){
+                oRGB.value = "";
+            }
+        };
+
+        oBtn.onclick = function(){
+            if(oRGB.value !== ""){
+                var reg = /^rgb\(([01]?\d{1,2}|2[0-4]\d|25[0-5])(,([01]?\d{1,2}|2[0-4]\d|25[0-5])){2}\)$/i;
+                if(reg.test(oRGB.value)){
+                    oHEX.value = rgbToHex(oRGB.value);
+                }else{
+                    alert("输入有误，请重新输入！");
+                }
+            }
+            if(oHEX.value !== ""){
+                var reg = /^#([0-9A-Fa-f]{3}){1,2}$/;
+                if(reg.test(oHEX.value)){
+                    oRGB.value = hexToRGB(oHEX.value);
+                }else{
+                    alert("输入有误，请重新输入！");
+                }
+            }
+        };
+        function rgbToHex(rgb){
+            var aRGB = rgb.match(/\d+/g), sHex = "#";
+            for(var i = 0, len = aRGB.length; i < len; i++){
+                sHex += ("0" + Number(aRGB[i]).toString(16)).slice(-2);
+            }
+            return sHex;
+        }
+        function hexToRGB(hex){
+            if(hex.length === 4){
+                hex = hex[0] + hex[1] + hex[1] + hex[2] + hex[2] + hex[3] + hex[3];
+            }
+            var sRGB = "rgb(",
+                aRGB = hex.match(/\w{2}/g);
+            for(var i = 0, len = aRGB.length; i < len; i++){
+                sRGB += parseInt(aRGB[i], 16) + ",";
+            }
+            return sRGB.slice(0,-1) + ")";
+        }
+    </script>
+</body>
+</html>

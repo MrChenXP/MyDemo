@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function(){
+            var oDiv = document.getElementById("div1"),iTimer = null;
+            var oTime = document.getElementById("time"), oSet = document.getElementById("setTime"), endTime = null;
+
+            oSet.onclick = function(){
+                clearInterval(iTimer);
+                oDiv.innerText = "活动已结束，敬请期待!";
+                endTime = new Date(oTime.value);
+                if(!isNaN(endTime.getSeconds())){
+                    iTimer = setInterval(countDown, 100);
+                    countDown();
+                }
+            };
+
+            function addZero(num){
+                return num >= 10 ? "" + num : "0" + num;
+            }
+
+            function countDown(){
+                var nowTime = new Date(),
+                    differTime = (endTime - nowTime) / 1000,
+                    iDay = addZero(Math.floor(differTime/60/60/24)),
+                    iHour = addZero(Math.floor(differTime/60/60%24)),
+                    iMinute = addZero(Math.floor(differTime/60)%60),
+                    iSecond = addZero(Math.floor(differTime % 60)),
+                    iMS = Math.floor((endTime - nowTime) % 1000 / 100);
+                if(differTime < 0){
+                    clearInterval(iTimer);
+                    oDiv.innerText = "活动已结束，敬请期待!";
+                }else{
+                    oDiv.innerText = iDay + "天 " + iHour + ":" + iMinute + ":" + iSecond + "." + iMS;
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+    倒计时时间：<input type="text" id="time">
+    <button id="setTime">设置时间</button>
+    <div style="width: 400px; height: 100px; background-color: deeppink; color: darkblue; font-size: 20px; text-align: center;
+        line-height: 100px;" id="div1">活动已结束，敬请期待!</div>
+</body>
+</html>

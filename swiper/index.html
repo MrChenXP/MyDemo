@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--逻辑像素（手机）等于实际像素（自己设置的） 宽度=可视宽度-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/swiper-4.2.0.min.css" type="text/css">
+    <link rel="stylesheet" href="css/animate.css" type="text/css">
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+</head>
+<body>
+<div class="swiper-container">
+    <!-- 主体部分 swiper-slide里放需要轮播的东西-->
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="bg">
+                <div class="ss-center ss-center-1">
+                    <img src="images/ss-center-1-yin.png" class="ss-center-1-yin ani " swiper-animate-effect=" bounceInLeft" swiper-animate-duration="3s">
+                    <img src="images/ss-center-1-zi.png" class="ss-center-1-zi ani"  swiper-animate-effect=" bounceInRight" swiper-animate-duration="3s">
+                    <img src="images/ss-center-1-yan.png" class="ss-center-1-yan ani" swiper-animate-effect=" bounceInDown" swiper-animate-duration="1s">
+                    <img src="images/ss-center-1-zui.png" class="ss-center-1-zui ani" swiper-animate-effect=" bounceIn" swiper-animate-duration="1s">
+                    <img src="images/ss-center-1-que.png" class="ss-center-1-que ani" swiper-animate-effect=" bounceInLeft" swiper-animate-duration="5s">
+                </div>
+            </div>
+            <div class="allor">
+                    <div class="allor-left">
+                    </div>
+                    <div class="allor-right">
+                    </div>
+            </div>
+            <div class="yinyue">
+                <img src="images/yy.png" width="24px" height="24px">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="bg">
+                <div class="ss-center ss-center-2">
+                    <div class="ss-center-2-bt ani"   swiper-animate-effect="shake" swiper-animate-duration="3s">
+                        <span class="ss-center-2-bt-1"></span>&nbsp;
+                        <span>关注我们</span>&nbsp;
+                        <span class="ss-center-2-bt-2"></span>
+                    </div>
+                    <div class="ss-center-2-2">
+                        <div>
+                                <img src="images/ss-center-2-21.png" class="ani" swiper-animate-effect=" zoomIn" swiper-animate-duration="2s">
+                                <span  class="ani" swiper-animate-effect=" bounceInDown" swiper-animate-duration="3s">点击查看更多作品</span>
+                        </div>
+                        <div>
+                                <img src="images/ss-center-2-22.png"  class="ani" swiper-animate-effect=" zoomInDown" swiper-animate-duration="2s">
+                                <span  class="ani" swiper-animate-effect=" bounceInUp" swiper-animate-duration="3s">个人微信</span>
+
+                        </div>
+                    </div>
+                    <div class="ss-center-2-2-xian">
+                        <img src="images/ss-center-2-xian.png">
+                    </div>
+                    <div  class="ss-center-2-zi">
+                        <div   class="ani" swiper-animate-effect=" tada" swiper-animate-duration="5s">
+                            <p>这是废话</p>
+                            <p>这是废话</p>
+                            <p>这是废话</p>
+                            <p>这是微信</p>
+                            <p>这是QQ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="allor">
+                <div class="allor-left">
+                </div>
+                <div class="allor-right">
+                </div>
+            </div>
+            <div class="yinyue">
+                <img src="images/yy.png" width="24px" height="24px">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="sscenter-3">
+                <div class="sscenter-31">
+                    <div class="sscenter-31-1 ani" swiper-animate-effect=" bounceIn" swiper-animate-duration="5s">
+                        <img src="images/sscenter-31.png" width="142" height="142">
+                    </div>
+                    <div class="sscenter-31-2 ani" swiper-animate-effect=" rollIn" swiper-animate-duration="2s">
+                        <p>
+                            最美江南旅游相册 个人旅行相册 闺蜜 江南之旅
+                        </p>
+                    </div>
+                    <div class="sscenter-31-3 ani" swiper-animate-effect=" wobble" swiper-animate-duration="5s">
+                        <p>
+                            查看更多
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="allor">
+                <div class="allor-left">
+                </div>
+                <div class="allor-right">
+                </div>
+            </div>
+            <div class="yinyue">
+                <img src="images/yy.png" width="24px" height="24px">
+            </div>
+        </div>
+    </div>
+    <!-- 分页器(焦点)-->
+    <div class="swiper-pagination"></div>
+
+
+    <!-- 滚动条 -->
+    <div class="swiper-scrollbar"></div>
+</div>
+
+<script src="js/swiper-4.2.0.min.js"></script>
+<script src="js/swiper.animate1.0.3.min.js"></script>
+<script>
+    var mySwiper = new Swiper('.swiper-container',{
+        direction: 'vertical',        //纵向滑动
+        loop:true,  //后复制若干个slide(默认一个)并在合适的时候切换
+        // 如果需要分页器
+        pagination: {
+            type: 'fraction',
+            el: '.swiper-pagination',   //使用分页导航
+            clickable :true,    //设置为true时，点击指示点会切换
+        },
+
+        // 如果需要滚动条
+        scrollbar: {
+            el: '.swiper-scrollbar',
+//            dragSize: 30,
+        },
+        on:{
+            init: function(){
+//                swiperAnimateCache(this); //隐藏动画元素
+                swiperAnimate(this); //初始化完成开始动画
+            },
+            slideChangeTransitionEnd: function(){
+                swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+            }
+        },
+
+    });
+
+</script>
+</body>
+</html>

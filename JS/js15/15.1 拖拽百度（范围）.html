@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .move{
+             width: 200px;
+             height: 200px;
+             background-color: darkblue;
+             position: absolute;
+             left: 0;
+             top: 0;
+             display: none;
+             z-index: 1000;
+         }
+        .move .header{
+            height: 30px;
+            background-color: darkred;
+            text-align: right;
+            cursor: move;
+        }
+        .wrap{
+            background-color: rgba(100,100,100,.5);
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    <a href="#">登 陆</a>
+    <div class="move">
+        <div class="header">
+            <button class="close">X</button>
+        </div>
+    </div>
+    <script>
+        var oHeader = document.querySelector(".move .header");
+        var oClose = document.querySelector(".move .close");
+        var oMove = oHeader.parentNode;
+        var oLogin = document.querySelector("a");
+        var oDiv = document.createElement("div");
+
+        oLogin.onclick = function(){
+            oMove.style.display = "block";
+            oMove.style.left = Math.floor((document.documentElement.clientWidth - oMove.offsetWidth)/2) + "px";
+            oMove.style.top = Math.floor((document.documentElement.clientHeight - oMove.offsetHeight)/2) + "px";
+            oDiv.style.height = document.documentElement.clientHeight + "px";
+            oDiv.style.width = document.documentElement.clientWidth + "px";
+            oDiv.className = "wrap";
+            document.body.appendChild(oDiv);
+            return false;
+        };
+        oClose.onclick = function(){
+            oMove.style.display = "none";
+            document.body.removeChild(oDiv);
+            return false;
+        };
+        oHeader.onmousedown = function( ev ){
+            var oEvent = ev || event;
+            var differX = oEvent.pageX - oMove.offsetLeft,
+                differY = oEvent.pageY - oMove.offsetTop;
+            document.onmousemove = function( ev ){
+                var oEvent = ev || event;
+                var finalX = oEvent.pageX - differX,
+                    finalY = oEvent.pageY - differY;
+                if(finalX < 0){
+                    finalX = 0;
+                }else if(finalX > document.documentElement.clientWidth - oMove.offsetWidth){
+                    finalX = document.documentElement.clientWidth - oMove.offsetWidth;
+                }
+                if(finalY < 0){
+                    finalY = 0;
+                }else if(finalY > document.documentElement.clientHeight - oMove.offsetHeight){
+                    finalY = document.documentElement.clientHeight - oMove.offsetHeight;
+                }
+                oMove.style.left = finalX + "px";
+                oMove.style.top = finalY + "px";
+            };
+            document.onmouseup = function(){
+                document.onmousemove = null;
+                document.onmouseup = null;
+            };
+        };
+
+        window.onresize = function(){
+            oMove.style.left = Math.floor((document.documentElement.clientWidth - oMove.offsetWidth)/2) + "px";
+            oMove.style.top = Math.floor((document.documentElement.clientHeight - oMove.offsetHeight)/2) + "px";
+            oDiv.style.height = document.documentElement.clientHeight + "px";
+            oDiv.style.width = document.documentElement.clientWidth + "px";
+        };
+    </script>
+</body>
+</html>

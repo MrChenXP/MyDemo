@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+//        12 + 22 + 32 + 42 ……n2,直到累加和不小于10000，输出n和结果
+
+//        var sum=12,i=22;
+//        while (1){
+//            sum+=i;
+//            if(sum>=10000){
+//                document.writeln(parseInt(i / 10));
+//                document.writeln(sum);
+//                 break;
+//            }
+//            i+=10;
+//        }
+
+//        var n = 1, sum = 12;
+//        while (sum <= 10000){
+//            n++;
+//            sum += (n * 10) + 2;
+//        }
+//        document.writeln("n = " + n + " 累加结果是：" + sum);
+//        ---------------------------------------------------------
+//        01
+//        02 03
+//        04 05 06
+//        07 08 09 10
+//        11 12 13 14 15
+
+//        for(var i = 1, n = 1; i <= 5; i++){
+//            for(var j = 0; j < i; j++){
+//                if(n < 10){
+//                    document.writeln("0" + n++);
+//                }else{
+//                    document.writeln(n++);
+//                }
+//            }
+//            document.writeln("<br>");
+//        }
+//        ----------------------------------------------------------------
+//        求2到100内的所有质数（只能被1和本身整除）
+//        document.writeln(2);
+//        for(var i =3;i<=100;i++){
+//            for(var j=2,n=0; j<i;j++){
+//                if(i%j==0){
+//                    n=1;
+//                    break;
+//
+//                }
+//            }
+//            if(n==0){
+//                document.writeln(i);
+//            }
+//        }
+//        for(var i = 2; i < 100; i++){
+//            var bTemp = true;
+//            for(var j = 2; j < i; j++){
+//                if(i % j === 0){
+//                    bTemp = false;
+//                    break;
+//                }
+//            }
+//            if(bTemp){
+//                document.writeln(i);
+//            }
+//        }
+
+//        ---------------------------------------------
+//        4位导师给学员评分（分数是0到10）
+//        要求：每位导师给学员手动输入分数且必需有分数（如果输入有误需重新输入当前导师的分数）
+//        计算学员的总分和平均分
+        var iTotal = 0;
+        for(var i = 1, iScore = 0; i <= 4; i++){
+            iScore = parseInt(prompt("请输入第" + i + "位导师分数是："));
+            if(iScore >= 0 && iScore <= 10 && !isNaN(iScore)){
+                iTotal += iScore;
+            }else{
+                i--;
+            }
+        }
+        document.writeln("该学员的总分是：" + iTotal + "分<br/>平均分是：" + iTotal/4 + "分");
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

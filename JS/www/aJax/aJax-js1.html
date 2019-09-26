@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button>读 取</button>
+    <script src="aJax.js"></script>
+    <script>
+        var oBtn = document.querySelector("button");
+
+        oBtn.onclick = function(){
+            aJax("data1.txt?t = " + new Date().getTime(), function(data){
+                alert(data);
+            }, function(error){
+                if(error === 404){
+                    alert("找不到文件");
+                }
+            });
+        };
+    </script>
+</body>
+</html>

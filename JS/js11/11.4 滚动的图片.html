@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            border: 0;
+            list-style: none;
+        }
+        .imgMove{
+            width: 1000px;
+            height: 250px;
+            overflow: hidden;
+            margin: 100px auto;
+            border: 5px solid firebrick;
+            background-color: darkgoldenrod;
+            position: relative;
+        }
+        .imgMove ul{
+            position: absolute;
+            top:0;
+            left: 0;
+        }
+        .imgMove ul li{
+            float: left;
+            cursor: pointer;
+        }
+        .imgMove ul li img{
+            width: 250px;
+            height: 250px;
+        }
+        .control{
+            width: 600px;
+            margin: 20px auto;
+        }
+        .control button,  #speed{
+            width: 50px;
+            height: 30px;
+            line-height: 30px;
+            background-color: darkgoldenrod;
+            color: blue;
+            text-align: center;
+            border-radius: 5px;
+            border: 1px solid darkgreen;
+            cursor: pointer;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="imgMove">
+        <ul>
+            <li><img src="img/h1.jpg" alt=""></li>
+            <li><img src="img/h2.jpg" alt=""></li>
+            <li><img src="img/h3.jpg" alt=""></li>
+            <li><img src="img/h4.jpg" alt=""></li>
+        </ul>
+    </div>
+    <div class="control">
+        <button class="cLeft">向 左</button>
+        <button class="cRight">向 右</button>
+        <select id="speed">
+            <option value="1">慢</option>
+            <option value="2" selected>中</option>
+            <option value="3">快</option>
+        </select>
+    </div>
+    <script>
+        var oUl = document.querySelector("ul");
+        var oLeft = document.querySelector(".control .cLeft");
+        var oSpeed = document.querySelector(".control #speed");
+        var oRight = document.querySelector(".control .cRight"), iSpeed = -oSpeed.value, iTimer = null;
+        oUl.innerHTML += oUl.innerHTML;
+        oUl.style.width = oUl.children[0].offsetWidth * oUl.children.length + "px";
+
+        function moveImg(){
+            if(oUl.offsetLeft < -oUl.offsetWidth/2){
+                oUl.style.left = iSpeed + "px";
+            }else if(oUl.offsetLeft > 0){
+                oUl.style.left = -oUl.offsetWidth/2 + iSpeed + "px";
+            }
+            oUl.style.left = oUl.offsetLeft + iSpeed + "px";
+        }
+        iTimer = setInterval(moveImg, 30);
+
+        oLeft.onclick = function(){
+            iSpeed = -Math.abs(iSpeed);
+        };
+        oRight.onclick = function(){
+            iSpeed = Math.abs(iSpeed);
+        };
+        oUl.onmouseover = function(){
+            clearInterval(iTimer);
+        };
+        oUl.onmouseout = function(){
+            iTimer = setInterval(moveImg, 30);
+        };
+        oSpeed.onchange = function(){
+            if(iSpeed > 0){
+                iSpeed = parseInt(oSpeed.value);
+            }else{
+                iSpeed = -parseInt(oSpeed.value);
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div style="width: 150px;height: 150px; background-color: darkgreen; position: absolute;"></div>
+    <script>
+        var oDiv = document.querySelector("div");
+
+//        document.onkeydown = function( ev ){
+//            var oEvent = ev || event;
+//            console.log(oEvent.keyCode);
+//            switch (oEvent.keyCode){
+//                case 37 : oDiv.style.left = oDiv.offsetLeft - 5 + "px";break;
+//                case 39 : oDiv.style.left = oDiv.offsetLeft + 5 + "px";break;
+//                case 38 : oDiv.style.top = oDiv.offsetTop - 5 + "px";break;
+//                case 40 : oDiv.style.top = oDiv.offsetTop + 5 + "px";break;
+//            }
+//        };
+
+        var oState = {
+            arrowL: false,
+            arrowR: false,
+            arrowT: false,
+            arrowB: false
+        };
+        function my(keycode , num){
+            switch (keycode){
+                case 37 : num ? oState.arrowL = true : oState.arrowL = false ;break;
+                case 38 : num ? oState.arrowT = true : oState.arrowT = false;break;
+                case 39 : num ? oState.arrowR = true : oState.arrowR = false;break;
+                case 40 : num ? oState.arrowB = true : oState.arrowB = false;break;
+            }
+        }
+        document.onkeydown = function( ev ){
+            var oEvent = ev || event;
+            my(oEvent.keyCode,true);
+//            switch (oEvent.keyCode){
+//                case 37 : oState.arrowL = true;break;
+//                case 38 : oState.arrowT = true;break;
+//                case 39 : oState.arrowR = true;break;
+//                case 40 : oState.arrowB = true;break;
+//            }
+        };
+        document.onkeyup = function( ev ){
+            var oEvent = ev || event;
+            my(oEvent.keyCode,false);
+//            switch (oEvent.keyCode){
+//                case 37 : oState.arrowL = false;break;
+//                case 38 : oState.arrowT = false;break;
+//                case 39 : oState.arrowR = false;break;
+//                case 40 : oState.arrowB = false;break;
+//            }
+        };
+
+        setInterval(function(){
+            if(oState.arrowL){
+                oDiv.style.left = oDiv.offsetLeft - 5 + "px";
+            }
+            if(oState.arrowR){
+                oDiv.style.left = oDiv.offsetLeft + 5 + "px";
+            }
+            if(oState.arrowT){
+                oDiv.style.top = oDiv.offsetTop - 5 + "px";
+            }
+            if(oState.arrowB){
+                oDiv.style.top = oDiv.offsetTop + 5 + "px";
+            }
+        },30);
+    </script>
+</body>
+</html>

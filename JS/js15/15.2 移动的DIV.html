@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .move{
+            position: fixed;
+            left: 100px;
+            top: 0;
+            text-align: center;
+        }
+        .move .header{
+            width: 200px;
+            height: 80px;
+            line-height: 80px;
+            font-size: 30px;
+            background-color: darkcyan;
+            cursor: pointer;
+            color: red;
+            letter-spacing: 10px;
+            text-shadow: 1px 1px 3px white,-1px -1px 3px white, 2px 2px 3px white, -2px -2px 3px white;
+        }
+        .move .close{
+            width: 50px;
+            height: 30px;
+            line-height: 30px;
+            background-color: gold;
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="move">
+        <div class="header">我要申诉</div>
+        <div><span class="close">关 闭</span></div>
+    </div>
+    <script>
+        var oMove = document.querySelector(".move");
+        var oClose = document.querySelector(".move .close");
+        var speedX = 1, speedY = 1;
+
+        function moveElement(){
+            if(oMove.offsetTop >= document.documentElement.clientHeight - oMove.offsetHeight){
+                speedY = -Math.abs(speedY);
+            }else if(oMove.offsetTop <= 0){
+                speedY = Math.abs(speedY);
+            }
+            if(oMove.offsetLeft >= document.documentElement.clientWidth - oMove.offsetWidth){
+                speedX = -Math.abs(speedX);
+            }else if(oMove.offsetLeft <= 0){
+                speedX = Math.abs(speedX);
+            }
+            oMove.style.left = oMove.offsetLeft + speedX + "px";
+            oMove.style.top = oMove.offsetTop + speedY + "px";
+        }
+        var iTimer = setInterval(moveElement, 30);
+
+        oMove.onmouseover = function(){
+            clearInterval(iTimer);
+        };
+        oMove.onmouseout = function(){
+            iTimer = setInterval(moveElement, 30);
+        };
+        oClose.onclick = function(){
+            document.body.removeChild(oMove);
+        };
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>循环</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h3>求2到100内的所有质数（只能被1和本身整除）</h3>
+    <script type="text/javascript">
+        for(var i=2;i<100;i++){    //罗列出2-100
+            for(var j = 2; j < i; j++){        //罗列除i即将要除的数
+                if(i % j == 0){       //判断i能不能整除j
+                    break;      //能就说明不是素数，跳出循环，执行下一语句
+                }
+            }
+            if(i==j){       //如果i等于j则说明他不是break跳出来的，完整的经过了素数检测循环，是个素数
+                document.writeln(i);      //输出素数
+            }
+        }
+    </script>
+    <h3>输入逐行加一个星星的直角三角形 5行</h3>
+    <script type="text/javascript">
+        for(var i = 1; i <= 5; i++){
+            for(var j = 1; j <= i; j++) {
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+    </script>
+    <h3>输入逐行加3个星星的直角三角形 4行</h3>
+    <script type="text/javascript">
+        for(var i = 0; i<4; i++){
+            for(var j=1; j<=(3*i+1); j++) {
+                document.write("*");
+            };
+            document.write("<br>");
+        };
+    </script>
+</body>
+</html>

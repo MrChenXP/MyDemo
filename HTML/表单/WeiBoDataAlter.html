@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新浪微博资料修改页面</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+        .dl1{
+            border-bottom: 1px solid black;
+            height: 30px;
+        }
+        .dl1 dd{
+            float: left;
+            border: 1px solid black;
+            padding: 5px;
+        }
+        .dl1 a:link{
+            text-decoration: none;
+        }
+        .dl2 dd{
+            float: left;
+        }
+        .dl2 a:link{
+            text-decoration: none;
+        }
+        .dl2 dd:not(:nth-child(1))::before{
+            content: "|";
+            margin: auto 10px auto -20px;
+        }
+        .table1{
+            height: 500px;
+            width: auto;
+            margin: auto;
+        }
+        .table1 tr td:first-child{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+<div style="width: 820px; height: 815px; background-color: rgba(188,188,188,0.44); margin:auto;">
+    <form action="https://www.baidu.com" method="get">
+        <img src="imges/logo.png">
+        <div style="float: right; line-height: 68px;">
+            <input type="search" id="sousuo">
+            <input type="submit" value="搜索">
+        </div>
+        <dl class="dl1">
+            <dd>
+                <a href="#">个人资料</a>
+            </dd>
+            <dd>
+                <a href="#">修改头像</a>
+            </dd>
+            <dd>
+                <a href="#">绑定手机</a>
+            </dd>
+            <dd>
+                <a href="#">隐私设置</a>
+            </dd>
+            <dd>
+                <a href="#">个性设置</a>
+            </dd>
+            <dd>
+                <a href="#">我的勋章</a>
+            </dd>
+            <dd>
+                <a href="#">应用授权</a>
+            </dd>
+        </dl>
+        <!--<hr width="820" align="center">-->
+        <dl class="dl2">
+            <dd>
+                <a href="#">基本信息</a>
+            </dd>
+            <dd>
+                <a href="#">修改密码</a>
+            </dd>
+            <dd>
+                <a href="#">教育信息</a>
+            </dd>
+            <dd>
+                <a href="#">职业信息</a>
+            </dd>
+            <dd>
+                <a href="#">个人标签</a>
+            </dd>
+            <dd>
+                <a href="#">个性域名</a>
+            </dd>
+            <dd>
+                <a href="#">收货地址</a>
+            </dd>
+        </dl>
+        <br>
+        <p style="color: gray; text-align: center">
+            以下信息将显示在<span style="color: blue;">你的个人资料页</span>，方便大家了解你。&emsp;&emsp;*为必填项
+        </p>
+        <table class="table1">
+            <tr>
+                <td>*昵称：</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>真实姓名：</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>*所在地：</td>
+                <td>
+                    <select>
+                        <option>广东</option>
+                        <option>浙江</option>
+                        <option selected>江西</option>
+                    </select>省
+                    <select>
+                        <option>抚州</option>
+                        <option>赣州</option>
+                        <option>南昌</option>
+                    </select>市
+                    <select>
+                        <option>崇仁</option>
+                        <option>宜黄</option>
+                        <option>临川</option>
+                    </select>县
+                </td>
+            </tr>
+            <tr>
+                <td>性别：</td>
+                <td>
+                    <input type="radio" id="man"><label for="man">男</label>
+                    <input type="radio" id="gril"><label for="gril">女</label>
+                    <input type="radio" id="secrecy"><label for="secrecy">保密</label>
+                </td>
+            </tr>
+            <tr>
+                <td>博客地址：</td>
+                <td>
+                    <input type="url">
+                </td>
+            </tr>
+            <tr>
+                <td>常用邮箱：</td>
+                <td>
+                    <input type="email" placeholder="stedent@bdqn.cn">
+                    不可修改
+                </td>
+            </tr>
+            <tr>
+                <td>QQ：</td>
+                <td>
+                    <input type="text">
+                </td>
+            </tr>
+            <tr>
+                <td>MSN：</td>
+                <td>
+                    <input type="text">
+                </td>
+            </tr>
+            <tr>
+                <td>一句话介绍：</td>
+                <td>
+                    <textarea rows="5" cols="45" style="resize: none;"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td> </td>
+                <td valign="top">
+                    以下信息，可作为通过客服取回账号的依据
+                </td>
+            </tr>
+            <tr>
+                <td>证件类型：</td>
+                <td>
+                    <select>
+                        <option>护照</option>
+                        <option>侨胞证</option>
+                        <option selected>身份证</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>证件号码：</td>
+                <td>
+                    <input type="text">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="保存">
+                </td>
+            </tr>
+        </table>
+        <p>
+            <span style="float: left">
+                帮助 意见反馈 微博认证及合作 开放平台 微博招聘 新浪网导航 不良信息举报
+            </span>
+            <span style="float: right">
+                新浪公司 版权所有
+            </span>
+        </p>
+        <br>
+        <p>
+            <span style="float: left">
+                客服电话：400 690 0000 提示音后按1键（按当地市话标准计费）
+            </span>
+            <span style="float: right">
+                语言：
+                <select>
+                    <option>简体中文</option>
+                    <option> 繁体中文</option>
+                </select>
+            </span>
+        </p>
+    </form>
+</div>
+</body>
+</html>

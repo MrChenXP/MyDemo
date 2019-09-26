@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .border{
+            border: 2px dashed #666;
+            position: absolute;
+            box-sizing: border-box;
+            cursor: move;
+        }
+    </style>
+</head>
+<body>
+    <div style="width: 200px;background-color: darkorange; height: 200px; position: absolute;"></div>
+    <script>
+        //        系统桌面的拖拽窗口
+        var oDiv = document.querySelector("div");
+
+        oDiv.onmousedown = function( event ){
+            var differX  = event.pageX - oDiv.offsetLeft,
+                differY  = event.pageY - oDiv.offsetTop;
+            var oNew = document.createElement("div");
+            oNew.style.width = oDiv.offsetWidth + "px";
+            oNew.style.height = oDiv.offsetHeight + "px";
+            oNew.style.left = oDiv.offsetLeft + "px";
+            oNew.style.top = oDiv.offsetTop + "px";
+            oNew.className = "border";
+            document.body.appendChild(oNew);
+            document.onmousemove = function( event ){
+                oNew.style.left = event.pageX - differX + "px";
+                oNew.style.top = event.pageY - differY + "px";
+            };
+            document.onmouseup = function(){
+                oDiv.style.left = oNew.offsetLeft + "px";
+                oDiv.style.top = oNew.offsetTop + "px";
+                document.body.removeChild(oNew);
+                document.onmousemove = null;
+                document.onmouseup = null;
+            };
+        };
+
+    </script>
+</body>
+</html>

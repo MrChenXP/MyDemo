@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div1{
+            width: 200px;
+            height: 200px;
+            background-color: #ff000d;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <script src="slowMove.js"></script>
+    <script>
+        var oDiv = document.querySelector(".div1");
+        oDiv.onmouseover = function(){
+//            slowMove(oDiv, "height", 500);
+            slowMove(oDiv, {width: 201, height: 500, opacity: 30}, function(){
+                alert("move end");
+            });
+        };
+    </script>
+</body>
+</html>

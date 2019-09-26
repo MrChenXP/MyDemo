@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //输入字符串,统计所有英文字符的个数
+//        var str = prompt("请输入内容："), iCount = 0;
+//        for(var i = 0, len = str.length; i < len; i++){
+//            if(str.charAt(i) >= "a" && str.charAt(i) <= "z" || str.charAt(i) >= "A" && str.charAt(i) <= "Z"){
+//                iCount++;
+//            }
+//        }
+//        document.writeln("英文字符的个数是：" + iCount);
+
+
+
+    </script>
+</head>
+<body>
+    <input type="text" id="txt1">
+    <button id="lock">加 密</button>
+    <input type="text" size="30" disabled id="txt2"><br/>
+    <a href=""></a>
+    <a href=""></a>
+    <a href=""></a>
+    <script>
+        //        4、编程实现对键盘输入的英文名句子进行加密。(提示："a".charCodeAt(0) === 97, String.fromCharCode(65,66,67) ===abc)
+        //        用加密方法为：  当内容为英文字母时，用26字母中的其后三个字母代替该字母，（xyz保持不变）
+        //        若为其它字符时不变。比如37a5A6y加密后是37bcd5BCD6y
+//        var oTxt1 = document.getElementById("txt1"),
+//            oTxt2 = document.getElementById("txt2"),
+//            oLock = document.getElementById("lock");
+//
+//        oLock.onclick = function(){
+//            var str = oTxt1.value, sOut = "", iTemp = 0;
+//            for(var i = 0, len = str.length; i < len; i++){
+//                if(str.charAt(i) >= "a" && str.charAt(i) <= "w" || str.charAt(i) >= "A" && str.charAt(i) <= "W"){
+//                    iTemp = str.charAt(i).charCodeAt(0);
+//                    sOut += String.fromCharCode(iTemp + 1, iTemp + 2, iTemp + 3);
+//                }else{
+//                    sOut += str.charAt(i);
+//                }
+//            }
+//            oTxt2.value = sOut;
+//        };
+
+        var sJson =  '{ "sites": [ { "name":"菜鸟教程" , "url":"www.runoob.com" },' +
+                '{ "name":"百度" , "url":"www.baidu.com" }, { "name":"微博" , "url":"www.weibo.com" } ] } ';
+        var obj = JSON.parse(sJson), aA = document.getElementsByTagName("a");
+
+        for(var i = 0, len = obj["sites"].length; i < len; i++){
+            aA[i].innerHTML = obj["sites"][i]["name"];
+            aA[i].href = "http://" + obj["sites"][i]["url"];
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+/*=================================时尚分析==============================================*/
+/*====================复古风====================*/
+.vintage{
+    margin-top: 90px;
+}
+h2{
+    text-align: center;
+    font-size: 50px;
+}
+.vin-left{
+    margin-top: 50px;
+}
+.vin-right p:first-child{   /*末尾元素*/
+    margin-top: 60px;
+    margin-left: 110px;
+    font-size: 30px;
+}
+.vin-right p:first-child+p{ /*相邻兄弟选择器css2*/
+    margin-top: 35px;
+    margin-left: 165px;
+}
+.vin-right img{
+    float: right;
+    margin-top: 50px;
+}
+.vin-minddle{
+    position: absolute;
+    top: 335px;
+    left:475px;
+}
+/*==================优雅蕾丝======================*/
+.lace{
+    margin-top: 215px;
+}
+h3{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 30px;
+}
+.lace-left p:first-child{
+    margin-top: 16px;
+    margin-left: 100px;
+}
+.lace-left img{
+    margin-top: 40px;
+}
+.lace-left img+p{
+    text-align: center;
+    font-size: 20px;
+    margin-top: 110px;
+    margin-bottom: 15px;
+}
+.lace-left img+p+p{
+    text-align: right;
+    font-size: 20px;
+    margin-right: 175px;
+}
+.lace-right{
+    margin-top: 55px;
+}
+.lace-middle{
+    position: absolute;
+    top: 545px;
+    left: 630px;
+    z-index: 1;
+}
+/*============解读韩流=======================*/
+.korean{
+    margin-top: 260px;
+    text-align: center;
+    font-size: 20px;
+}
+h4{
+    text-align: center;
+    margin-top: 20px;
+}
+.kor-left{
+    margin-top: 30px;
+}
+.kor-left p{
+    margin-top: 210px;
+    margin-bottom: 20px;
+}
+.kor-left img+p+p{
+    margin-top: 50px;
+}
+.kor-right{
+    margin-top: 30px;
+    width: 50%;
+}
+.kor-right img+img{
+    margin-top: 65px;
+}
+.kor-middle{
+    position: absolute;
+    top: 765px;
+    left: 495px;
+}
+/*===========简约并非简单======================*/
+.easy{
+    /*margin-top: 70px;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

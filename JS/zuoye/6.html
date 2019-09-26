@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var i = 0;
+//        setInterval(function(){
+//            document.writeln(i);
+//            i++;
+//        }, 1000);
+        function show(){
+            document.writeln(i);
+            i++;
+            setTimeout(show, 1000);
+        }
+        setTimeout(show, 1000);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

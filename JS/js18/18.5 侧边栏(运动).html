@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            border: 0;
+            list-style: none;
+        }
+        html{
+            background-color: #F1F3F5;
+        }
+        .sideBar{
+            width: 50px;
+            color: #333;
+        }
+        .bar-bg{
+            position: relative;
+            background-color: #fbfbfc;
+        }
+        .sideBar-content{
+            width: 50px;
+            position: absolute;
+            top:40%;
+            left: 0;
+            margin-top: -220px;
+        }
+        .sideBar-content li{
+            text-align: center;
+            width: 50px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        .arrow{
+            width: 50px;
+            height: 50px;
+            background: url("img/bg.png") no-repeat 0 -100px;
+            cursor: pointer;
+            position: fixed;
+            left: 0;
+            bottom: 15%;
+            z-index: 100;
+        }
+        /*.arrow:hover{*/
+            /*background-position-y: -150px;*/
+        /*}*/
+    </style>
+</head>
+<body>
+    <div class="sideBar">
+        <div class="bar-bg">
+            <ul class="sideBar-content">
+                <li>
+                    <img src="img/s1.png" alt="">
+                    <span>爽文</span>
+                </li>
+                <li>
+                    <img src="img/s2.png" alt="">
+                    <span>内涵</span>
+                </li>
+                <li>
+                    <img src="img/s3.png" alt="">
+                    <span>动漫</span>
+                </li>
+                <li>
+                    <img src="img/s4.png" alt="">
+                    <span>游戏</span>
+                </li>
+                <li>
+                    <img src="img/s5.png" alt="">
+                    <span>直播</span>
+                </li>
+            </ul>
+        </div>
+        <div class="arrow"></div>
+    </div>
+    <script>
+        var oArrow = document.querySelector(".sideBar .arrow");
+        var oBar = document.querySelector(".sideBar .bar-bg"), iTimer = null;
+
+        function linearMove(element, iTarget){          //匀速运动函数
+            clearInterval(iTimer);              //保证只有一个定时器在运行
+            var iSpeed;
+            iTimer = setInterval(function(){
+                (iTarget > element.offsetLeft) ? iSpeed = 5 : iSpeed = -5;      // 根据目标点和变化的样式值决定运动方向
+                if(Math.abs(iTarget - element.offsetLeft) <= Math.abs(iSpeed)){         //定时器终止条件
+                    element.style.left = iTarget + "px";
+                    clearInterval(iTimer);
+                }else{
+                    element.style.left = element.offsetLeft + iSpeed + 'px';
+                }
+            }, 30);
+        }
+        oArrow.addEventListener("click", function(){
+            if(oBar.offsetLeft === 0){
+                linearMove(oBar, -50);
+                oArrow.style.backgroundPositionY = "-50px";
+            }else{
+                linearMove(oBar, 0);
+                oArrow.style.backgroundPositionY = "-150px";
+            }
+        }, false);
+
+        oArrow.addEventListener("mouseover", function(){
+            if(oBar.offsetLeft === 0){
+                oArrow.style.backgroundPositionY = "-150px";
+            }else{
+                oArrow.style.backgroundPositionY = "-50px";
+            }
+        });
+        oArrow.addEventListener("mouseout", function(){
+            if(oBar.offsetLeft === 0){
+                oArrow.style.backgroundPositionY = "-100px";
+            }else{
+                oArrow.style.backgroundPositionY = "0";
+            }
+        });
+        (window.onresize = function(){
+            oBar.style.height = document.documentElement.clientHeight + "px";
+        })();
+    </script>
+</body>
+</html>

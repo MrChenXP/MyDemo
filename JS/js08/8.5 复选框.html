@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="control">
+        <input type="radio" name="ctrl">全选
+        <input type="radio" name="ctrl">不选
+        <input type="radio" name="ctrl">反选
+    </div>
+    <div class="content">
+        <input type="checkbox">11111111
+        <input type="checkbox">22222222
+        <input type="checkbox" checked>33333333
+        <input type="checkbox">44444444
+    </div>
+    <script>
+        var aControl = document.querySelectorAll(".control input[type = radio]"),
+            aContent = document.querySelectorAll(".content input[type = checkbox]");
+
+        aControl[0].onclick = function(){
+            for(var i = 0, len = aContent.length; i < len; i++){
+                aContent[i].checked = true;
+            }
+        };
+        aControl[1].onclick = function(){
+            for(var i = 0, len = aContent.length; i < len; i++){
+                aContent[i].checked = false;
+            }
+        };
+        aControl[2].onclick = function(){
+            for(var i = 0, len = aContent.length; i < len; i++){
+                if(aContent[i].checked){
+                    aContent[i].checked = false;
+                }else{
+                    aContent[i].checked = true;
+                }
+            }
+        };
+    </script>
+</body>
+</html>

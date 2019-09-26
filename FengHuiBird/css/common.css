@@ -1,0 +1,148 @@
+/*==========================公共样式======================*/
+.center-container{  /*主体宽度*/
+    width: 1200px;
+    margin: 0 auto;
+    position: relative; /*生成相对定位的元素，相对于其正常位置进行定位*/
+}
+/*最外围100%部分*/
+.tupo{
+    max-width: 2000px;
+    min-width: 1200px;
+    width: 100%;
+    margin:0 auto;
+    position: relative;
+}
+/*=========头部=============*/
+.public-header{
+    font-size: 14px ;
+    color: #666666;
+}
+.ph-head{
+    width: 1250px;
+    margin:0 auto;
+}
+.ph-menu{
+    height: 92px;
+}
+.header-logo{
+    margin-top: 31px;
+}
+.ph-menu{
+    margin-left: 303px;
+}
+.ph-menu ul{
+    margin-top: 55px;
+}
+.ph-menu li{
+    float: left;
+    margin-right: 40px;
+    height: 22px;
+}
+.ph-menu img{
+    vertical-align: bottom;
+}
+.ph-search{
+    width: 265px;
+    height: 20px;
+    background-color: #e9e4e9;
+    margin-top: 59px;
+    margin-left: 67px;
+}
+.ph-search input:first-child{
+    border: 0;
+    margin-left: 2px;
+    margin-top: 2px;
+    width: 215px;
+    color: #666666;
+}
+.ph-search input:last-child{
+    margin-top: 2px;
+    margin-left: 16px;
+    cursor: pointer;
+}
+.nav{
+    height: 59px;
+    border-top: 9px solid #e3dfe1;
+}
+.nav ul{
+    margin:0 auto;
+    color: #666666;
+    width: 800px;
+}
+.nav ul li{
+    margin-right: 50px;
+    margin-top: 15px;
+    float: left;
+}
+/*=========尾部==========*/
+.public-footer{
+    color: #666666;
+}
+.idea{
+    width: 1060px;
+    height: 70px;
+}
+.idea img{
+    width: 70px;
+    height: 70px;
+    float: left;
+}
+.idea li{
+    float: left;
+    margin-left: 60px;
+    width: 205px;
+    text-align: center;
+}
+.idea span{
+    line-height: 30px;
+}
+.service{
+    margin-top: 120px;
+    border-top: 9px solid #e3dfe1;
+    height: 431px;
+}
+.friendLink{
+    width: 610px;
+    height: 35px;
+    font-size: 12px;
+    margin: 26px;
+    float: left;
+}
+.friendLink li{
+    margin-right: 50px;
+    margin-bottom: 11px;
+    float: left;
+}
+.joinus{
+    width: 390px;
+    margin: 26px;
+    float: left;
+    font-size: 12px;
+}
+.joinus span{
+    line-height: 27px;
+}
+.feedback{
+    width: 260px;
+    height: 17px;
+    margin-top: 25px;
+}
+.feedback input[type="email"]{
+    font-size: 10px;
+    border: none;
+    border-bottom: 1px solid #6b4c38;
+    width: 235px;
+    height: 20px;
+    float: left;
+}
+.feedback input[type="image"]{
+    width: 22px;
+    height: 15px;
+    float: left;
+}
+.attention{
+    margin-top: 25px;
+}
+.attention img{
+    vertical-align: top;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>滚动至顶部后固定</title>
+  <style type="text/css">
+    .wrapper {
+      width: 1000px;
+      height: 9000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .header {
+      height: 550px;
+    }
+
+
+    #f {
+      padding: 10px;
+      position: relative;
+      top: 0;
+      background: #125430;
+      width: 1000px;
+    }
+  </style>
+</head>
+<body>
+
+
+<div class="wrapper">
+  <div class="header"></div>
+  <div id="f">
+    gff
+  </div>
+</div>
+
+
+
+  <script type="text/javascript">
+    //HTMLElement.offsetParent 只读属性 返回一个指向最近的(closest，指包含层级上的最近)包含该元素的定位元素
+      //与当前元素最近的经过定位(position不等于static)的父级元素
+      //如果没有定位的元素，则offsetParent为最近的table,table cell或根元素(标准模式下为html;quirks模式下为body)
+      //Webkit中若元素隐藏(该元素或其祖先元素的style.display="none"),或该元素的style.position="fixed"，则该属性返回null。
+      //在IE9中，如果该元素的style.position被设置为"fixed"，则该属性返回null。（display:none 无影响。）
+       //传入id值
+      var obj = document.getElementById('f');//获取元素
+      var _getHeight = obj.offsetTop;//返回当前元素相对于其 offsetParent(当前是html) 元素的盒子顶部的距离。
+      window.onscroll = function () { //当该元素滚动时，会执行该函数
+        //scrollTop 这个元素的顶部到它的最顶部可见内容（的顶部）的距离的度量
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        if (scrollTop <= _getHeight) { //如果元素距离可见顶部小于偏移量 就不变
+          obj.style.position = 'relative';
+        } else {
+          obj.style.position = 'fixed';
+        }
+      }
+
+
+  </script>
+</body>
+</html>

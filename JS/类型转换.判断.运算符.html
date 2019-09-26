@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta charset="utf-8">
+
+</head>
+<body>
+<!--1、用两个按钮（加和减）分别控制DIV的透明度（默认值为0.3，点击一次增加10%,范围在0到1）-->
+<button id="jia">+</button>
+<button id="jian">-</button>
+<div id="color" style="width: 50px; height: 50px; background-color: red; opacity: 0.3;"></div>
+<script type="text/javascript">
+    var oJia = document.getElementById("jia"),
+        oJian = document.getElementById("jian"),
+        oColor = document.getElementById("color");
+    oJia.onclick = function () {
+        if (oColor.style.opacity <= 1 && oColor.style.opacity > 0){
+            oColor.style.opacity =oColor.style.opacity*1 + 0.1;
+        }else{
+            oColor.style.opacity = 0.1;
+        }
+    }
+    oJian.onclick = function () {
+        if (oColor.style.opacity <= 1 && oColor.style.opacity > 0){
+            oColor.style.opacity =oColor.style.opacity*1 - 0.1;
+        }else{
+            oColor.style.opacity = 1;
+        }
+    }
+</script>
+<!--2、请输入年份，判断是否是闰年（被4整除则为闰年，否则为平年）-->
+<input type="number" id="number"><input type="submit" id="submit">
+<script type="text/javascript">
+    var oSubmint = document.getElementById("submit"),
+        oNumber = document.getElementById("number"),
+        nYu;
+    oSubmint.onclick = function () {
+        nYu = oNumber.value % 4;
+        if (nYu){
+            alert("不是闰年")
+        }else {
+            alert("是闰年")
+        }
+    }
+</script>
+<!--3、请输入您的存款：
+我想买车，买什么车决定于我的银行卡里有多少存款。
+如果存款超过100万，我就买宝马5系
+如果存款超过50万，我就买大众CC
+如果存款超过20万，我就买丰田卡罗拉
+如果存款超过10万，我就买奇瑞QQ
+如果存款在10万以下，我就去炒股-->
+<input type="number" id="money"><input type="submit" id="submit1" value="咨询">
+<script type="text/javascript">
+    var oMoney = document.getElementById("money"),
+        oSubmit1 = document.getElementById("submit1");
+    oSubmit1.onclick = function () {
+        if (oMoney.value >= 1000000){
+            alert("买宝马5s");
+        }else if (oMoney.value >= 500000){
+            alert("买大众");
+        }
+        else if (oMoney.value >= 200000){
+            alert("买丰田卡罗拉");
+        }
+        else if (oMoney.value >= 100000){
+            alert("买奇瑞QQ");
+        }
+        else {
+            alert("去炒股");
+        }
+    }
+
+</script>
+<!--4、以下程序根据输入的三角形的三边判断是否能组成三角形,若可以则输出它的面积和三角形的类型-->
+<br>
+a边：<input type="text" id="a"><br/>
+b边：<input type="text" id="b"><br/>
+c边：<input type="text" id="c"><br/>
+<button id="test"> 检 测 </button><br/>
+<input type="text" disabled id="show" size="30">
+<script>
+    var oTest = document.getElementById("test"),
+        oShow = document.getElementById("show");
+
+    oTest.onclick = function(){
+        oShow.value = "";
+        var a = Number(document.getElementById("a").value),
+            b = Number(document.getElementById("b").value),
+            c = Number(document.getElementById("c").value);
+        if(!isNaN(a) && !isNaN(b) && !isNaN(c)){        // 判断输入为数字
+            if((a + b > c) && (b + c > a) && (a + c > b)){      //构成三角形的条件（任意两边之和大于第三边）
+                if(a === b || a === c || b === c){      //等腰三角形的条件
+                    if(a === b && b === c){
+                        oShow.value = "等边";
+                    }else{
+                        oShow.value = "等腰";
+                    }
+                }
+                var aa = Math.pow(a, 2), bb = Math.pow(b, 2), cc = Math.pow(c, 2), p = (a + b + c)/ 2, s;
+                if(aa + bb === cc || bb + cc === aa || aa + cc === bb){
+                    oShow.value += "直角三角形";
+                }else if(aa + bb < cc || bb + cc < aa || aa + cc < bb){
+                    oShow.value += "钝角三角形";
+                }else{
+                    oShow.value += "锐角三角形";
+                }
+                s = Math.sqrt(p * (p - a) * (p - b) * (p - c)).toFixed(2);
+                oShow.value += " 面积为：" + s;
+            }else{
+                oShow.value = "不能构成三角形";
+            }
+        }else{
+            oShow.value = "输入有非数字";
+        }
+
+    };
+</script>
+<!--5、--请输入您的秒数：如果有资格进入决赛，则请输入性别：学校举行运动会，百米赛跑跑入10秒内的学生有资格进入决赛；再根据性别判断进入男子组或女子组-->
+请输入时间<input type="number" id="time">
+<input type="submit" id="submit3" value="提交">
+<script type="text/javascript">
+    var oSubmint3 = document.getElementById("submit3"),
+        oTime = document.getElementById("time"),
+        nSix;
+    oSubmint3.onclick = function () {
+        if (oTime.value < 10){
+            nSix = prompt("请输入性别");
+            if(nSix == "男"){
+                alert("已报名男子组");
+            }else if( nSix == "女"){
+                alert("已报名女子组");
+            }else {
+                alert("对不起！建国以后不允许成精")
+            }
+
+        }else {
+            alert("好好读书");
+        }
+    }
+</script>
+</body>
+</html>

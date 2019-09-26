@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button >读 取文件</button>
+    <button>读取数据</button>
+
+    <script>
+        var oBtn = document.querySelectorAll("button");
+
+//        oBtn[0].onclick = function(){
+//            var xhr = new XMLHttpRequest();
+//            //规定请求的类型、URL 以及是否异步处理请求。
+//            xhr.open("get", "data.txt", true); //open(操作数据方式（get(读取)或者post(上传)），请求地址，传输方式（同步（false）或异步（true））)
+////            xhr.open("get", "data.txt?t = " + new Date().getTime(), true); //处理缓存
+//            //将请求发送到服务器。
+//            xhr.send(null);
+//            xhr.onreadystatechange = function(){        //当服务器有响应数据回来触发事件
+//                if(xhr.readyState === 4){           //响应数据解析完成
+//                    if(xhr.status >= 200 && xhr.status < 300 || xhr.status === 304){        //请求文件成功
+//                        alert(xhr.responseText);                //请求文件里内容
+//                    }else{
+//                        if(xhr.status === 404){
+//                            alert("not found file");
+//                        }
+//                    }
+//                }
+//            };
+//        };
+//
+//        oBtn[1].onclick= ()=>{
+//            let xhr = new XMLHttpRequest();
+//            xhr.open("get","http://182.61.33.130/YunheStuScoresInterface/classServlet?method=single&class_id=3",true);
+//            xhr.send(null);
+//            xhr.onreadystatechange = ()=>{
+//                if(xhr.readyState === 4){
+//                    if( xhr.status >= 200 && xhr.status < 300 || xhr.status === 304){
+//                        alert(xhr.response);
+//                    }else {
+//                        if(xhr.status === 404){
+//                            alert('err');
+//                        }
+//                    }
+//                }
+//            }
+//        };
+
+
+        oBtn[0].onclick = function(){
+          var xhr = new XMLHttpRequest();
+          //规定请求的类型、URL 以及是否异步处理请求。
+          xhr.open("get", "http://dict.youdao.com/suggest?q=a&le=eng&num=80&ver=&doctype=json&keyfrom=&model=&mid=&imei=&vendor=&screen=&ssid=&abtest=", true); //open(操作数据方式（get(读取)或者post(上传)），请求地址，传输方式（同步（false）或异步（true））)
+//            xhr.open("get", "data.txt?t = " + new Date().getTime(), true); //处理缓存
+          //将请求发送到服务器。
+          xhr.send(null);
+          xhr.onreadystatechange = function(){        //当服务器有响应数据回来触发事件
+            if(xhr.readyState === 4){           //响应数据解析完成
+              if(xhr.status >= 200 && xhr.status < 300 || xhr.status === 304){        //请求文件成功
+                alert(xhr.responseText);                //请求文件里内容
+              }else{
+                if(xhr.status === 404){
+                  alert("not found file");
+                }
+              }
+            }
+          };
+        };
+    </script>
+</body>
+</html>

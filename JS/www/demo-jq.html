@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <style>
+        .infor{
+            width: 400px;
+            margin: 0 auto;
+            border: 1px solid slategray;
+            padding: 30px 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="infor">
+        <h1>员工查询</h1>
+        <h4>员工编号：</h4>
+        <p>
+            <input type="text" id="keyword">
+            <button id="search">查询</button>
+        <p/>
+        <div>
+            <label>查询结果：</label>
+            <p id="searchResult"></p>
+        </div>
+
+        <h1>员工增加</h1>
+        <h4>员工编号：<input type="text" id="add-number"></h4>
+        <h4>员工姓名：<input type="text" id="add-name"></h4>
+        <h4>员工性别：<input type="text" id="add-sex"></h4>
+        <h4>员工职位：<input type="text" id="add-job"></h4>
+        <p><button id="add-search">增加员工</button></p>
+        <div>
+            <label>结果：</label>
+            <p id="add-resultshow"></p>
+        </div>
+    </div>
+    <script src="jquery-1.12.2.min.js"></script>
+    <script src="staffManage-jq.js"></script>
+</body>
+</html>

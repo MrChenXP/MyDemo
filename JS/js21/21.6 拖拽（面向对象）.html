@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .move{
+            width: 200px;
+            height: 200px;
+            background-color: darkblue;
+            position: absolute;
+            left: 0;
+            top: 0;
+            cursor: move;
+        }
+    </style>
+</head>
+<body>
+    <div class="move">子类</div>
+    <div class="move" style="background-color: red;">父类</div>
+    <script src="Drag.js"></script>
+    <script>
+
+        var aDiv = document.querySelectorAll(".move");
+        new SubDrag(aDiv[0]);
+        new Drag(aDiv[1]);
+    </script>
+</body>
+</html>

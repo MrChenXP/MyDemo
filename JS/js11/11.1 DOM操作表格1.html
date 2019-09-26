@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .control{
+            width: 800px;
+            margin: 20px auto;
+        }
+        td{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="control">
+        姓名：<input type="text" id="user" placeholder="请输入姓名">
+        手机：<input type="text" id="phone" placeholder="请输入手机">
+        年龄：<input type="text" id="age" placeholder="请输入年龄">
+        <button id="add"> 增 加 </button>
+    </div>
+    <table border="1" width="600" align="center">
+        <thead>
+        <tr>
+            <th>编号</th>
+            <th>姓名</th>
+            <th>手机</th>
+            <th>年龄<button class="up">升序</button> <button class="down">降序</button></th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody style="text-align: center">
+        <tr>
+            <td>1</td>
+            <td>马云</td>
+            <td>13245678945</td>
+            <td>52</td>
+            <td><a href="#"> 删 除</a> | <a href="#"> 替 换 </a> | <a href="#"> 置 顶 </a></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>马化腾</td>
+            <td>13647894245</td>
+            <td>66</td>
+            <td><a href="#"> 删 除</a> | <a href="#"> 替 换 </a> | <a href="#"> 置 顶 </a></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>许家印</td>
+            <td>13589454456</td>
+            <td>36</td>
+            <td><a href="#"> 删 除</a> | <a href="#"> 替 换 </a> | <a href="#"> 置 顶 </a></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>王卫</td>
+            <td>13248965231</td>
+            <td>59</td>
+            <td><a href="#"> 删 除</a> | <a href="#"> 替 换 </a> | <a href="#"> 置 顶 </a></td>
+        </tr>
+        </tbody>
+    </table>
+    <script>
+        var oTab = document.querySelector("table"), oBody = oTab.tBodies[0];
+        var aRows = oBody.rows ;
+        var oUser = document.querySelector("#user");
+        var oPhone = document.querySelector("#phone");
+        var oAge = document.querySelector("#age");
+        var oAdd = document.querySelector("#add");
+        var oUp = document.querySelector(".up");
+        var oDown = document.querySelector(".down");
+        oTab.tHead.style.backgroundColor = "orange";
+        var rowLen = aRows.length + 1;
+
+        function setColor(){        //背景颜色
+            var sColor = "skyblue";
+            for(var i = 0, len = aRows.length; i < len; i++){
+                if(i % 2){
+                    aRows[i].style.backgroundColor = "pink";
+                }else{
+                    aRows[i].style.backgroundColor = "skyblue";
+                }
+                aRows[i].onmouseover = function(){
+                    sColor = this.style.backgroundColor;
+                    this.style.backgroundColor = "yellow";
+                };
+                aRows[i].onmouseout = function(){
+                    this.style.backgroundColor = sColor;
+                };
+            }
+        }
+
+
+        oAdd.onclick = function(){          //增加功能
+            var sUser = oUser.value.split(" ").join("");
+            if(sUser !== ""){
+                var oTr = document.createElement("tr");
+                var oTd = document.createElement("td");
+                oTd.innerText = rowLen++;
+                oTr.appendChild(oTd);
+
+                oTd = document.createElement("td");
+                oTd.innerText= oUser.value;
+                oTr.appendChild(oTd);
+
+                oTd = document.createElement("td");
+                oTd.innerText= oPhone.value;
+                oTr.appendChild(oTd);
+
+                oTd = document.createElement("td");
+                oTd.innerText= oAge.value;
+                oTr.appendChild(oTd);
+
+                oTd = document.createElement("td");
+                oTd.innerHTML = '<a href="#"> 删 除</a> | <a href="#"> 替 换 </a> | <a href="#"> 置 顶 </a>';
+                oTd.getElementsByTagName("a")[0].onclick = function(){      //删除功能
+                    oTab.tBodies[0].removeChild(this.parentNode.parentNode);
+                    setColor();
+                };
+                oTd.getElementsByTagName("a")[1].onclick = function(){      //替换功能
+                    this.parentNode.parentNode.cells[2].innerText = oPhone.value;
+                    this.parentNode.parentNode.cells[3].innerText = oAge.value;
+                    oUser.value = oPhone.value = oAge.value = "";
+                };
+                oTd.getElementsByTagName("a")[2].onclick = function(){      //置顶功能
+                    oBody.insertBefore(this.parentNode.parentNode, oBody.rows[0]);
+                    setColor();
+                };
+                oTr.appendChild(oTd);
+
+                oBody.appendChild(oTr);
+                setColor();
+            }else{
+                oUser.value = "";
+                oUser.focus();
+            }
+        };
+        setColor();
+
+        function rowSort(bSort){        //排序表体的行
+            var aDOM = [];
+            for(var i = 0, len = aRows.length; i < len; i++){
+                aDOM[i] = aRows[i];
+            }
+            aDOM.sort(function(row1, row2){     // sort可用排序数组元素是引用类型的（有条件）
+                return row1.cells[3].innerText - row2.cells[3].innerText;
+            });
+            if(bSort){
+                for(i = 0; i < len; i++){
+                    oBody.appendChild(aDOM[i]);
+                }
+            }else{
+                for(i = 0; i < len; i++){
+                    oBody.appendChild(aDOM[len - 1 - i]);
+                }
+            }
+            setColor();
+        }
+        oUp.onclick = function(){
+            rowSort(true);      //升序
+        };
+        oDown.onclick = function(){
+            rowSort(false);     //降序
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+body{
+    margin:0 auto;
+    width: 100vw;
+    height: 100vh;
+    min-width: 320px;
+    max-width: 620px;
+    max-height: 1021px;
+    min-height: 568px;
+}
+.swiper-container{
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+}
+.bg{
+    width: 100%;
+    height: 100%;
+    background: url("../images/bg.png") no-repeat;
+    background-size: 100% 100%;
+    box-sizing: border-box ;
+    padding: 6%;
+
+}
+.swiper-pagination{
+    text-align: right;
+}
+.ss-center{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: rgba(255,255,255,0.4);
+    border:1px solid rgba(113, 204, 239,.8);
+}
+.ss-center-1{
+    background: url("../images/ss-center-1-bg.png") no-repeat;
+    background-size: 100%;
+    border: none;
+}
+.ss-center-1-yin{
+    position: absolute;
+    left:0;
+}
+.ss-center-1-zi{
+    position: absolute;
+    right: 0;
+}
+.ss-center-1-yan{
+    position: absolute;
+    right: 38%;
+}
+.ss-center-1-zui{
+    position: absolute;
+    top: 3%;
+    left: 22%;
+}
+.ss-center-1-que{
+    position: absolute;
+    top: 60%;
+    left: 65%;
+}
+/*----------------------------------第二张-----------------------------*/
+.ss-center-2{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 30px;
+    align-items: center;
+
+}
+.ss-center-2-bt{
+    display: flex;
+    width: 184px;
+    height: 42px;
+    background: #B1DEF5;
+    justify-content: center;
+    align-items: center;
+}
+.ss-center-2-bt-1{
+    display: inline-block;
+    width: 10px;
+    height: 20px;
+    background-color: black;
+    border-radius: 0px 20px 20px 0;
+    font-size: 20px;
+
+}
+.ss-center-2-bt-2{
+    display: inline-block;
+    width: 10px;
+    height: 20px;
+    background-color: black;
+    border-radius: 20px 0px 0px 20px;
+    font-size: 20px;
+}
+.ss-center-2-2{
+    display: flex;
+    margin-top: 20%;
+    font-size: 12px;
+
+}
+.ss-center-2-2 div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.ss-center-2-2 div:last-child{
+    margin-left: 30px;
+}
+/*-----------------------------第三3章-----------------*/
+.sscenter-3{
+    width: 100%;
+    height: 100%;
+    background: url("../images/bg.png") no-repeat;
+    background-size: 100% 100%;
+}
+.sscenter-31{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+.sscenter-31-1{
+    padding-top: 15%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.sscenter-31-2{
+    width: 80%;
+    font-size: 25px;
+    margin: 10% auto;
+    text-align: center;
+}
+.sscenter-31-3{
+    width: 60%;
+    height: 50px;
+    font-size: 25px;
+    margin: 20% auto ;
+    background: #1594FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+}
+/*------------------------------------向上箭头-------------------------------*/
+
+.allor{
+    width: 20%;
+    height: 10%;
+    /*			background-color: green;*/
+    position: absolute;
+    left: 40%;
+    bottom: 0;
+    z-index: 10;
+    animation: up 1s infinite linear;
+}
+.allor-left{
+    width: 25%;
+    height: 10%;
+    border-radius: 0 0 0 10px;
+    background-color: gray;
+    margin-top:42%;
+    margin-left: 31%;
+    transform: rotateZ(-45deg);
+}
+.allor-right{
+    width: 25%;
+    height: 10%;
+    border-radius:10px 0 0 0;
+    background-color: gray;
+    margin-top:-9%;
+    margin-left: 42%;
+    transform: rotateZ(225deg);
+}
+@keyframes up{
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    75% {
+        opacity: 1;
+        transform: translateY(-15px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+/*------------------------music-----------------------------------*/
+.yinyue{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background: rgba(128, 128, 128, 0.75);
+    border: 1px solid white;
+    border-radius: 15px 15px 15px 15px;
+    box-sizing: border-box;
+    padding: 2px;
+    animation: zhuan 3s infinite linear;
+}
+@keyframes zhuan{
+    0%{
+        transform: rotate(0deg)
+    }
+    100%{
+        transform: rotate(360deg)
+    }
+}
+
+
+
+
+

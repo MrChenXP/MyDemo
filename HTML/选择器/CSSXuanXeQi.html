@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS选择器</title>
+    <!-- nav.pngCSS-->
+    <style type="text/css">
+        .nav{width: 840px; height: 40px;}
+        .nav dd{float: left; margin-left: 8px; line-height: 15px;}
+        .nav dl dd:not(:first-child):before{content:"| "}
+    </style>
+    <!-- work1.pngCSS-->
+    <style type="text/css">
+        .table2 td{height: 30px;}
+        caption{ text-align:left;}
+        .span1:before{content: "new:"; color: blue; font-weight: bold;}
+        .table2 a:link{color: rgba(210, 126, 45, 0.69);}
+        .table2 a:visited{ color: #ff1122;}
+        .table2 a:hover{ color: #f1ff74;}
+        .table2 a:active{ color: #192cff;}
+        .table2 tbody tr td:first-child::after{content: url("imges/H5.png"); float:right;}
+    </style>
+    <!-- work2.pngCSS-->
+    <style type="text/css">
+        ul{
+            width: 150px;
+            list-style: none;
+            border: 1px solid black;
+        }
+        ul li{
+            font-size: 12px;
+            margin-left: -30px;
+        }
+        /*ul li a{*/
+            /*margin-left: -10px;*/
+        /*}*/
+        ul li:before{
+            content: url(imges/BoFang.png)
+        }
+        ul li a:link{
+            color: black;
+            text-decoration: none;
+        }
+        ul li a:hover{
+            color: red;
+            text-decoration: underline;
+        }
+    </style>
+    <!-- 水调歌头CSS-->
+    <style type="text/css">
+        .sdgt h2,.sdgt hr+pre{
+            color: red;
+        }
+        .sdgt pre{
+            font-size: 14px;
+        }
+    </style>
+    <!-- 如梦令CSS-->
+    <style type="text/css">
+        .rml p{
+            width: 305px;
+            font-size: 14px;
+            margin-bottom: -12px;
+            color: green;
+        }
+        span{
+            color: blue;
+        }
+    </style>
+    <!-- 淘宝侧边栏CSS-->
+    <style type="text/css">
+        .tb{
+            width: 60px;
+            height: 385px;
+            background-color: rgba(188, 188, 188, 0.54);
+        }
+        .tb img:first-child:hover{
+            width: 70px;
+            height: 80px;
+        }
+        .tb dl a{
+            text-decoration: none;
+        }
+        .tb dl dd:nth-child(odd) a{
+            color: #ba0000;
+        }
+        .tb dl dd:nth-child(odd) a:hover{
+            color: red;
+            font-weight: 900;
+            font-size: 18px;
+        }
+        .tb dl dd:nth-child(even) a{
+            color: #0000aa;
+        }
+        .tb dl dd:nth-child(even) a:hover{
+            color: blue;
+            font-weight: 900;
+            font-size: 18px;
+        }
+        .tb dl{
+            margin-left: -25px;
+        }
+        .tb dd{
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+<!-- nav.pan-->
+<div class="nav">
+    <hr>
+    <dl>
+        <dd>国内酒店</dd>
+        <dd>海外酒店</dd>
+        <dd>海外民俗+短租</dd>
+        <dd>团购</dd>
+        <dd>特价酒店</dd>
+        <dd>途家公寓</dd>
+        <dd>酒店+酒店</dd>
+        <dd>客栈民宿</dd>
+        <dd>团队房&bull;长住房</dd>
+        <dd>会议</dd>
+    </dl>
+    <br><hr>
+</div>
+<br>
+<!-- work1.png-->
+<h3>属性</h3>
+<table border="1" cellspacing="0" width="800" class="table2">
+    <caption>
+        <img src="imges/H5.png">
+        <span class="span1">HTML5中的新属性。</span>
+    </caption>
+    <thead>
+        <tr style="background-color: #000; color: white;">
+            <th>属性</th>
+            <th>值</th>
+            <th>描述</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><a href="#">autoplay</a></td>
+            <td>autoplay</td>
+            <td>如果出现该属性，则音频在就绪后马上播放。</td>
+        </tr>
+        <tr>
+            <td><a href="#">autoplay</a></td>
+            <td>autoplay</td>
+            <td>如果出现该属性，则音频在就绪后马上播放。</td>
+        </tr>
+        <tr>
+            <td><a href="#">autoplay</a></td>
+            <td>autoplay</td>
+            <td>如果出现该属性，则音频在就绪后马上播放。</td>
+        </tr>
+        <tr>
+            <td><a href="#">autoplay</a></td>
+            <td>autoplay</td>
+            <td>如果出现该属性，则音频在就绪后马上播放。</td>
+        </tr>
+        <tr>
+            <td><a href="#">autoplay</a></td>
+            <td>autoplay</td>
+            <td>如果出现该属性，则音频在就绪后马上播放。</td>
+        </tr>
+        <tr>
+            <td><a href="#">autoplay</a></td>
+            <td>autoplay</td>
+            <td>如果出现该属性，则音频在就绪后马上播放。</td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<!-- work2.png-->
+<ul>
+    <li><a href="#">《大话西游》黄子韬飙演技</a></li>
+    <li><a href="#">《特勤精英》张丹峰热血青春</a></li>
+    <li><a href="#">《轩辕剑》暮云黑化暴走屠村 </a></li>
+    <li><a href="#">《飞哥战队》飞哥激斗敌寇 </a></li>
+    <li><a href="#">《碧血雄心》唐国强上海救援</a></li>
+    <li><a href="#">《小五当官》东北版让子弹飞 </a></li>
+</ul>
+<br>
+<!-- 水调歌头-->
+<div class="sdgt">
+    <h2>水调歌头</h2>
+    <hr width="200px" align="left">
+    <pre>
+明白几时有，把酒问青天。
+不知天上宫阙，今夕是何年？
+我欲乘风归去，又恐琼楼玉宇，
+高处不胜寒。
+起舞弄清影，何似在人间！
+    </pre>
+    <pre>
+ 转朱阁，低绮户，照无眠。
+不应有恨，何事长向别时圆？
+人有悲欢离合，月有阴晴圆缺，
+此事古难全。
+但愿人长久，千里共婵娟。
+    </pre>
+</div>
+<!-- 如梦令-->
+<div class="rml">
+    <h2>如梦令</h2>
+    <hr width="300" align="left">
+    <p>昨夜雨疏风骤，浓睡不消残酒。</p>
+    <p>试问卷帘人，却道“海棠依旧”。</p>
+    <p>“知否？知否？应为绿肥红瘦。”</p>
+    <br>
+    <span>译文</span>
+    <p>
+昨夜雨点稀疏，晚风急猛，我虽然睡了一夜，仍有余醉未消。试问卷帘的侍女：海棠花怎么样？她说海棠花依然如旧。知道吗？知道吗？应是绿叶繁茂，红花凋零
+    </p>
+</div>
+<br>
+<!-- 淘宝侧边栏-->
+<div class="tb">
+    <a href="#"><img src="imges/tb.png" width="60" height="71"></a>
+    <dl>
+        <dd>
+            <a href="#">这是一行</a>
+        </dd>
+        <dd>
+            <a href="#">这是一行</a>
+        </dd>
+        <dd>
+            <a href="#">这是一行</a>
+        </dd>
+        <dd>
+            <a href="#">这是一行</a>
+        </dd>
+    </dl>
+</div>
+</body>
+</html>

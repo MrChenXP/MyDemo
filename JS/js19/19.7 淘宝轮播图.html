@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            list-style: none;
+        }
+        .carousel{
+            width: 520px;
+            height: 280px;
+            border: 5px solid black;
+            position: relative;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        .carousel .img-wrap{
+            width: 2600px;
+            height: 280px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .carousel .img-wrap li{
+            float: left;
+        }
+        .circle{
+            position: absolute;
+            left: 50%;
+            bottom: 20px;
+            background-color: rgba(150,150,150,.5);
+            border-radius: 9px;
+            margin-left: -50px;
+        }
+        .circle li{
+            float: left;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: white;
+            margin: 4px 5px;
+            cursor: pointer;
+        }
+        .circle .selected{
+            background-color: #ff5000;
+        }
+        .arrow span{
+            position: absolute;
+            z-index: 100;
+            width: 20px;
+            height: 30px;
+            background-color: rgba(0,0,0,.5);
+            top: 50%;
+            margin-top: -15px;
+            line-height: 30px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            display: none;
+        }
+        .arrow .arrow-left{
+            border-radius: 0 15px 15px 0;
+            left: 0;
+        }
+        .arrow .arrow-right{
+            border-radius: 15px 0 0 15px;
+            right: 0;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="carousel">
+        <ul class="img-wrap">
+            <li><a href="#"><img src="img/TB1.jpg"></a></li>
+            <li><a href="#"><img src="img/TB2.jpg"></a></li>
+            <li><a href="#"><img src="img/TB3.jpg"></a></li>
+            <li><a href="#"><img src="img/TB4.jpg"></a></li>
+            <li><a href="#"><img src="img/TB5.png"></a></li>
+        </ul>
+        <ol class="circle">
+            <li class="selected"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+        <div class="arrow">
+            <span class="arrow-left">&lt;</span>
+            <span class="arrow-right">&gt;</span>
+        </div>
+    </div>
+    <script src="slowMove.js"></script>
+    <script>
+        var aCircle = document.querySelectorAll(".circle li");
+        var oCarousel = document.querySelector(".carousel");
+        var oUl = document.querySelector(".carousel .img-wrap");
+        var oLeft = document.querySelector(".carousel .arrow-left");
+        var oRight = document.querySelector(".carousel .arrow-right"), nowIndex = 0, iTimer = null;
+
+        function moveImg(){
+            clearInterval(iTimer);
+            for(i = 0; i < len; i++){
+                aCircle[i].className = "";
+            }
+            aCircle[nowIndex].className = "selected";
+            slowMove(oUl, {left: -520 * nowIndex});
+            iTimer = setInterval(nextImg, 2000);
+        }
+        function nextImg(){
+            nowIndex ++;
+            nowIndex %= 5;
+            moveImg();
+        }
+        for(var i = 0, len = aCircle.length; i < len; i++){
+            aCircle[i].index = i;
+            aCircle[i].onclick = function(){
+                nowIndex = this.index;
+                moveImg();
+            };
+        }
+
+        oCarousel.onmouseover = function(){
+            oLeft.style.display = "block";
+            oRight.style.display = "block";
+        };
+        oCarousel.onmouseout = function(){
+            oLeft.style.display = "none";
+            oRight.style.display = "none";
+        };
+        oLeft.onmouseover = oRight.onmouseover = function(){
+            this.style.backgroundColor = "rgba(0,0,0,.8)";
+        };
+        oLeft.onmouseout = oRight.onmouseout = function(){
+            this.style.backgroundColor = "rgba(0,0,0,.5)";
+        };
+
+        oUl.onmouseover = function(){
+            clearInterval(iTimer);
+        };
+        oUl.onmouseout = function(){
+            iTimer = setInterval(nextImg, 2000);
+        };
+
+        oRight.onclick = function(){
+//            nowIndex++;
+//            if(nowIndex === 5){
+//                nowIndex = 0;
+//            }
+//            nowIndex %= 5;
+//            moveImg();
+            nextImg();
+        };
+        oLeft.onclick = function(){
+            nowIndex--;
+//            if(nowIndex < 0){
+//                nowIndex = 4;
+//            }
+            nowIndex = (nowIndex + 5) % 5;
+            moveImg();
+        };
+        iTimer = setInterval(nextImg, 2000);
+    </script>
+</body>
+</html>

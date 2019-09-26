@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <button id="open">打开</button>
+    <script>
+        var money = 100, bag = 20;
+        var oP = document.getElementById("open");
+
+        oP.onclick = function(){
+            if(bag === 1){
+                console.log(money.toFixed(2));
+            }else if(bag > 1){
+                var iRan = (Math.random() * (money/bag * 2)).toFixed(2);
+                console.log(iRan);
+                money -= iRan;
+            }
+            bag--;
+        };
+    </script>
+</body>
+</html>

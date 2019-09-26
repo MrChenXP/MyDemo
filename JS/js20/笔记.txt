@@ -1,0 +1,54 @@
+面向对象编程 简称OOP（Object-Oriented Programming）
+    四大特性
+        抽象、封装、继承、多态
+    对象
+        对象的类型
+            普通对象    __proto__ 属性（只要是对象就具有）      new Object()
+            函数对象    function也是对象，有一个原型对象（prototype）， __proto__ 属性   new Function()
+        对象的组成
+            属性和方法（值是函数）
+        对象的声明
+            var obj = new Object();
+            var obj = {};
+            var obj = Object.create(null);
+        对象的权限
+            Object.preventExtensions(obj);      阻止往对象扩展新的属性和方法
+            Object.seal(obj);                   阻止删除对象的属性和方法
+            Object.freeze(obj);                 阻止删除和修改对象的属性和方法
+        对象的键名权限
+            Object.defineProperty(obj, name, desc)    设置对象键名的权限(单个)
+            Object.defineProperties(obj,{})           设置对象键名的权限(多个)
+                数据属性：
+                    configurable: 仅当该属性的 configurable 为 true 时，该属性才能够被改变，也能够被删除。默认为 false
+                    enumerable: 仅当该属性的 enumerable 为 true 时，该属性才能够出现在对象的枚举属性中。默认为 false
+                    value: 该属性对应的值。可以是任何有效的 JavaScript 值（数值，对象，函数等）。默认为 undefined
+                    writable: 仅当仅当该属性的writable为 true 时，该属性才能被赋值运算符改变。默认为 false
+                访问器属性
+                    configurable: 仅当该属性的 configurable 为 true 时，该属性才能够被改变，也能够被删除。默认为 false
+                    enumerable: 仅当该属性的 enumerable 为 true 时，该属性才能够出现在对象的枚举属性中。默认为 false
+                    get: 一个给属性提供 getter 的方法，如果没有 getter 则为 undefined。该方法返回值被用作属性值。undefined
+                    set: 一个给属性提供 setter 的方法，如果没有 setter 则为 undefined。该方法将接受唯一参数，并将该参数的新值分配给
+            Object.getOwnPropertyDescriptor(obj, name)      获取对象键名的描述
+        对象键名的使用
+            1、普通对象    键名增加到对象本身上（由对象使用）
+            2、函数对象
+                  2.1、键名可增加到构造器上（由构造器使用）
+                  2.2、键名可增加到构造函数里this对象上（由实例对象使用）
+                  2.3、键名可增加到构造函数的原型上（由实例对象使用）
+        面向对象的方式
+            工厂方式    （方法和属性不共用，没有new操作符）
+            构造函数原型混合方式    （用构造函数来增加属性，用原型来增加方法）
+                  new操作符        在构造器前加new操作符就会改变构造函数里的this的指向，使this指向实例对象上
+                                   原因：
+                                         1、创建一个空对象
+                                         2、把构造函数里的this绑定到空对象上
+                                         3、空对象的__proto__指向到构造函数的原型上
+                                         4、返回空对象
+                  构造函数里的属性和方法是实例对象不共用，在原型上的属性和方法是实例对象共同
+            面向过程修改成面向对象的方式步骤
+                1、创建一个构造函数
+                2、分析把变量变成实例对象的属性，使用该属性时须在前增加this对象
+                3、如果构造函数里有使用非实例对象的this，须必区分this
+                4、把构造函数里的子函数增加到构造器的原型上，在构造函数里调用该方法且由实例对象去调用，如果有参数就传出
+
+

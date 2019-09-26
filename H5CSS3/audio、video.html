@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义video控件</title>
+    <meta http-equiv="content-type" content="text/html;application/octet-stream">
+</head>
+<body>
+<video id="video1" controls>
+    <source src="../../Demo/HTML/imgers/mov_bbb.mp4" type="video/mp4" >
+    <source src="../../Demo/HTML/imgers/mov_bbb.ogg" type="video/ogg">
+</video>
+<input type="button" onclick="playPause()" value="播放/暂停">
+<input type="range" value="设置进度" id="range1">
+<div><span  id="cur">0:00</span> / <span id="dur"></span></div>
+<script>
+    var oVi = document.getElementById("video1");
+
+//    ===============播放暂停==========================
+    function playPause() {
+        oVi.paused ? oVi.play() : oVi.pause();
+    }
+//    ===================================改变播放时间==============================================
+    var oR = document.getElementById("range1"); //获取滚动条对象
+//    oRange.oninput //事件在用户输入时触发 IE8-和IE10+浏览器不支持
+//    oRange.onpropertychange    // ie专属 触发对象改变任何属性时都会触发 IE11浏览器不支持
+//    change事件的触发条件是失去焦点并且value值改变 ie10+不会
+    oR.onpropertychange = oR.oninput = oR.onchange =function () {   //给滚动条加修改事件
+        oVi.currentTime = oVi.duration * oR.value/100;  //当前事件=总时间 * 滚动条值%
+    };
+//    ===================================显示当前播放时间==============================================
+    oVi.oncanplay=function () { //当浏览器能够开始播放指定的音频/视频时，会发生 canplay 事件。ie8不行
+        var oDur = document.getElementById("dur");
+        oDur.innerHTML = parseInt(oVi.duration);
+    };
+    var oCur = document.getElementById("cur");
+    setInterval(function () {
+        var oDate = oVi.currentTime,
+            iHour = Math.floor(oDate/60/60%24),
+            iMinute = Math.floor(oDate/60)%60,
+            iSecond = Math.floor(oDate % 60);
+        oCur.innerHTML = iHour + ":" + iMinute + ":" + iSecond;
+    },100);
+//===================================改变音量==============================================
+
+
+
+
+
+</script>
+</body>
+</html>

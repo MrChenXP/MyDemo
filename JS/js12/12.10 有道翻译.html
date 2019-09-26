@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        .translation{
+            position: relative;
+            height: 600px;
+            width: 200px;
+            margin: 100px auto;
+        }
+        .translation .translation-title{
+            height: 40px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            line-height: 40px;
+        }
+        .translation .translation-title span:first-child{
+            float: left;
+            margin-left: 10px;
+        }
+        .translation .translation-title span:last-child{
+            float: right;
+            width: 40px;
+            transform: rotate(90deg);
+            margin-top: 16px;
+            opacity: 0.5;
+        }
+        .translation .translation-title:hover{
+            color: red;
+        }
+        .translation-content{
+            width: 250px;
+            position: absolute;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 4px 1px rgba(100,100,100,.5);
+            left: 0;
+            top: 50px;
+            padding: 20px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+        }
+        .translation-content li{
+            margin-top: 5px;
+        }
+        .translation-content li::after{
+            content: "";
+            display: block;
+            height: 0;
+            visibility: hidden;
+            clear: both;
+        }
+        .translation-content li span{
+            float: left;
+            height: 30px;
+            margin-left: 5px;
+            line-height: 30px;
+            padding: 2px 8px;
+            border-radius: 5px;
+        }
+        .translation-content li:first-child span{
+            background-color: coral;
+        }
+        .translation-content li:not(:first-child) span:last-child{
+            margin-left: 40px;
+        }
+        .translation-content li:not(:first-child) span:hover{
+            background-color: #24a3d8;
+        }
+    </style>
+</head>
+<body>
+    <div class="translation">
+        <div class="translation-title">
+            <span>自动检测语言</span>
+            <span>&gt;</span>
+        </div>
+        <ul class="translation-content">
+            <li><span>自动检测语言</span></li>
+            <li><span>中文 》英语</span><span>英语 》中文</span></li>
+            <li><span>中文 》日语</span><span>日语 》中文</span></li>
+            <li><span>中文 》韩语</span><span>韩语 》中文</span></li>
+            <li><span>中文 》法语</span><span>法语 》中文</span></li>
+        </ul>
+    </div>
+    <script>
+        var oTitle = document.querySelector(".translation-title");
+        var oContent = document.querySelector(".translation-content");
+        var aSpan = document.querySelectorAll(".translation-content span");
+
+        function stopBubble(oEvent){        //阻止事件冒泡兼容函数
+            oEvent.stopPropagation ? oEvent.stopPropagation() : oEvent.cancelBubble = true;
+        }
+        oTitle.onclick = function( ev ){
+            var oEvent = ev || event;
+            if(oContent.style.display === "block"){
+                oContent.style.display = "none";
+            }else{
+                oContent.style.display = "block";
+            }
+            stopBubble(oEvent);
+        };
+
+        for(var i = 0, len = aSpan.length; i < len; i++){
+            aSpan[i].onclick = function(){
+                oTitle.children[0].innerText = this.innerText;
+                oContent.style.display = "none";
+            };
+        }
+
+        document.onclick = function(){
+            oContent.style.display = "none";
+        };
+    </script>
+</body>
+</html>

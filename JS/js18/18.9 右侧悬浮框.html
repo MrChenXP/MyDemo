@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div1{
+            width: 200px;
+            height: 250px;
+            border: 1px solid darkblue;
+            background-color: greenyellow;
+            position: absolute;
+            top: 50%;
+            margin-top: -125px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <img src="img/movebg.png">
+    <div class="div1"></div>
+    <script src="slowMove.js"></script>
+    <script>
+        var oDiv = document.querySelector(".div1");
+        oDiv.style.marginTop = 0;
+        (window.onscroll = function(){
+            var iTop = Math.floor((document.documentElement.clientHeight - oDiv.offsetHeight) / 2);
+//            oDiv.style.top = document.documentElement.scrollTop + iTop + "px";
+            slowMove(oDiv, "top", document.documentElement.scrollTop + iTop);
+        })();
+    </script>
+</body>
+</html>

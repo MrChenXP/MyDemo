@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p{
+            padding: 0;
+            margin: 0;
+        }
+        .chat{
+            width: 1200px;
+            margin: 50px auto;
+        }
+        .left, .right{
+            width: 500px;
+            float: left;
+            margin-left: 20px;
+        }
+        .header{
+            width: 500px;
+            height: 30px;
+            background-color: darkred;
+            line-height: 30px;
+            color: white;
+            padding-left: 20px;
+            box-sizing: border-box;
+            letter-spacing: 5px;
+        }
+        .show{
+            height: 600px;
+            border: 1px solid #ccc;
+            overflow-y: auto;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat">
+        <div class="left">
+            <div class="header">窗口A</div>
+            <div class="show"></div>
+            <div class="send">
+                <input type="text" id="contentA">
+                <button>发 送</button>
+            </div>
+        </div>
+        <div class="right">
+            <div class="header">窗口B</div>
+            <div class="show"></div>
+            <div class="send">
+                <input type="text" id="contentB">
+                <button>发 送</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        var oShowA = document.querySelector(".left .show");
+        var oTextA = document.querySelector("#contentA");
+        var oBtnA = document.querySelector(".left button");
+        var oShowB = document.querySelector(".right .show");
+        var oTextB = document.querySelector("#contentB");
+        var oBtnB = document.querySelector(".right button");
+        function addZero(num){
+            return num >= 10 ? "" + num : "0" + num;
+        }
+        function loadTime(){
+            var oDate = new Date(),
+                iYear = oDate.getFullYear(),
+                iMonth = addZero(oDate.getMonth() + 1),
+                iDay = addZero(oDate.getDate()),
+                iHour = addZero(oDate.getHours()),
+                iMinute = addZero(oDate.getMinutes()),
+                iSecond = addZero(oDate.getSeconds());
+            return iYear + "-" + iMonth + "-" + iDay + " " + iHour + ":" + iMinute + ":" + iSecond;
+        }
+        function sendA(){
+            if(oTextA.value !== ""){
+                oShowA.innerHTML += "<p><span style='font-size: 14px; color: #999;'>" + loadTime() + "</span><br><span style='padding-left: 32px;'>" + oTextA.value + "</span></p><br>";
+                oShowB.innerHTML += "<p style='text-align: right;'><span style='font-size: 14px; color: #999;'>" + loadTime() + "</span><br><span style='padding-right: 32px;'>" + oTextA.value + "</span></p>";
+                oTextA.value = "";
+            }
+        }
+        function sendB(){
+            if(oTextB.value !== ""){
+                oShowA.innerHTML += "<p style='text-align: right;'><span style='font-size:14px; color: #999;'>" + loadTime() + "</span><br><span style='padding-right: 32px;'>" + oTextB.value + "</span></p>";
+                oShowB.innerHTML += "<p><span style='font-size: 14px; color: #999;'>" + loadTime() + "</span><br><span style='padding-left: 32px;'>" + oTextB.value + "</span></p><br>";
+                oTextB.value = "";
+            }
+        }
+        oBtnA.onclick = sendA;
+        oBtnB.onclick = sendB;
+
+        oTextA.onkeydown = function(event){
+            if(event.keyCode === 13){
+                sendA();
+            }
+        };
+        oTextB.onkeydown = function(event){
+            if(event.keyCode === 13 && event.ctrlKey){
+                sendB();
+            }
+        };
+    </script>
+</body>
+</html>

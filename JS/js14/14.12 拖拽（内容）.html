@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .move{
+            width: 250px;
+            height: 250px;
+            background-color: hotpink;
+            position: absolute;
+            left: 0;
+            top: 0;
+            cursor: move;
+        }
+    </style>
+</head>
+<body>
+    <p>jflsdakjfdaadslsdakjflsdakfsadfsdaf</p>
+    <p>jflsdakjfdaadslsdakjflsdakfsadfsdaf</p>
+    <p>jflsdakjfdaadslsdakjflsdakfsadfsdaf</p>
+    <p>jflsdakjfdaadslsdakjflsdakfsadfsdaf</p>
+    <p>jflsdakjfdaadslsdakjfpppppppppppppppplsdakfsadfsdaf</p>
+    <p>jflsdakjfdaadslsdakjflsdpppppppppppppppppppppppppppppakfsadfsdaf</p>
+    <div class="move">
+        <form action="">
+            账号：<input type="text" name="user"><br>
+            密码：<input type="password" name="pwd"><br>
+            <input type="radio" name="sex">
+            <input type="radio" name="sex">
+            <input type="checkbox">
+            <select name="">
+                <option value="">11</option>
+                <option value="">11</option>
+                <option value="">11</option>
+            </select>
+            <textarea name="" cols="30" rows="5"></textarea>
+            <input type="submit"><br>
+        </form>
+    </div>
+    <p>jflsdakjfdaadslsdakjflsdakfsadfsdaf</p>
+    <p>jflsdakjfdaadslsdakjflsdakfsadfsdaf</p>
+    <p>jflsdakjfdaadslsdakjflsdakfsadfsdaf</p>
+    <p>jflsdakjfdaadslsdakjflsdakfsadfsdaf</p>
+    <p>jflsdakjfdaadslsdakjfpppppppppppppppplsdakfsadfsdaf</p>
+    <p>jflsdakjfdaadslsdakjflsdpppppppppppppppppppppppppppppakfsadfsdaf</p>
+    <script>
+        var oMove = document.querySelector(".move");
+
+        oMove.onmousedown = function( ev ){
+            var oEvent = ev || event;
+            var differX = oEvent.clientX - oMove.offsetLeft,
+                differY = oEvent.clientY - oMove.offsetTop;
+            document.onmousemove = function( ev ){
+                var oEvent = ev || event;
+                var finalX = oEvent.clientX - differX,
+                    finalY = oEvent.clientY - differY;
+                if(finalX < 0){
+                    finalX = 0;
+                }else if(finalX > document.documentElement.clientWidth - oMove.offsetWidth){
+                    finalX = document.documentElement.clientWidth - oMove.offsetWidth;
+                }
+                if(finalY < 0){
+                    finalY = 0;
+                }else if(finalY > document.documentElement.clientHeight - oMove.offsetHeight){
+                    finalY = document.documentElement.clientHeight - oMove.offsetHeight;
+                }
+                oMove.style.left = finalX + "px";
+                oMove.style.top = finalY + "px";
+            };
+            document.onmouseup = function(){
+                document.onmousemove = null;
+                document.onmouseup = null;
+            };
+            return false;       // 在高级浏览器可以解决移动过程中选中其他内容的问题
+        };
+
+        oMove.onclick = function( ev ){
+            ev.target.focus();
+        };
+        (window.onresize = function(){
+            oMove.style.left = Math.floor((document.documentElement.clientWidth - oMove.offsetWidth)/2) + "px";
+            oMove.style.top = Math.floor((document.documentElement.clientHeight - oMove.offsetHeight)/2) + "px";
+        })();
+    </script>
+</body>
+</html>

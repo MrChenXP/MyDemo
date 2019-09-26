@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div1{
+            width: 150px;
+            height: 150px;
+            background-color: darkred;
+            position: absolute;
+            left: 0px;
+        }
+        .div2{
+            width: 1px;
+            height: 800px;
+            background-color: black;
+            position: absolute;
+            left: 500px;
+        }
+        .div3{
+            width: 150px;
+            height: 150px;
+            background-color: darkcyan;
+            position: absolute;
+            left: 1000px;
+            top: 200px;
+        }
+    </style>
+</head>
+<body>
+    <button>运 动</button>
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+    <script>
+        var oDiv = document.querySelector(".div1");
+        var oDiv3 = document.querySelector(".div3");
+        var oBtn = document.querySelector("button");
+        oBtn.addEventListener("click", function(){
+            slowMove(oDiv3, 500);
+            slowMove(oDiv, 500);
+        }, false);
+
+
+        function slowMove(oElement, iTarget){
+            clearInterval(oElement.iTimer);             //清除每个对象本身的定时器
+            var iSpeed;
+            oElement.iTimer = setInterval(function(){
+                iSpeed = (iTarget - oElement.offsetLeft)/5;     // 处理运动速度
+                iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
+                oElement.style.left = oElement.offsetLeft + iSpeed + "px";
+                if(oElement.offsetLeft === iTarget){
+                    clearInterval(oElement.iTimer);
+                }
+            }, 30);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table id="studentTable" border="1" width="1000">
+        <thead>
+        <tr id="theTableTitle">
+            <th>名次</th>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>纪律考核分</th>
+            <th>技术考核分</th>
+            <th>职业能力考核分</th>
+            <th>综合分</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script src="jquery-1.12.2.min.js"></script>
+    <script>
+        $(function(){
+            $.getJSON("http://182.61.33.130/YunheStuScoresInterface/studentServlet?method=home&class_id=8", function(data){
+                if(data.status === 200){
+                    $.each(data.stuArray, function(index, val){
+                        var oNode = `<tr>
+                                        <td>${index + 1}</td>
+                                        <td>${val["stu_no"]}</td>
+                                        <td>${val["stu_name"]}</td>
+                                        <td>${val["score_avg"]}</td>
+                                        <td>${val["score_jilv"]}</td>
+                                        <td>${val["score_jishu"]}</td>
+                                        <td>${val["score_zhiye"]}</td>
+                                    </tr>`;
+                        $("#studentTable > tbody").append(oNode);
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

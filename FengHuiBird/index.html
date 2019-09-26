@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/common.css" type="text/css">
+    <link rel="stylesheet" href="css/index.css" type= "text/css">
+    <script src="jquery-1.12.2.js"></script>
+    <style>
+        .banner{
+            margin-bottom: 40%;
+        }
+        .banner ul{
+            list-style: none;
+            position: relative;
+        }
+        .banner ul li{
+            position: absolute;
+            display: none;
+        }
+        /*.circle{*/
+            /*position: absolute;*/
+            /*top: 50px;*/
+            /*left: 50%;*/
+            /*margin-left: -45px;*/
+            /*z-index: 50;*/
+            /*width: 90px;*/
+            /*height: 16px;*/
+            /*border-radius: 8px;*/
+            /*background-color: rgba(180,180,180, .5);*/
+        /*}*/
+        /*.circle li{*/
+            /*width: 10px;*/
+            /*height: 10px;*/
+            /*border-radius: 50%;*/
+            /*margin: 3px 4px;*/
+            /*float: left;*/
+            /*background-color: white;*/
+            /*cursor: pointer;*/
+        /*}*/
+        /*.circle .active{*/
+            /*background-color: #f40;*/
+        /*}*/
+        /*.arrow>span{*/
+            /*position: absolute;*/
+            /*top: 50%;*/
+            /*margin-top: -20px;*/
+            /*z-index: 100;*/
+            /*width: 22px;*/
+            /*height: 40px;*/
+            /*font-size: 18px;*/
+            /*color: white;*/
+            /*line-height: 40px;*/
+            /*background-color: rgba(100,100,100, .5);*/
+            /*cursor: pointer;*/
+
+        /*}*/
+        /*.arrow .arrow-left{*/
+            /*border-radius: 0 20px 20px 0;*/
+            /*padding-left: 2px;*/
+        /*}*/
+        /*.arrow .arrow-right{*/
+            /*border-radius: 20px 0 0 20px;*/
+            /*right: 0;*/
+            /*padding-right: 2px;*/
+            /*text-align: right;*/
+        /*}*/
+
+    </style>
+</head>
+<body>
+<!--头部-->
+<div class="public-header tupo clearfix">
+    <div class="clearfix ph-head">
+            <div class="header-logo fl">
+                <a href="#"><img src="img/header-logo.png" width="146" height="61"></a>
+            </div>
+            <div class="ph-menu fl">
+                <ul>
+                    <li><a href="#"><img src="img/shoupingcarticon.png" width="23" height="19">购物车</a></li>
+                    <li><a href="#"><img src="img/collecticon.png" width="19" height="20">收藏</a></li>
+                    <li><a href="#"><img src="img/serviceicon.png" width="24" height="17">客服中心</a></li>
+                    <li><a href="#"><img src="img/buyericon.png" width="11" height="22">买家中心</a></li>
+                </ul>
+            </div>
+            <div class="ph-search fr clearfix">
+                <form action="" method="get">
+                    <input type="search" height="15" class="fl" placeholder="搜索">
+                    <input type="image" src="img/magnifying.png" width="18" height="15" class="fl">
+                </form>
+            </div>
+        </div>
+    <div class="nav">
+            <ul>
+                <li><a href="index.html" style="color: black;">首页</a></li>
+                <li><a href="FanshionAnaly.html">时尚分析</a></li>
+                <li><a href="AutumnNew.html">秋季新品</a></li>
+                <li><a href="customization.html">限量定制</a></li>
+                <li><a href="Lace.html">优雅蕾丝</a></li>
+                <li><a href="Special.html">让我们拾起麦秆</a></li>
+            </ul>
+        </div>
+</div>
+<!--广告-->
+<div class="banner tupo">
+    <ul>
+        <li style="display: list-item"><a><img src="img/banner1.png" width="100%" height="40%"></a></li>
+        <li><a><img src="img/banner2.png" width="100%" height="40%"></a></li>
+        <li><a><img src="img/banner3.png" width="100%" height="40%"></a></li>
+    </ul>
+    <!--<ol class="circle">-->
+        <!--<li class="active"></li>-->
+        <!--<li></li>-->
+        <!--<li></li>-->
+        <!--<li></li>-->
+        <!--<li></li>-->
+    <!--</ol>-->
+    <!--<div class="arrow">-->
+        <!--<span class="arrow-left">&lt;</span>-->
+        <!--<span class="arrow-right">&gt;</span>-->
+    <!--</div>-->
+    <script>
+        $(function(){
+            var nowIndex = 0;
+            function a() {
+                var a = $(".banner ul > li");
+                $(a[nowIndex]).fadeOut(2000);
+                if(nowIndex === 2){
+                    nowIndex = -1;
+                }
+                $(a[++nowIndex]).fadeIn(2000);
+            }
+            a();
+            setInterval(function () {
+                a();
+            },2000)
+        });
+
+//        12:22:30
+//        彭桂发 2018/3/20 12:22:30
+//        $(".hotPhoto").hover(function(){
+//            $(".beacon > li").stop(true).fadeIn();
+//        },function(){
+//            $(".beacon > li").stop(true).fadeOut();
+//        }).on({
+//            mouseover(){
+//                clearInterval(iTimer);
+//            },
+//            mouseout(){
+//                iTimer = setInterval(moveRight,3000);
+//            }
+//        });
+//        var count = 0;
+//        function moveRight(){
+//            $(".photo-bans >li").eq(++count % 4).fadeIn(1000).siblings().fadeOut(1000);
+//            $(".circles > li").eq(count%4).css({backgroundColor:"rgba(255,255,255,1)"}).siblings().css({backgroundColor:"rgba(255,255,255,.6)"});
+//        }
+//        $(".beacon-icon-lefter").on("click",function(){
+//            $(".photo-bans >li").eq((--count+4) % 4).fadeIn(1000).siblings().fadeOut(1000);
+//            $(".circles > li").eq((count+4)%4).css({backgroundColor:"rgba(255,255,255,1)"}).siblings().css({backgroundColor:"rgba(255,255,255,.6)"});
+//        });
+//        $(".beacon-icon-righter").on("click",moveRight);
+//        iTimer = setInterval(moveRight,3000);
+
+    </script>
+</div>
+<!--主体内容-->
+<div class="subject clearfix tupo">
+    <!--秋季让我们拾起麦秆-->
+    <div class="center-container maigan clearfix">
+        <h2>秋季&sdot;让我们拾起麦秆</h2>
+        <div class="yuanli fl">
+            <img src="img/index/YuanliYongsu.png" width="535" height="806">
+        </div>
+        <div class="yuanchuang fr">
+            <div class="yc-text">
+                <p>FENGHUI</p><br>
+                <p>独立原创设计</p><br>
+                <p>阳光房不再热烈，<br>
+                唯有恰如其分的色彩才能渲染触动心弦的细节</p><br>
+                <p>IN FENGHUI WE PICK STPAW<br>
+                THE SUNIL IGHI IS NO LONGER WARM, ONLY THE APPROPRIATE,<br>
+                CANRENDER TOUCH THE HEART STRINGS DETAILS</p>
+            </div>
+            <div class="yc-img">
+                <img src="img/index/yuanchuang.png" width="351" height="547">
+            </div>
+        </div>
+    </div>
+    <!--格蕾丝优雅的午后-->
+    <div class="center-container gelace clearfix">
+        <h2>格蕾丝优雅的午后</h2>
+        <p>2017秋季，时尚巴黎&middot;复古风</p>
+        <div class="gelace-img1 fl">
+            <img src="img/index/yuanliyongsu2.png" width="694" height="655">
+        </div>
+        <div class="gelace-text fr clearfix ">
+            <p>FENGHUI</p><br>
+            <p>独立原创设计</p><br>
+            <p>时尚巴黎设计，格蕾丝的优雅午后</p>
+            <img src="img/index/49.png" width="484" height="467">
+        </div>
+        <div class="fugu center-container clearfix fl">
+            <div class="fg-text fl">
+                <span>保持复古情怀，</span> <br>
+                   <span>又充满摩登风情，心动不心动？</span><br><br><br>
+                <span>蕾丝代表着浪漫的装饰主义</span><br>
+                    <span>细致裁剪</span><br>
+                <span>看起来更显气质</span><br>
+                    <span>展现恬静优雅的一面</span><br>
+                    <span>身上穿着漂亮的华丽衣服</span><br>
+                    <span> 一层一层的蕾丝花边</span><br>
+                    <span> 把她衬托得高贵可爱，让人陶醉</span><br>
+            </div>
+            <div class="fg-img fr">
+                <img src="img/index/greenqun.png" width="710" height="520">
+            </div>
+        </div>
+    </div>
+    <!--分析时尚元素-->
+    <div class="fenxi center-container clearfix">
+        <h2> 解读流行趋势&sdot;分析时尚元素 </h2>
+        <div class="fx-top">
+            <div class="fl">
+                <img src="img/index/96.0.png" width="506" height="831">
+            </div>
+            <div class="fr fx-top-text">
+                <p>FENGHUI</p><br>
+                <p>独立原创设计</p><br>
+                <p>世界流行设计风格：时尚巴黎复古风</p>
+            </div>
+            <div class="fr fx-top-img2">
+                <img src="img/index/78.png" width="375" height="585">
+            </div>
+        </div>
+        <div class="fx-bottom clearfix">
+            <div class="fl fx-bottom-text">
+                <p>FENGHUI</p>
+                <p>独立原创设计</p>
+                <p>世界流行设计风格:时尚魅力韩国风</p>
+                <p>韩版女装已经是达人们扮靓不可缺少的主角之一</p>
+                <p>这个季给美女们说说</p>
+                <p>时尚韩版女装的4大特点</p>
+                <br>
+                <p>韩版女装特点一.出位设计</p>
+                <p>韩版女装特点二.出位设计</p>
+                <p>韩版女装特点三.出位设计</p>
+                <p>韩版女装特点四.出位设计</p>
+            </div>
+            <div class="fr">
+                <img src="img/index/28.png" width="603" height="790">
+            </div>
+        </div>
+    </div>
+    <!--秋季新品-->
+    <div class="qiujinew center-container clearfix">
+        <h2>2017.09.22换季新品更新</h2>
+        <div >
+            <div class="qj-top-left fl">
+                <img src="img/index/72.png" width="608" height="806">
+            </div>
+            <div class="qj-top-text fr">
+                <p>FENGHUI</p>
+                <p>独立原创设计</p>
+                <p>缤纷秋意，感知生活</p>
+                <img src="img/index/30.png" width="406" height="620">
+            </div>
+        </div>
+        <div class="clear">
+            <div class="qj-bottom-text fl">
+                <div class="qj-bottom-text1" >
+                    <p>曼妙而轻盈，翘首远望，</p>
+                    <p>色彩不艳不娇，高雅大方</p>
+                </div>
+                <div class="qj-bottom-text2" >
+                    <p>轻奢优雅女装  追求一种低调的状态</p>
+                    <p>不走前端  不为炫耀夸赞</p>
+                    <p>但要尽情享受生活的美好</p>
+                    <p>The light luxurious elegant dress</p>
+                    <p>pursue a kind of low-key state don’t</p>
+                    <p>brag about it but enjoy it</p>
+                </div>
+            </div>
+            <div class="fr qj-bottom-img ">
+                <img src="img/index/77.0.png" width="398" height="576">
+            </div>
+        </div>
+        <div class="qj-midden fl clearfix">
+            <img src="img/index/67.png" width="407" height="601">
+        </div>
+    </div>
+    <!--专属定制-->
+    <div class="clearfix zhuanshu center-container clearfix">
+        <h2>专属&sdot;限量定制</h2>
+        <div class="zs-top fl">
+            <div class="zs-top-text fl">
+                <p>FENGHUI</p>
+                <p>独立原创设计</p>
+                <p>专属定制：只生产一件</p>
+                <img src="img/index/zs-top-textimg.png" width="411" height="595">
+            </div>
+            <div class="zs-top-img fr">
+                <img src="img/index/redqun.png" width="689" height="781">
+            </div>
+        </div>
+        <div class="zs-bottom fl">
+            <div class="zs-bottom-img fl">
+                <img src="img/index/zs-bottom-img.png" width="437" height="544">
+            </div>
+            <div class="zs-bottom-text fr">
+                <p>FENGHUI</p>
+                <p>独立原创设计</p>
+                <p>限量定制：小量生产拒绝撞衫</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--尾部-->
+<div class="public-footer clearfix tupo">
+        <div class="idea clearfix center-container">
+            <ul>
+                <li><img src="img/pin.png" ><span>品质保障<br> 品质护航 质量无忧</span></li>
+                <li><img src="img/shang.png" ><span>前卫时尚<br> 紧跟潮流趋势</span></li>
+                <li><img src="img/chuang.png" ><span>拒绝抄袭<br> 独立原创设计</span></li>
+                <li><img src="img/te.png" ><span>高级定制<br> 限量定制拒绝撞衫</span></li>
+            </ul>
+        </div>
+        <div class="service clearfix">
+            <div class="center-container">
+                <div class="friendLink">
+                    <ul>
+                        <li><a href="#">客服中心</a></li>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">人才招聘</a></li>
+                        <li><a href="#">店铺列表</a></li>
+                        <li><a href="#">招商加盟</a></li>
+                        <li><a href="#">帮助中心</a></li>
+                        <li><a href="#">友情链接</a></li>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">法律声明</a></li>
+                        <li><a href="#">店铺列表</a></li>
+                    </ul>
+                </div>
+                <div class="joinus">
+                    <span>精彩咨询 立即订阅！</span><br>
+                    <span>订阅风绘鸟 官网最新 精彩咨询 了解更多 时尚气息 紧随时尚步伐</span>
+                    <div class="feedback">
+                        <form action="" method="get">
+                            <input type="email" placeholder="填写邮箱地址">
+                            <input type="image" src="img/Jiantou.png" width="22" height="15">
+                        </form>
+                    </div>
+                    <div class="attention">
+                        关注我们
+                        <a href="#">
+                            <img src="img/wechat.png" width="42" height="42">
+                        </a>
+                        <a href="#">
+                            <img src="img/microblog.png" width="42" height="42">
+                        </a>
+                        <a href="#">
+                            <img src="img/taobao.png" width="42" height="41">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+</body>
+</html>

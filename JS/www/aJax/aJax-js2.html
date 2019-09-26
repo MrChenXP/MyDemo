@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button>读 取</button>
+    <ul id="show"></ul>
+    <script src="aJax.js"></script>
+    <script>
+        const oBtn = document.querySelector("button"),
+              oShow = document.querySelector("#show");
+
+        oBtn.onclick = function(){
+            aJax("json.txt?t=" + new Date().getTime(), function(data){
+//                var aDate = eval(data);
+//                console.log(aDate);
+                let aDate = JSON.parse(data);
+
+                aDate["user"].map(val =>{
+                    let oLi = document.createElement("li");
+                    oLi.innerHTML = `<span style="font-weight: bold;">姓名：</span> ${val.userName}
+                                     <span style="font-weight: bold;">年龄：</span> ${val.age}`;
+                    oShow.appendChild(oLi);
+                });
+            });
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .in{
+            width: 100px;
+            height: 100px;
+            background-color: deeppink;
+            float: left;
+        }
+        .out{
+            width: 400px;
+            height: 400px;
+            background-color: darkblue;
+            float: left;
+            margin-left: 30px;
+            transform: translateY(-400px);
+            opacity: 0;
+            transition: all 1s linear;
+        }
+    </style>
+</head>
+<body>
+    <div class="in"></div>
+    <div class="out"></div>
+    <script>
+        var oIn = document.querySelector(".in");
+        var oShow = document.querySelector(".out"),iTimer = null;
+
+        oIn.onmouseover = oShow.onmouseover = function(){
+            clearInterval(iTimer);
+            iTimer = setTimeout(function(){
+                oShow.style.cssText = "transform: translateY(0px); opacity: 1;";
+            }, 500);
+        };
+        oIn.onmouseout = oShow.onmouseout = function(){
+            iTimer = setTimeout(function(){
+                oShow.style.cssText = "transform: translateY(-400px); opacity: 0;";
+            }, 500);
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="">
+        <table>
+            <tr>
+                <td align="right">手机号：</td>
+                <td><input type="text" name="phone"></td>
+            </tr>
+            <tr>
+                <td align="right">密码：</td>
+                <td><input type="password" name="pwd"></td>
+            </tr>
+            <tr align="center">
+                <td><input type="checkbox" name="check" checked> 十天内免登陆</td>
+                <td>
+                    <input type="submit" value=" 注 册 ">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        var oF = document.forms[0];
+        oF.addEventListener("submit", function(){
+            if(oF.check.checked){
+                localStorage.setItem(oF.phone.name, oF.phone.value);
+                localStorage.setItem(oF.pwd.name, oF.pwd.value);
+            }
+        },false);
+
+        oF.phone.value = localStorage.getItem(oF.phone.name);
+        oF.pwd.value = localStorage.getItem(oF.pwd.name);
+    </script>
+</body>
+</html>

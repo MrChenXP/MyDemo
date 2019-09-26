@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+//        使用while循环编写输入一个任意的整数实现反转输出；如输入：1234，输出4321
+//        var str = parseInt(prompt("请输入数字："));
+//        while(str){
+//            document.write(str % 10);
+//            str = (str / 10) | 0;
+//        }
+//        -----------------------------------------------------------------------
+//        打印九九乘法表
+//        for(var i = 1; i <= 9; i++){
+//            for(var j = 1; j <= i; j++){
+//                document.writeln(i + "*" + j + "=" + i * j);
+//            }
+//            document.write("<br>");
+//        }
+//        --------------------------------------------------------------------
+//        模拟抢红包
+
+    </script>
+</head>
+<body>
+    红包金额：<input type="text" id="money"> <br/>
+    红包个数：<input type="text" id="count">
+    <button id="open">打开红包</button>
+    <div style="width: 600px; height: 200px; background-color: darkkhaki; color: deeppink; text-align: center;">
+        <h3>红包的结果：</h3>
+        <p id="show"></p>
+    </div>
+    <script>
+        var bag = 1,iMoney = 0, iCount = 0, rest = 30,
+            oOpen = document.getElementById("open"),
+            oShow = document.getElementById("show");
+
+
+        oOpen.onclick = function(){
+            if(rest === 30){
+                iMoney = parseInt(document.getElementById("money").value);
+                iCount = parseInt(document.getElementById("count").value);
+            }
+            if(iCount !== 0){
+                if(iCount === 1){
+                    oShow.innerHTML += "第" + bag + "红包是：" + (iMoney/30 * rest).toFixed(2);
+                }else{
+                    var iRan = Math.ceil(Math.random() * (rest - iCount));
+                    oShow.innerHTML += "第" +  (bag++) + "红包是：" + (iMoney/30 * iRan).toFixed(2) + "<br>";
+                    rest -= iRan;
+//                    console.log(iRan, rest);
+                }
+                iCount--;
+            }
+        };
+    </script>
+</body>
+</html>

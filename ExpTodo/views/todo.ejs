@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>todo</title>
+	<script src="/js/jquery-1.12.2.min.js"></script>
+	<link rel="stylesheet" href="/css/styles.css" type="text/css">
+    <script src="/js/todo-list.js"></script>
+
+</head>
+<body>
+
+<div id="todo-table">
+    <form>
+        <input type="text" name='item' placeholder="Add new item..." required />
+        <button type="submit">添加</button>
+    </form>
+    <ul>
+        <% datas.forEach(function (a) { %>
+            <li><%= a.item%></li>
+        <% }) %>
+    </ul>
+</div>
+
+
+</body>
+</html>

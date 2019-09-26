@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .menu1,.menu2{
+            padding: 10px 14px;
+            border: 1px solid #666;
+            border-radius: 8px;
+            width: 200px;
+            box-shadow: 1px 1px 1px 4px #ccc;
+            position: absolute;
+            display: none;
+            background-color: white;
+        }
+        .menu1 li,.menu2 li{
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .menu1 li:hover,.menu2 li:hover{
+            background-color: darkolivegreen;
+        }
+        .menu1 li:not(:last-child),.menu2 li:not(:last-child){
+            border-bottom: 1px dashed #ccc;
+        }
+
+    </style>
+</head>
+<body>
+    <img src="h1.jpg" alt="">
+    <ul class="menu1">
+        <li>图片一</li>
+        <li>图片一</li>
+        <li>图片一</li>
+        <li>图片一</li>
+        <li>图片一</li>
+    </ul>
+    <ul class="menu2">
+        <li>菜单二</li>
+        <li>菜单二</li>
+        <li>菜单二</li>
+        <li>菜单二</li>
+        <li>菜单二</li>
+        <li>菜单二</li>
+        <li>菜单二</li>
+    </ul>
+    <script>
+        function stopDefault(oEvent){
+            oEvent.preventDefault ? oEvent.preventDefault() : oEvent.returnValue = false;
+            return false;
+        }
+        function getPosition( oEvent ){
+            if(oEvent.pageX){
+                return {X: oEvent.pageX, Y: oEvent.pageY};
+            }else{
+                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop,
+                        scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+                return{X: oEvent.clientX + scrollLeft, Y: oEvent.clientY + scrollTop};
+            }
+        }
+        var oMenu1 = document.querySelector(".menu1");
+        var oMenu2 = document.querySelector(".menu2");
+        document.oncontextmenu = function( ev ){
+            var oEvent = ev || event;
+            var oTarget = oEvent.target || oEvent.srcElement;
+            var oPosition = getPosition(oEvent);
+            if(oTarget.tagName.toUpperCase() === "IMG"){
+                oMenu1.style.display = "block";
+                oMenu2.style.display = "none";
+                oMenu1.style.left = oPosition.X + "px";
+                oMenu1.style.top = oPosition.Y + "px";
+            }else{
+                oMenu1.style.display = "none";
+                oMenu2.style.display = "block";
+                oMenu2.style.left = oPosition.X + "px";
+                oMenu2.style.top = oPosition.Y + "px";
+            }
+            stopDefault(oEvent);
+        };
+        document.onclick = function(){
+            oMenu1.style.display = "none";
+            oMenu2.style.display = "none";
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .magnifier{
+            position: relative;
+            width: 1500px;
+        }
+        .left{
+            width: 600px;
+            height: 450px;
+            border: 1px solid red;
+            position: relative;
+        }
+        .left .float{
+            width: 300px;
+            height: 225px;
+            background-color: rgba(195, 255, 132, 0.5);
+            position: absolute;
+            left: 0;
+            top: 0;
+            cursor: move;
+            display: none;
+        }
+        .right{
+            position: absolute;
+            left: 620px;
+            top: 0;
+            width: 600px;
+            height: 450px;
+            overflow: hidden;
+            display: none;
+        }
+        .right img{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="magnifier">
+        <div class="left">
+            <img src="big.jpg" alt="" width="600" height="450">
+            <div class="float"></div>
+        </div>
+        <div class="right">
+            <img src="big.jpg" alt="" width="1200" height="900">
+        </div>
+    </div>
+    <script>
+        var oFloat = document.querySelector(".left .float");
+        var oSmall = document.querySelector(".left");
+        var oBig = document.querySelector(".right");
+        var oImg = document.querySelector(".right img");
+
+        oSmall.onmouseover = function(){
+            oFloat.style.display = "block";
+            oBig.style.display = "block";
+            oSmall.onmousemove = function( event ){
+                var finalX = event.pageX - oSmall.offsetLeft - (oFloat.offsetWidth / 2);
+                var finalY = event.pageY - oSmall.offsetTop - (oFloat.offsetHeight / 2);
+                var iMoveW = oSmall.offsetWidth - oFloat.offsetWidth - 2;
+                var iMoveH = oSmall.offsetHeight - oFloat.offsetHeight - 2;
+                if(finalX < 0){
+                    finalX = 0;
+                }else if(finalX > iMoveW){
+                    finalX = iMoveW;
+                }
+                if(finalY < 0){
+                    finalY = 0;
+                }else if(finalY > iMoveH){
+                    finalY = iMoveH;
+                }
+                oFloat.style.left = finalX + "px";
+                oFloat.style.top = finalY + "px";
+
+                oImg.style.left = -Math.round(oFloat.offsetLeft/iMoveW * (oImg.offsetWidth - oBig.offsetWidth)) + "px";
+                oImg.style.top = -Math.round(oFloat.offsetTop/iMoveH * (oImg.offsetHeight - oBig.offsetHeight)) + "px";
+            };
+        };
+        oSmall.onmouseout = function(){
+            oFloat.style.display = "none";
+            oBig.style.display = "none";
+        };
+    </script>
+</body>
+</html>
