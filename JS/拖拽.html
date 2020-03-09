@@ -66,14 +66,14 @@
                 var oEvent = ev || event;
                 var finalX = oEvent.pageX - differX,
                     finalY = oEvent.pageY - differY;
-                if(finalX < 0){
+                if(finalX < 30){
                     finalX = 0;
-                }else if(finalX > document.documentElement.clientWidth - oMove.offsetWidth){
+                }else if(finalX > document.documentElement.clientWidth - oMove.offsetWidth-30){
                     finalX = document.documentElement.clientWidth - oMove.offsetWidth;
                 }
-                if(finalY < 0){
+                if(finalY < 30){
                     finalY = 0;
-                }else if(finalY > document.documentElement.clientHeight - oMove.offsetHeight){
+                }else if(finalY > document.documentElement.clientHeight - oMove.offsetHeight-30){
                     finalY = document.documentElement.clientHeight - oMove.offsetHeight;
                 }
                 oMove.style.left = finalX + "px";

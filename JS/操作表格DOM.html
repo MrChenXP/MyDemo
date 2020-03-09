@@ -17,8 +17,9 @@
     <div class="control">
         姓名：<input type="text" id="user" placeholder="请输入姓名">
         手机：<input type="text" id="phone" placeholder="请输入手机">
-        年龄：<input type="text" id="age" placeholder="请输入年龄">
+        年龄：<input type="number" min="0" id="age" placeholder="请输入年龄">
         <button id="add"> 增 加 </button>
+        <button id="search"> 查 询 </button>
     </div>
     <table border="1" width="600" align="center">
         <thead>
@@ -26,7 +27,7 @@
             <th>编号</th>
             <th>姓名</th>
             <th>手机</th>
-            <th>年龄<button>升序</button><button>降序</button></th>
+            <th>年龄<button class="up">升序</button> <button class="down">降序</button></th>
             <th>操作</th>
         </tr>
         </thead>
@@ -62,26 +63,30 @@
         </tbody>
     </table>
     <script>
-        var oTab = document.querySelector("table"), oBody = oTab.tBodies[0];
-        var aRows = oBody.rows ;
-        var oUser = document.querySelector("#user");
-        var oPhone = document.querySelector("#phone");
-        var oAge = document.querySelector("#age");
-        var oAdd = document.querySelector("#add");
-        oTab.tHead.style.backgroundColor = "orange";
-        var rowLen = aRows.length + 1;
+        var oTab = document.querySelector("table"), // 表格
+            oBody = oTab.tBodies[0], // tbody
+            aRows = oBody.rows, // tbody里的每一行
+            oUser = document.querySelector("#user"), // 姓名
+            oPhone = document.querySelector("#phone"), // 手机
+            oAge = document.querySelector("#age"), // 年龄
+            oAdd = document.querySelector("#add"), // 增加
+            oSearch = document.querySelector("#search"), // 查询
+            oUp = document.querySelector(".up"), // 升序
+            oDown = document.querySelector(".down"), // 降序      
+            rowLen = aRows.length + 1; // 页面初始化时 tbody 里的行数
 
-        function setColor(){        //背景颜色
+        // tbody隔行变色
+        function setColor(){        
             var sColor = "skyblue";
             for(var i = 0, len = aRows.length; i < len; i++){
                 if(i % 2){
-                    aRows[i].style.backgroundColor = "pink";
+                    aRows[i].style.backgroundColor = "#ccc";
                 }else{
-                    aRows[i].style.backgroundColor = "skyblue";
+                    aRows[i].style.backgroundColor = "#eee";
                 }
                 aRows[i].onmouseover = function(){
                     sColor = this.style.backgroundColor;
-                    this.style.backgroundColor = "yellow";
+                    this.style.backgroundColor = "#bbb";
                 };
                 aRows[i].onmouseout = function(){
                     this.style.backgroundColor = sColor;
@@ -89,8 +94,8 @@
             }
         }
 
-
-        oAdd.onclick = function(){          //增加功能
+        //增加功能
+        oAdd.onclick = function(){          
             var sUser = oUser.value.split(" ").join("");
             if(sUser !== ""){
                 var oTr = document.createElement("tr");
@@ -111,7 +116,7 @@
                 oTr.appendChild(oTd);
 
                 oTd = document.createElement("td");
-                oTd.innerHTML= '<a href="#"> 删 除</a> | <a href="#"> 替 换 </a> | <a href="#"> 置 顶 </a>';
+                oTd.innerHTML = '<a href="#"> 删 除</a> | <a href="#"> 替 换 </a> | <a href="#"> 置 顶 </a>';
                 oTd.getElementsByTagName("a")[0].onclick = function(){      //删除功能
                     oTab.tBodies[0].removeChild(this.parentNode.parentNode);
                     setColor();
@@ -135,7 +140,63 @@
             }
         };
         setColor();
-		
+
+        //排序表体的行
+        function rowSort(bSort){        
+            var aDOM = [];
+            for(var i = 0, len = aRows.length; i < len; i++){
+                aDOM[i] = aRows[i];
+            }
+            aDOM.sort(function(row1, row2){     // sort可用排序数组元素是引用类型的（有条件）
+                return row1.cells[3].innerText - row2.cells[3].innerText;
+            });
+            if(bSort){
+                for(i = 0; i < len; i++){
+                    oBody.appendChild(aDOM[i]);
+                }
+            }else{
+                for(i = 0; i < len; i++){
+                    oBody.appendChild(aDOM[len - 1 - i]);
+                }
+            }
+            setColor();
+        }
+        oUp.onclick = function(){
+            rowSort(true);      //升序
+        };
+        oDown.onclick = function(){
+            rowSort(false);     //降序
+        };
+        oSearch.onclick = function(){
+            var sUser = oUser.value.split(" ").join("");
+            if(sUser !== ""){
+                aUser = oUser.value.split(" ");
+                var bColor = true;
+                console.log(aUser);
+                for(var i = 0, len = aRows.length; i < len; i++) {
+                    for (var j = 0, userLen = aUser.length; j < userLen; j++) {
+                        if (aUser[j] !== "") {
+                            if (aRows[i].cells[1].innerText.toUpperCase().indexOf(aUser[j].toUpperCase()) !== -1) {
+                                aRows[i].style.display = "table-row";
+                                if (bColor) {
+                                    aRows[i].style.backgroundColor = "skyblue";
+                                    bColor = false;
+                                } else {
+                                    aRows[i].style.backgroundColor = "pink";
+                                    bColor = true;
+                                }
+                                break;
+                            } else {
+                                aRows[i].style.display = "none";
+                            }
+                        }
+                    }
+                }
+            }else{
+                oUser.value = "";
+                oUser.focus();
+            }
+        };
     </script>
 </body>
 </html>
