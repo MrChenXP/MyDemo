@@ -1,0 +1,151 @@
+/*标题*/
+.nav-right .search-input{
+    padding: 5px 15px !important;
+    border: none;
+}
+.nav-right .input-group{
+    width: 375px;
+    height: 45px;
+    margin: 30px auto auto;
+    display: flex;
+    align-items: center;
+
+}
+.nav-right .input-control{
+    width: 275px;
+    height: 100%;
+    border:1px solid #EEEEEE;
+}
+.nav-right .form-control{
+    height: 100%;
+    font-size:15px;
+}
+.nav-right .input-group-btn{
+    width: 100px;
+    height: 100%;
+    display: flex;
+}
+.nav-right .btn{
+    width: 100%;
+    margin: 0 !important;
+    background: #FFCC00;
+    border: none;
+    font-size:18px;
+}
+.nav-right .icon{
+    font-size:18px;
+}
+/*导航*/
+.zcjy-dh{
+    background:#1A6EAD;
+    height:57px;
+    position: sticky;
+    top: 105px;
+    z-index: 10;
+}
+.zcjy-dh-content{
+    display: flex;
+}
+.zcjy-dh-content a{
+    display: inline-block;
+    color: #ffffff;
+    font-size:17px;
+    padding: 0 50px;
+    margin-right: 10px;
+    height: 57px;
+    line-height: 57px;
+    transition: background .5s ease;
+}
+.zcjy-dh-content a:hover,.zcjy-dh-content .active{
+    background: #1492FF;
+}
+
+/*当前位置*/
+.dqwz{
+    height:40px;
+    line-height: 40px;
+    font-size:14px;
+    background: #EEEEEE;
+    position: sticky;
+    top: 162px;
+    z-index: 10;
+}
+.dqwz .breadcrumb{
+    padding: 0;
+}
+.dqwz a:hover{
+    color: #145ccd;
+}
+
+/*新闻列表*/
+.newsLists{
+    margin: 30px auto 50px auto;
+}
+.newsLists-title{
+    font-size:18px;
+    padding-left: 10px;
+    position: relative;
+}
+.newsLists-title::before{
+    position: absolute;
+    left: 0;
+    top: 6px;
+    content:'';
+    width: 3px;
+    height: 14px;
+    background: #3A6AE0;
+}
+.newsLists-title::after{
+    position: absolute;
+    left: 100px;
+    top: 3px;
+    content:'';
+    width: 1100px;
+    height: 20px;
+    background: repeating-linear-gradient(-45deg, #dadada, #dadada 2px, white 2px, white 10px);
+}
+
+.newsList{
+    font-size:17px;
+    padding: 12px 0;
+    border-bottom: 1px solid #eeeeee;
+    display: flex;
+    justify-content: space-between;
+}
+.newsList:hover a{
+    color: #23527c;
+}
+.newsList-title{
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+}
+
+.newsList-tip{
+    font-size: 13px;
+    max-width: 90px;
+    min-width: 70px;
+}
+
+/*新闻*/
+.new{
+    margin-bottom: 50px;
+}
+.new-head{
+    height: 120px;
+}
+.new-title{
+    color: #1A6EAD;
+    font-size:28px;
+    text-align: center;
+}
+.new-tip{
+    text-align: center;
+    margin-top: 20px;
+    font-size:14px;
+}
+.new-tip span{
+    margin: 0 15px;
+}
+
+

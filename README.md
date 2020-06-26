@@ -5,4 +5,4 @@
 [![GitHub stars](https://img.shields.io/github/stars/MrChenXP/MyDemo.svg?style=social&label=Stars)](https://github.com/MrChenXP/MyDemo)
 [![GitHub forks](https://img.shields.io/github/forks/MrChenXP/MyDemo.svg?style=social&label=Fork)](https://github.com/MrChenXP/MyDemo)
 
-> 自己平时写的不完整的学习项目
+> 小项目,就几个网页的那种

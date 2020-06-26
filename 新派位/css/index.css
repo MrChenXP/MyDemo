@@ -1,0 +1,143 @@
+body{
+    background: #F5F5F5 !important;
+}
+/* 步骤条 */
+.bzt{
+    margin-top: 16px;
+    height: 64px;
+    display: flex;
+    display: -ms-flexbox;
+    padding: 0 25px;
+    background: white;
+    border-radius:2px;
+}
+.bzt-item{
+    width: 222px;
+    font-size:16px;
+    text-align: center;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.bzt-item-active{
+    border-bottom: 2px solid #1890FF;
+}
+.bzt-item-bh{
+    margin-right: 8px;
+    width:24px;
+    height:24px;
+    border-radius: 50%;
+    border:1px solid rgba(0,0,0,0.15);
+    color: rgba(0,0,0,0.2);
+    text-align: center;
+    line-height: 24px;
+}
+.bzt-item-active .bzt-item-bh{
+    background: #1890FF; 
+    color: white;
+}
+.bzt-item-title{
+    color: rgba(0,0,0,0.45);
+}
+.bzt-item-active .bzt-item-title{
+    color: rgba(0,0,0,0.85);
+    font-weight: bold;
+}
+.bzt-item:not(:last-child)::after{
+    position: absolute;
+    top: 22px;
+    right: 0;
+    content: '';
+    background: url(../static/images/xpw-icons.png);
+    background-position: 0 0;
+    width:9px;
+    height:17px;
+}
+.bzt-item-jt{
+    color: rgba(0,0,0,0.15);
+    font-size: 28px;
+    position: absolute;
+    top: 16px;
+    right: 0;
+}
+
+/*  填写区域 */
+.pw-content{
+    margin-top: 16px;
+    background: white;
+    height: calc(100vh - 16px - 64px - 16px - 16px - 64px);
+    padding: 0 24px;
+}
+.pw-title{
+    height: 64px;
+    line-height: 64px;
+    font-size:20px;
+    font-weight: bold;
+    color:rgba(0,0,0, 0.85);
+}
+.pw-body{
+    height: calc(100% - 64px);
+}
+.jrpw .pw-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.jrpw-img img{
+    width: 188px;
+    height: 138px;
+}
+.jrpw-mc{
+    margin-top: 24px;
+    height: 40px;
+    display: flex;
+    line-height: 40px;
+}
+.jrpw-mc-name{
+    width: 68px;
+    font-size:16px;
+    color:rgba(0,0,0,0.65);
+    margin-right: 8px;
+}
+.jrpw-mc-input{
+    height: 100%;
+    width:420px;
+    border-radius:2px 0 0 2px;
+    border:1px solid rgba(0,0,0,0.15);
+}
+.jrpw-mc-save{
+    width:120px;
+    height: 100%;
+    background: #1890FF;
+    font-size:16px;
+    color: white;
+    text-align: center;
+}
+.jrpw-mc-save .fa{
+    margin-right: 8px;
+}
+/* 底部功能 */
+.pw-fotter{
+    width: 100%;
+    height: 64px;
+    line-height: 64px;
+    background: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:0px -3px 6px -4px rgba(0,0,0,0.12),0px -6px 16px 0px rgba(0,0,0,0.08),0px -9px 28px 8px rgba(0,0,0,0.05);
+}
+.pw-xyb{
+    padding: 0 26px;
+    height:40px;
+    line-height: 40px;
+    background:rgba(108,204,118,1);
+    font-size:16px;
+    color: white;
+}

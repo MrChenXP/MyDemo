@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>大平台</title>
+    <link href="./css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="./css/zui.min.css" rel="stylesheet">
+    <link href="./css/reset.css" rel="stylesheet">
+    <link href="./css/common.css" rel="stylesheet">
+    <link href="./css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<header class="content-fluid header">
+    <div class="lists content">
+        <div class="list">您好，<span class="name">一夕</span></div>
+        <span class="list dropdown toggleJg">
+              <span class="dropdown-toggle" data-toggle="dropdown">
+                  深圳市 <i class="fa fa-angle-down"></i>
+              </span>
+              <ul class="dropdown-menu">
+                <li><a href="#">广州</a></li>
+                <li><a href="#">深圳</a></li>
+              </ul>
+        </span>
+        <div class="list">密码修改</div>
+        <div class="list"><i class="fa fa-bell-o"></i>&nbsp;通知</div>
+        <div class="list"><i class="fa fa-off"></i>&nbsp;退出登录</div>
+        <div class="list"><i class="fa fa-cubes"></i>&nbsp;全部功能</div>
+    </div>
+</header>
+
+<!--常用应用区-->
+<div class="cyyys">
+    <div class="cyyy">
+        <div class="logo"><i class="fa fa-cloud"></i></div>
+        <div class="title font-bold">顺德招生服务平台</div>
+        <div class="cyyy-body">
+            <div class="cyyy-yy">
+                <div class="cyyy-yy-bg"></div>
+                <a class="cyyy-yy-content">
+                    <div><i class="fa fa-group"></i></div>
+                    <div class="cyyy-yy-title font-bold text-ellipsis">智能大智慧</div>
+                    <div class="cyyy-yy-tip text-ellipsis">以资源共享为纽带，以教师资源为课堂，以学生</div>
+                </a>
+            </div>
+            <div class="cyyy-yy">
+                <div class="cyyy-yy-bg"></div>
+                <a class="cyyy-yy-content">
+                    <div><i class="fa fa-group"></i></div>
+                    <div class="cyyy-yy-title font-bold text-ellipsis">智能大智慧</div>
+                    <div class="cyyy-yy-tip text-ellipsis">以资源共享为纽带，以教师资源为课堂，以学生</div>
+                </a>
+            </div>
+            <div class="cyyy-yy">
+                <div class="cyyy-yy-bg"></div>
+                <a class="cyyy-yy-content">
+                    <div><i class="fa fa-group"></i></div>
+                    <div class="cyyy-yy-title font-bold text-ellipsis">智能大智慧</div>
+                    <div class="cyyy-yy-tip text-ellipsis">以资源共享为纽带，以教师资源为课堂，以学生</div>
+                </a>
+            </div>
+            <div class="cyyy-yy">
+                <div class="cyyy-yy-bg"></div>
+                <a class="cyyy-yy-content">
+                    <div><i class="fa fa-group"></i></div>
+                    <div class="cyyy-yy-title font-bold text-ellipsis">智能大智慧</div>
+                    <div class="cyyy-yy-tip text-ellipsis">以资源共享为纽带，以教师资源为课堂，以学生</div>
+                </a>
+            </div>
+
+            <div class="cyyy-yy">
+                <div class="cyyy-yy-bg"></div>
+                <a class="cyyy-yy-content" href="./pages/applys.html">
+                    <div><i class="fa fa-plus"></i></div>
+                    <div class="cyyy-yy-title font-bold text-ellipsis">添加应用</div>
+                    <div class="cyyy-yy-tip text-ellipsis">进入应用中心</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="content-fluid footer clearfix">
+    <div class="footer-toLeft"><i class="fa fa-angle-left"></i></div>
+    <div class="footer-body clearfix">
+        <div class="list">
+            <i class="fa fa-bell bs"></i>
+            &nbsp;物联网<i class="delete fa fa-close"></i>
+        </div>
+        <div class="list">
+            <i class="fa fa-globe bs"></i>
+            &nbsp;大数据<i class="delete fa fa-close"></i>
+        </div>
+        <div class="list">
+            <i class="fa fa-bell bs"></i>
+            &nbsp;云计算<i class="delete fa fa-close"></i>
+        </div>
+        <div class="list">
+            <i class="fa fa-windows bs"></i>
+            &nbsp;人工智能<i class="delete fa fa-close"></i>
+        </div>
+        <div class="list">
+            <i class="fa fa-windows bs"></i>
+            &nbsp;移动智能化<i class="delete fa fa-close"></i>
+        </div>
+        <div class="list">
+            <i class="fa fa-windows bs"></i>
+            &nbsp;移动智能化<i class="delete fa fa-close"></i>
+        </div>
+        <div class="list">
+            <i class="fa fa-windows bs"></i>
+            &nbsp;移动智能化<i class="delete fa fa-close"></i>
+        </div>
+    </div>
+    <div class="footer-toRight"><i class="fa fa-angle-right"></i></div>
+</footer>
+
+<script src="./js/jquery-1.10.2.min.js"></script>
+<script src="./js/zui.min.js"></script>
+<script type="text/javascript">
+    // 动态更改rem
+    let el = document.documentElement;
+    // 根据宽度更改html元素的fontSize
+    let refRem = (width) =>{
+        if(width >= 1200){
+            el.style.fontSize = '20px'
+        } else if(width >= 1024){
+            el.style.fontSize = '19px'
+        } else{
+            el.style.fontSize = '16px'
+        }
+    };
+    refRem(el.getBoundingClientRect().width);
+
+    // 标签页位移的数值
+    let tranX = 0;
+    // 功能标签页左右两边是否出现按钮
+    let showLeftRight = () => {
+        // 判断标签页是否超过父元素
+        let footerBody = $('.footer-body')
+        let lists= $('.footer-body .list');
+        let listsW = 0;
+        for(let i = 0; i < lists.length; i++){
+            let margleft = parseInt($(lists[i]).css('marginLeft'));
+            listsW += $(lists[i]).outerWidth() + margleft;
+        }
+        if(footerBody.outerWidth() < listsW){
+            $('.footer-toRight').css('display','block');
+            $('.footer-toLeft').css('display','block');
+
+            // 给左右两个按钮加点击事件 进行标签页位移
+            $('.footer-toRight').off().on('click',()=>{
+                if(tranX > footerBody.outerWidth() - listsW){
+                    tranX += -40;
+                }
+                for(let i = 0; i < lists.length; i++){
+                    $(lists[i]).css('transform','translateX('+tranX+'px)')
+                }
+            });
+            $('.footer-toLeft').off().on('click',()=>{
+                if(tranX < 0){
+                    tranX += 40;
+                }
+                for(let i = 0; i < lists.length; i++){
+                    $(lists[i]).css('transform','translateX('+tranX+'px)')
+                }
+            });
+
+        } else {
+            $('.footer-toRight').css('display','none');
+            $('.footer-toLeft').css('display','none');
+        }
+    };
+
+    // 点击左右按钮偏移功能标签页
+    showLeftRight();
+
+    // 可视区域变化是触发
+    window.addEventListener("resize",() => {
+        refRem(el.getBoundingClientRect().width);
+        showLeftRight()
+    },false);
+    //浏览器后退/前进时重新计算 一条会话历史记录被执行时
+    window.addEventListener("pageshow",() => {
+        refRem(el.getBoundingClientRect().width);
+        showLeftRight();
+    },false);
+
+</script>
+</body>
+</html>

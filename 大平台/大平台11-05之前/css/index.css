@@ -1,0 +1,218 @@
+body{
+    background: url("../static/images/index-bg.png") center fixed;
+    height: 100vh;
+    min-height: 675px;
+    min-width: 960px;
+    background-size: 100% 100%;
+    overflow-y: hidden;
+}
+.content{
+    min-width: 960px;
+    max-width: 1200px;
+    width: 100%;
+}
+.content-fluid{
+    min-width: 960px;
+}
+
+/*头部*/
+.header{
+    z-index: 10;
+    height: 45px;
+    width: 100%;
+    line-height: 45px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.75);
+    text-align: right;
+}
+.header .list{
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.65);
+    display: inline-block;
+    position: relative;
+}
+.header .list:hover,.header .toggleJg .dropdown-toggle:hover{
+    color: #1BA777;
+    text-decoration: underline;
+}
+
+.header .list .name{
+    color: #1BA777;
+}
+.header .toggleJg .dropdown-menu li{
+    text-align: left;
+}
+.header .toggleJg .dropdown-menu>li>a:focus, .header .toggleJg .dropdown-menu>li>a:hover{
+    background: #1BA777;
+}
+
+/*常用应用*/
+.cyyys{
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+}
+.cyyy{
+    height: calc(100vh - 90px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 960px;
+    max-width: 1200px;
+}
+.cyyy .logo{
+    margin-top: 7%;
+    color: #33CD98;
+    font-size: 24px;
+}
+.cyyy .title{
+    font-size:32px;
+    line-height: 45px;
+    height: 45px;
+    font-family:"宋体",STSongti-SC-Bold,STSongti-SC,sans-serif;
+    position: relative;
+}
+.cyyy .title::before{
+    content: '';
+    height: 2px;
+    background: white;
+    width: 250px;
+    position: absolute;
+    top: 22px;
+    left: -280px;
+}
+.cyyy .title::after{
+    content: '';
+    height: 2px;
+    background: white;
+    width: 250px;
+    position: absolute;
+    top: 22px;
+    right: -280px;
+}
+.cyyy-body{
+    width: 100%;
+    margin-top: 3%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.cyyy-yy{
+    width: 20%;
+    margin: 2.5%;
+    height: 12rem;
+    text-align: center;
+    position: relative;
+}
+.cyyy-yy-content:hover{
+    background: #33CD98;
+}
+.cyyy-yy-content:hover .fa{
+    color: white;
+}
+.cyyy-yy-content:hover .cyyy-yy-title{
+    color: rgba(255, 255, 255, 0.85);
+}
+.cyyy-yy-content:hover .cyyy-yy-tip{
+    color: rgba(255, 255, 255, 0.65);
+}
+.cyyy-yy-bg{
+    width: 200%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background:url("../static/images/yy-box-shadow.png") no-repeat;
+    background-size: 100% 100%;
+    z-index: -1;
+}
+.cyyy-yy-content{
+    display: block;
+    background: white;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+.cyyy-yy-content .fa{
+    font-size:60px;
+    line-height:60px;
+    color: #33CD98;
+    margin-top: 17%;
+}
+.cyyy-yy-title{
+    font-size:18px;
+    color: black;
+    margin-top: 17%;
+    opacity: 0.85;
+}
+.cyyy-yy-tip{
+    font-size:14px;
+    color: black;
+    opacity: 0.65;
+    margin-top: 8%;
+    padding: 0 20px
+}
+
+
+
+/*底部*/
+.footer{
+    z-index: 10;
+    height: 45px;
+    line-height: 45px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.35);
+}
+.footer-toLeft,.footer-toRight{
+    position: absolute;
+    top: 0;
+    background: rgba(0,0,0,0.35);
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    font-size:19px;
+    color: rgba(255, 255, 255, 0.65);
+    display: none;
+}
+.footer-toLeft{
+    left: 0;
+}
+.footer-toRight{
+    right: 0;
+}
+.footer-body{
+    margin: 0 55px 0 45px;
+    height: 45px;
+    white-space:nowrap;
+    overflow: hidden;
+}
+.footer .list{
+    display: inline-block;
+    position: relative;
+    margin-left: 10px;
+    background: rgba(255, 255, 255, 0.35);
+    font-size: 18px;
+}
+.footer .bs{
+    color: #33CD98;
+}
+.footer .delete{
+    margin: 5px 0 0 20px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size:19px;
+    color: rgba(0, 0, 0, 0.5);
+
+}
+.footer .delete:hover{
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+}

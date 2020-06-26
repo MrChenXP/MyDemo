@@ -1,0 +1,248 @@
+body{
+    overflow-y: hidden;
+}
+.lb{
+    width: 100%;
+    height: 100vh;
+    /*min-height: 68px;*/
+    min-width: 1160px;
+}
+/*轮播分页器*/
+.lb .swiper-pagination{
+    position: fixed;
+    right: 100px;
+}
+.lb .swiper-pagination-bullet{
+    margin: 33px 0 !important;
+    background: #C8E4FA;
+    width: 15px;
+    height: 15px;
+    opacity: 1;
+    position: relative;
+}
+
+.lb .swiper-pagination-bullet-active,.lb .swiper-pagination-bullet:hover{
+    transition: all .4s;
+    background: #2B95FE;
+    transform: scale(1.1);
+}
+
+.lb .swiper-pagination-bullet-active::before,.lb .swiper-pagination-bullet:hover::before{
+    height: 28px !important;
+    top: -28px !important;
+}
+.lb .swiper-pagination-bullet::after{
+    position: absolute;
+    right: -27px;
+    top: -6px;
+    font-size: 18px;
+    color: #C8E4FA;
+}
+.lb .swiper-pagination-bullet-active::after,.lb .swiper-pagination-bullet:hover::after{
+    color: #2B95FE;
+}
+.lb .swiper-pagination-bullet[aria-label ~="2"]::after {
+    content: '教';
+}
+.lb .swiper-pagination-bullet[aria-label ~="3"]::after {
+    content: '学';
+}
+.lb .swiper-pagination-bullet[aria-label ~="4"]::after {
+    content: '管';
+}
+.lb .swiper-pagination-bullet[aria-label ~="5"]::after {
+    content: '评';
+}
+.lb .swiper-pagination-bullet:not(:first-child)::before{
+    position: absolute;
+    left: 6px;
+    top: -32px;
+    content:'';
+    width: 2px;
+    height: 32px;
+    background: #C8E4FA;
+}
+
+/*第一张轮播*/
+@keyframes fadeInUp {
+    from{transform:translateY(100%);opacity: 0;}
+    to{transform:  translateY(0);opacity: 1;}
+}
+@keyframes fadeInDown {
+    from{transform:translateY(-100%);opacity: 0;}
+    to{transform:  translateY(0);opacity: 1;}
+}
+@keyframes fadeInRight {
+    0%{transform: translateX(100%);opacity: 0;}
+    50%{transform: translateX(-25%);opacity: 0.5;}
+    60%{transform: translateX(0);opacity: 0.6;}
+    70%{transform: translateX(-15%);opacity: 0.7;}
+    80%{transform: translateX(0%);opacity: 0.8;}
+    90%{transform: translateX(-5%);opacity: 0.9;}
+    100%{transform: translateX(0);opacity: 1;}
+}
+@keyframes fadeInLeft {
+    from{transform: translateX(-100%);opacity: 0;}
+    to{transform: translateX(0);opacity: 1;}
+}
+@keyframes fadeInHeightAirport {
+    from{height:0;}
+    to{height:  15.65rem;}
+}
+@keyframes upDownShake {
+    0%{transform: translateY(0);}
+    25%{transform: translateY(-20px);}
+    50%{transform: translateY(0);}
+    75%{transform: translateY(20px);}
+    100%{transform: translateY(0);}
+}
+.gsjj{
+    position: relative;
+    background: linear-gradient(128deg,rgba(78,210,243,1) 0%,rgba(183,229,236,1) 100%);
+}
+.cloud{
+    position: absolute;
+    bottom: 0;
+    left:0;
+    width: 100%;
+    animation: fadeInUp 1s;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    animation-fill-mode: both;
+}
+.cloudBig{
+    height: 40.35rem;
+    z-index: 1;
+    background-image: url(../static/images/cloudBig.png);
+    background-size: 100%;
+}
+.cloudMid{
+    z-index: 10;
+    height: 30.35rem;
+    background-image: url(../static/images/cloudMid.png);
+    background-size: 100%;
+    animation-delay: 0.5s;
+}
+.cloudMall{
+    z-index: 20;
+    height: 14rem;
+    background-image: url(../static/images/cloudsMall.png);
+    background-size: 100%;
+    animation-delay: 0.7s;
+}
+.gsjj-title{
+    z-index: 40;
+    position: absolute;
+    top: 10rem;
+    left: 25%;
+    animation: fadeInDown 0.7s;
+}
+.gsjj-title p:first-child{
+    font-size: 3rem;
+    font-weight:400;
+    color:#FFFFFF;
+}
+.gsjj-title p:last-child{
+    font-size: 1.5rem;
+    font-weight:400;
+    color:rgba(255,255,255,0.5);
+}
+.paperPlane{
+    z-index: 30;
+    position: absolute;
+    left: 12%;
+    top: 27%;
+    width: 3.15rem;
+    height: 2.55rem;
+    background-image: url(../static/images/pic_paperport.png);
+    background-size: 100%;
+}
+.paperPlane2{
+    z-index: 30;
+    position: absolute;
+    left: 17%;
+    top: 37%;
+    width: 2.1rem;
+    height: 2.1rem;
+    background-image: url(../static/images/pic_paperport2.png);
+    background-size: 100%;
+}
+.sunny{
+    z-index: 9;
+    position: absolute;
+    right: 20%;
+    top: 25%;
+    width: 27.5rem;
+    height: 10.5rem;
+    background-image: url(../static/images/pic_sun.png);
+    background-size: 100%;
+}
+.bookTree{
+    position: absolute;
+    right: 10%;
+    bottom: 15.5rem;
+    z-index: 9;
+    width: 16.25rem;
+    height: 14.6rem;
+    background-image: url(../static/images/pic_booktree.png);
+    background-size: 100%;
+    animation: fadeInRight 1s;
+    animation-delay: 1s;
+    animation-fill-mode: both;
+}
+.bookDeer{
+    position: absolute;
+    left: 50%;
+    margin-left: -13.75rem;
+    bottom: 20px;
+    z-index: 9;
+    width: 27.5rem;
+    height: 19.3rem;
+    background-image: url(../static/images/pic_bookdeer.png);
+    background-size: 100%;
+    animation: fadeInUp 1s;
+    animation-fill-mode: both;
+    animation-delay: 1s;
+}
+.airport{
+    position: absolute;
+    left: 9rem;
+    bottom: 15rem;
+    z-index: 9;
+    width: 12.5rem;
+    height: 15.65rem;
+    background-image: url(../static/images/pic_airport.png);
+    background-size: 100%;
+    background-position: left bottom;
+    animation: fadeInHeightAirport 1s;
+    animation-fill-mode: both;
+    animation-delay: 1.5s;
+}
+.bookLight{
+    position: absolute;
+    left: 13.5rem;
+    bottom: 5.25rem;
+    z-index: 9;
+    width: 16.65rem;
+    height: 17rem;
+    background-image: url(../static/images/bookLight.png);
+    background-size: 100%;
+    animation: fadeInLeft 1s ease-in;
+    animation-fill-mode: both;
+    animation-delay: 1s;
+}
+.bl-person{
+    position: absolute;
+    left: 6rem;
+    bottom: 7rem;
+    z-index: 9;
+    width: 14.8rem;
+    height: 16.6rem;
+    background-image: url(../static/images/bl-person.png);
+    background-size: 100%;
+    background-position: left bottom;
+    animation: upDownShake 3.5s linear;
+    animation-delay: 1s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+}

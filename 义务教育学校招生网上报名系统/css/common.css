@@ -1,0 +1,81 @@
+/*==========================公共样式======================*/
+/* == clearfix == */
+.clearfix:after {   /*在元素的内容之后插入新内容*/
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; /*元素不可见*/
+}
+.clearfix { /*元素后面添加清除浮动元素 用来清撑不出高*/
+    zoom: 1;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.clear{ /*规定元素左右两侧不允许有浮动*/
+    clear: both;
+}
+
+.col-gray{
+    color: #999999;
+}
+.col-white{
+    color: white;
+}
+.font-bold{
+    font-weight:bold;
+}
+
+.content{
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+.content-fluid{
+    width: 100%;
+    min-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/*标题*/
+.zs-nav{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: white;
+}
+.zs-nav .content{
+    height: 105px;
+    line-height: 105px;
+    display: flex;
+}
+.nav-left{
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+.nav-title{
+    margin-left: 18px;
+    font-size: 24px;
+    color: #3A3A3A;
+}
+.nav-right{
+    width: 50%;
+}
+
+/*页脚*/
+.footer{
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    background: #434343;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    z-index: 10;
+}

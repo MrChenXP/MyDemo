@@ -1,0 +1,209 @@
+body{
+    background: #000A33 !important;
+    height: 100vh;
+    width: 100vw;
+    padding: 0 0.4rem 0.8rem;
+}
+/* -----内容区----- */
+.viewport{
+    width: 100%;
+    height: 100%;
+    min-height: 768px;
+    min-width: 1024px;
+    max-width: 1920px;
+    background: url(../static/images/yj-sjkb-bg.png) no-repeat;
+    background-size: 100% auto;
+    display: flex;
+    padding-top: 1.6rem;
+    position: relative;
+}
+.column{
+    flex: 2.717;
+    position: relative;
+}
+.column:nth-child(3) {
+    flex: 4.565;
+    margin: 0 0.4rem;
+}
+/* -------上边------- */
+.port-top{
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 1.6rem;
+    width: 100%;
+    display: flex;
+    line-height: 1.6rem;
+    font-size: 0.32rem;
+}
+.xc-toggle{
+    height: 1.6rem;
+    position: relative;
+    flex: 2.717;
+}
+.xc-toggle .xx,.xc-toggle .cz{
+    position: absolute;
+    top: 0.42rem;
+    height: 0.8rem;
+    width: 1.4rem;
+    line-height: 0.8rem;
+    text-align: center;
+    color: #61A8FF;
+    border:1px solid rgba(97,168,255,1);
+    transform: skewX(30deg);
+}
+.xc-toggle .active,.xc-toggle .xx:hover,.xc-toggle .cz:hover{
+    background:rgba(97,168,255,1);
+    color: #000A33;
+}
+.xc-toggle .xx{
+    left: 2.2rem;
+}
+.xc-toggle .cz{
+    left: 3.9rem;
+}
+.xc-toggle .xc-tip{
+    height: 100%;
+    width: 100%;
+    transform: skewX(-30deg);
+}
+.sjkb-title{
+    flex: 4.565;
+    margin: 0 0.4rem;
+    font-size: 0.6rem;
+    font-weight:bold;
+    color: white;
+    text-align: center;
+    letter-spacing: 0.08rem;
+    text-shadow:0px 0px 15px #00CBFF;
+}
+.sjkb-sjSet{
+    flex:2.717;
+    text-align: right;
+    color: #61A8FF;
+}
+.sjkb-date,.sjkb-week{
+    margin-right: 0.2rem;
+}
+.sjkb-sj{
+    margin-right: 0.46rem;
+}
+.sjkb-set{
+    margin-right: 0.92rem;
+}
+.sjkb-set .fa{
+    margin-right: 0.1rem;
+}
+/*------- 左边 -------*/
+.port-panel{
+    width: 100%;
+    border: 0.2rem solid transparent;
+    border-image-source: url(../static/images/yj-sjkb-panel-bg.png) ;
+    border-image-slice: 10;
+    display: flex;
+    padding: 0.2rem;
+}
+/* 师生数 */
+.port-level-list{
+    height: 2rem;
+    justify-content: space-between;
+}
+.port-level-list .item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.port-level-list h3{
+    color: #61A8FF;
+    font-size: 0.32rem;
+    line-height: 0.42rem;
+    position: relative;
+    padding-left: 0.26rem;
+}
+.port-level-list h3::before{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0.12rem;
+    width: 0.12rem;
+    height: 0.12rem;
+    background: #61A8FF;
+    border-radius: 50%;
+}
+.port-level-list .sss-sj{
+    font-size: 0.56rem;
+    color: white;
+    line-height: 0.64rem;
+}
+/* 排行榜 */
+.port-vertical-lists{
+    height: 15.14rem;
+    margin-top: 0.4rem;
+    flex-direction: column;
+}
+.port-title{
+    height: 0.48rem;
+    margin-bottom: 0.4rem;
+    color: white;
+    line-height:0.48rem;
+    font-size: 0.36rem;
+    font-weight:bold;
+    padding-left: 0.46rem;
+    position: relative;
+}
+.port-title::before{
+    content: '';
+    position: absolute;
+    top: 0.06rem;
+    left: 0;
+    width: 0.32rem;
+    height: 0.36rem;
+    background: url(../static/images/yj-sjkb-icons-set.png);
+    background-size: 100%;
+}
+.port-lists-title{
+    height: 0.6rem;
+    line-height: 0.6rem;
+    display: flex;
+    font-size:0.28rem;
+    color:rgba(97,168,255,1);
+}
+.port-lists-title-item{
+    padding: 0 0.3rem;
+    margin-right: 0.2rem;
+}
+.port-lists-title-item:hover, .port-lists-title-item-active{
+    background: #00DFF9;
+    color:rgba(0,10,51,1);
+    border-radius: 2px;
+}
+/* ------中间-------- */
+.port-midden{
+    padding-top: 0.4rem;
+}
+/* 差异系数 */
+.cyxs{
+    height:14.74rem;
+    flex: 2;
+    margin-bottom: 0.4rem;
+}
+/* 区域学校数据 */
+.cyxs{
+    background: url(../static/images/yj-sjkb-midden-bg.png);
+    background-size: 100%;
+    border:none;
+}
+/* ---------右边------- */
+.port-right{
+    background: #110f31;
+    opacity: 0.9;
+}
+/* 右中 */
+.port-right-midden{
+    height: 7.4rem;
+    flex: 2;
+}
+/* 右下 */
+.port-right-bottom{
+    height: 7.4rem;
+}

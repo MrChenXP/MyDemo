@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>学区划分</title>
+    <link href="https://libs.cdnjs.net/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- ZUI 标准版压缩后的 CSS 文件 -->
+    <link rel="stylesheet" href="https://libs.cdnjs.net/zui/1.8.1/css/zui.min.css">
+    <!-------------------------------------------------------------------------------->
+    <!----------------------------------------------------------------------
+      ====kwm4的css文件,请勿直接复制此文件，会造成文件冗余和文件不同步,
+      请在kwm4svn同步此文件，使用那个同步后的文件==
+    ---------------------------------------------------------------------------------------------------------->
+    <link href="./static/css/default.css" rel="stylesheet">
+    <!-------------------------------------------------------------------------------->
+    <!-------------------------------------------------------------------------------->
+    <!-------------------------------------------------------------------------------->
+    <!-------------------------------------------------------------------------------->
+    <link href="./static/css/index.css" rel="stylesheet">
+</head>
+<body class="xqhf">
+    <!-- 上面学校和表格 -->
+    <div class="xqhf-top">
+        <div class="xqhf-left">
+            <div class="xqhf-left-xxs">
+                <div class="xqhf-left-xx one-row">
+                    <span>全部学校</span>
+                </div>
+                <div class="xqhf-left-xx one-row">
+                    <input type="checkbox">
+                    <span title="这是学校的全名">学校1</span>
+                </div>
+                <div class="xqhf-left-xx one-row">
+                    <input type="checkbox">
+                    <span title="这是学校的全名">学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1学校1</span>
+                </div>
+            </div>
+            <!-- 底部按钮 -->
+            <div class="xqhf-left-gn tac">
+                <button class="btn btn-info" type="button">调整学区</button>
+                <button class="btn btn-info" type="button">确认调整</button>
+            </div>
+        </div>
+        <!-- 上面的表格 -->
+        <div class="xqhf-right-bg">
+            <div class="xqhf-right-bg-table">
+                <table class="table  table-striped  table-hover  table-bordered">
+                    <thead>
+                    <tr>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>...</td>
+                        <td>...</td>
+                        <td>...</td>
+                        <td>...</td>
+                        <td>...</td>
+                        <td>...</td>
+                        <td>...</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- 底部按钮 -->
+            <div class="tac xqhf-right-bg-gn">
+                <button class="btn btn-sm btn-info" type="button">一二三四</button>
+                <button class="btn btn-sm btn-info" type="button">一二三四</button>
+            </div>
+        </div>
+        <!-- 收缩按钮       -->
+        <div class="xqhf-bg-ss cursor">
+            <i class="fa fa-arrow-up"></i>
+        </div>
+    </div>
+
+    <!-- 下面的地图 -->
+    <div class="xqhf-bottom">
+        <div class="xqhf-bottom-dt">
+            
+        </div>
+    </div>
+
+<!-- ZUI Javascript 依赖 jQuery -->
+<script type="text/javascript" src="https://libs.cdnjs.net/jquery/3.4.1/jquery.js"></script>
+<!-- ZUI 标准版压缩后的 JavaScript 文件 -->
+<script type="text/javascript" src="https://libs.cdnjs.net/zui/1.8.1/js/zui.min.js"></script>
+
+<script type="text/javascript">
+    // 表格区域收缩与扩展
+    $('.xqhf-bg-ss').on('click',function () {
+        $('.xqhf-top').toggleClass('xqhf-bg-kzsh');
+        $('.xqhf-bg-ss').toggleClass('xqhf-bg-kz');
+        $('.xqhf-bg-ss').children('i').toggleClass('fa-arrow-down');
+    })
+</script>
+</body>
+</html>

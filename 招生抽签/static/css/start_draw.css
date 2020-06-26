@@ -1,0 +1,198 @@
+@charset "UTF-8";
+.cq-footer .szrs {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 35px;
+  display: flex;
+  justify-content: space-between; }
+  .cq-footer .szrs .cqzs {
+    display: flex; }
+    .cq-footer .szrs .cqzs .qr {
+      width: 100px;
+      height: 100%;
+      background: #18b6f0;
+      border-radius: 5px;
+      margin-left: 20px;
+      color: white; }
+  .cq-footer .szrs .kscq {
+    width: 178px;
+    height: 100%;
+    background: #f25e4e;
+    border-radius: 5px;
+    color: white; }
+
+.cq-footer .zs {
+  margin: 0 5px; }
+
+.cq-footer .zqrmd {
+  margin-top: 20px;
+  border: 1px solid #e4e6e9;
+  border-radius: 5px;
+  padding: 20px; }
+  .cq-footer .zqrmd .zqrzs-lists {
+    display: flex;
+    margin-bottom: 15px; }
+    .cq-footer .zqrmd .zqrzs-lists .zqrzs-list {
+      width: 20px;
+      height: 20px;
+      font-size: 18px;
+      font-family: Arial;
+      font-weight: bold;
+      line-height: 20px;
+      color: #FC6A11;
+      opacity: 0.6;
+      text-align: center;
+      margin-right: 5px; }
+    .cq-footer .zqrmd .zqrzs-lists .active {
+      background: #FC6A11;
+      border-radius: 50%;
+      color: white;
+      opacity: 1; }
+  .cq-footer .zqrmd .zqrmd-body {
+    background: whitesmoke;
+    border-radius: 5px;
+    padding: 20px; }
+    .cq-footer .zqrmd .zqrmd-body .zqrmd-body-header {
+      font-weight: bold;
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 15px; }
+      .cq-footer .zqrmd .zqrmd-body .zqrmd-body-header .zs {
+        color: #FC6A11; }
+    .cq-footer .zqrmd .zqrmd-body .zqrmd-body-lists {
+      display: flex;
+      flex-wrap: wrap; }
+      .cq-footer .zqrmd .zqrmd-body .zqrmd-body-lists .zqrmd-body-list {
+        padding: 0 15px;
+        height: 35px;
+        text-align: center;
+        line-height: 35px;
+        font-size: 14px;
+        background: white;
+        border-radius: 5px;
+        margin: 0 10px 10px 0; }
+        .cq-footer .zqrmd .zqrmd-body .zqrmd-body-lists .zqrmd-body-list .num {
+          color: #999999;
+          margin-right: 6px; }
+
+/*遮罩*/
+.cq-mask {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(51, 51, 51, 0.6); }
+
+/*抽签操作区域*/
+.cq-body {
+  width: 872px;
+  height: 490px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin: -245px 0 0 -436px;
+  display: flex; }
+  .cq-body .cz {
+    width: 82px;
+    height: 278px;
+    background: url(../images/cq-cjj.png);
+    background-position: right -92px;
+    position: absolute;
+    top: 92px;
+    right: 0; }
+    .cq-body .cz .ks-tz-xyz {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 64px;
+      height: 64px;
+      text-align: center;
+      line-height: 64px;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      opacity: 0.8;
+      cursor: pointer;
+      border-radius: 50%; }
+      .cq-body .cz .ks-tz-xyz:hover {
+        opacity: 1; }
+
+/*左边*/
+.cq-md-wc {
+  width: 790px;
+  height: 100%;
+  background: url(../images/cq-cjj.png);
+  position: relative; }
+  .cq-md-wc .wc {
+    width: 80px;
+    height: 20px;
+    position: absolute;
+    top: 16px;
+    right: 85px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+    color: white;
+    opacity: 0.8;
+    cursor: pointer; }
+    .cq-md-wc .wc:hover {
+      opacity: 1; }
+  .cq-md-wc .md-content {
+    width: 750px;
+    height: 410px;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    padding: 0 40px 40px; }
+    .cq-md-wc .md-content .md-title {
+      height: 40px;
+      line-height: 40px;
+      font-size: 16px;
+      font-weight: bold;
+      color: white; }
+      .cq-md-wc .md-content .md-title .zs {
+        margin: 0 5px; }
+    .cq-md-wc .md-content .md-lists {
+      height: 330px;
+      overflow: auto;
+      padding: 10px 20px 10px 10px; }
+      .cq-md-wc .md-content .md-lists .list {
+        height: 35px;
+        background: white;
+        border-radius: 5px;
+        margin-bottom: 6px;
+        padding: 0 70px;
+        display: flex;
+        justify-content: space-between;
+        line-height: 35px;
+        font-size: 14px;
+        color: #333333; }
+      .cq-md-wc .md-content .md-lists::-webkit-scrollbar, .cq-md-wc .md-content .md-lists::-webkit-scrollbar-thumb {
+        background: transparent;
+        border: none;
+        box-shadow: none; }
+    .cq-md-wc .md-content .md-lists-cqcw {
+      display: flex;
+      flex-wrap: wrap; }
+      .cq-md-wc .md-content .md-lists-cqcw .list {
+        height: 35px;
+        line-height: 35px;
+        padding: 0 10px;
+        margin: 0 10px 10px 0; }
+        .cq-md-wc .md-content .md-lists-cqcw .list .num {
+          margin-right: 5px; }
+
+/*手杆下滑效果*/
+.top-fade-bottom {
+  animation: topFadeBottom 1s linear;
+  transform-origin: center bottom; }
+
+@keyframes topFadeBottom {
+  0% {
+    transform: rotateX(0); }
+  50% {
+    transform: rotateX(20deg); }
+  100% {
+    transform: rotateX(0); } }

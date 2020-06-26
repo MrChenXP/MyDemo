@@ -1,0 +1,290 @@
+/* =======================登录注册页============================ */
+.dgzs-login{
+    background: #EDEDED !important;
+}
+/* 头部标题 */
+.dgzs-login .dgzs-header{
+    background: white;
+}
+
+/* ==报名区== */
+.dgzs-login .bmdl{
+    /* 视高-标题-底部 */
+    min-height: calc(100vh - 80px - 49px);
+    padding-top: 30px;
+    .content{
+        background: white;
+        box-shadow:-10px 9px 21px rgba(128,152,213,0.07);
+        width:1000px;
+        margin: 0 auto;
+        padding: 30px 50px;
+        display: flex;
+    }
+    .left{
+        width: 450px;
+        border-right: 1px dashed #E4E6E9;
+        .bmdl-title{
+            height: 24px;
+            line-height: 24px;
+            font-size: 18px;
+            padding-left: 13px;
+            position: relative;
+            margin-bottom: 20px;
+            &::before{
+                content: '';
+                width: 3px;
+                height: 18px;
+                position: absolute;
+                top: 3px;
+                left: 0;
+                background: #0077FF;
+            }
+        }
+        .bmdl-inputP{
+            width: 400px;
+            height: 45px;
+            margin-bottom: 25px;
+            border-radius:5px;
+            position: relative;
+            .bmdl-input{
+                border: none;
+                width: 100%;
+                height: 100%;
+                font-size:14px;
+                padding: 13px 15px;
+                border-radius:5px;
+                border:1px solid rgba(228,230,233,1);
+            }
+            input:focus{
+                color: #333333;
+                border:1px solid rgba(71,157,255,1) !important;
+            }
+        }
+        .bmdl-noInput{
+            border: none;
+            box-shadow: none;
+            display: flex;
+            .bmdl-input{
+                border-radius:5px;
+                border:1px solid rgba(228,230,233,1);
+                width: 270px;
+            }
+            .bmdl-input-tip{
+                height: 100%;
+                width: 110px;
+                border-radius:5px;
+                border:1px solid rgba(228,230,233,1);
+            }
+        }
+        .bmdl-zjlx {
+            .bmdl-input-tip{
+                margin-right: 20px;
+            }
+            .form-control:focus{
+                box-shadow: none;
+                border:1px solid rgba(71,157,255,1);
+            }
+        }
+        .bmdl-yzm{
+            .bmdl-yzm-img{
+                margin-left: 20px;
+                line-height: 45px;
+                text-align: center;
+                background: #EDEDED;
+            }
+        }
+        .bmdl-dxyzm{
+            .bmdl-dxyzm-img{
+                margin-left: 20px;
+                line-height: 45px;
+                text-align: center;
+                background: #479DFF;
+                color: white;
+            }
+            .bmdl-dxyzm-img:hover{
+                background: #3686E2;
+            }
+        }
+        .bmdl-submit{
+            width:400px;
+            height:45px;
+            background: #479DFF;
+            border-radius:5px;
+            line-height: 45px;
+            text-align: center;
+            color: white;
+            font-size:14px;
+            &:hover{
+                background: #3686E2;
+            }
+        }
+        .bmdl-xy{
+            font-size:13px;
+            margin-top: 10px;
+            .bmdl-xy-yyd{
+                color: #666666;
+            }
+            .bmdl-xy-xy{
+                color: #0077FF;
+            }
+        }
+    }
+    /* 右边 */
+    .right{
+        padding-left: 30px;
+        .bmdl-zns{
+            display: flex;
+            color: #666666;
+            margin-top: 20px;
+            .bmdl-zns-icon{
+                background: url(../images/icons.png) no-repeat 0 -600px;
+                width: 15px;
+                height: 18px;
+                margin-right: 10px;
+                color: white;
+                text-align: center;
+                line-height: 18px;
+            }
+        }
+        .bmdl-yyzh{
+            width: auto;
+            color: #0077FF;
+            font-size:14px;
+            margin-top:30px;
+            text-decoration: underline;
+        }
+    }
+    
+}
+/* ==登录区==*/
+.dgzs-login .dlq{
+    .bmdl-dl-top{
+        width: 400px;
+        margin-bottom: 30px;
+        height: 47px;
+        display: flex;
+        .bmdl-ljmm{
+            width: 200px;
+            height: 100%;
+            background: #91CE50;
+            color: white;
+            font-size:18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 40px;
+            &:hover{
+                background: #7EC556;
+            }
+            .bmdl-ljmm-img{
+                width:21px;
+                height:16px;
+                background: url(../images/icons.png) no-repeat 0 0;
+                position: relative;
+                left: 0;
+                top: -2px;
+                margin-right: 5px;
+            }
+        }
+        .bmdl-wxsmdl{
+            width: 120px;
+            height: 25px;
+            background: url(../images/icons.png) no-repeat 0 -240px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .bmdl-wxsmdl-wxicon{
+                width: 17px;
+                height: 17px;
+                background: url(../images/icons.png) no-repeat 0 -180px;
+                margin-right: 5px;
+            }
+        }
+        .bml-wxm{
+            width: 50px;
+            height: 100%;
+            background: url(../images/icons.png) no-repeat 0 -660px;
+        }
+    }
+    .bmdl-inputP{
+        .bmdl-input{
+            padding-left: 40px !important;
+        }
+        .bmdl-input-xm-img{
+            width: 14px;
+            height: 14px;
+            background: url(../images/icons.png) no-repeat 0 -300px;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+        .bmdl-input-mm-img{
+            width: 12px;
+            height: 14px;
+            background: url(../images/icons.png) no-repeat 0 -360px;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+        .bmdl-input-yzm-img{
+            width: 12px;
+            height: 14px;
+            background: url(../images/icons.png) no-repeat 0 -420px;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+        .bmdl-input-number-img{
+            width: 12px;
+            height: 17px;
+            background: url(../images/icons.png) no-repeat 0 -480px;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+        .bmdl-input-dxyzm-img{
+            width: 14px;
+            height: 15px;
+            background: url(../images/icons.png) no-repeat 0 -540px;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+    }
+    .bmdl-wjmm{
+        width: 400px;
+        margin-top: 10px;
+        &:hover{
+            color: #479DFF;
+        }
+    }
+}
+
+/*移动端适配 r小于1200*/
+.screen-phone,.screen-tablet,.screen-desktop{
+    .bmdl{
+        min-height: auto;
+        text-align: center;
+        .content{
+            width: auto;
+            padding: 5px;
+            display: inline-block;
+            .left{
+                text-align: left;
+                border: none;
+                width: 350px;
+                .bmdl-inputP,.bmdl-submit,.bmdl-wjmm,.bmdl-title,.bmdl-dl-top {
+                    width: 350px;
+                }
+                .bmdl-dl-top{
+                    .bmdl-ljmm {
+                        width: 150px;
+                        margin-right: 5px;
+                    }
+                    .bmdl-wxsmdl{
+                    }
+                }
+            }
+        }
+    }
+}

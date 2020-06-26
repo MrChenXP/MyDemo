@@ -1,0 +1,154 @@
+
+
+/* 标题导航 */
+.nav-right{
+    display: flex;
+    justify-content: space-between;
+}
+.nav-list{
+    font-size: 19px;
+    color: #000003;
+    transition: background .5s ease;
+}
+.nav-list a{
+    padding: 0 25px;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+.nav-right .active a, .nav-list:hover a{
+    color: #3D93F7;
+    border-bottom: 4px solid #3D93F7;
+    background: #E1E5F8;
+}
+
+/*报名入口*/
+.signUp{
+    height: 360px;
+    background: linear-gradient(to bottom,  #7BD5F4, white);
+    padding-top: 20px;
+}
+.signUp-lb{
+    width: 50%;
+    height: 100%;
+}
+.signUp-lb img{
+    width:100%;
+    height:100%;
+}
+.signUp .content{
+    height: 100%;
+    display: flex;
+}
+.su-go{
+    width: 50%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 25px;
+    background: white;
+}
+.su-go .su-go-content:not(:first-child){
+    margin-top:10px;
+}
+.su-go-title{
+    font-size: 23px;
+    padding-left: 15px;
+    position: relative;
+}
+.su-go-title::before{
+    position: absolute;
+    left: 2px;
+    top: 9px;
+    content:'';
+    width: 3px;
+    height: 23px;
+    background: #3D93F7;
+}
+.su-go-lists{
+    margin: 0 -10px;
+}
+.su-go-list{
+    margin: 10px;
+    padding: 15px 25px;
+    height: 50px;
+    line-height: 20px;
+    border-radius: 25px;
+    display: inline-block;
+    font-size: 20px;
+}
+.bg-dGreen{
+    background: #66C6D3;
+}
+.bg-dz{
+    background: #A3AFF3;
+}
+.bg-pinkZ{
+    background: #D6A9CF;
+}
+.bg-jYellow{
+    background: #F4B45C;
+}
+.bg-dBlue{
+    background: #83B9F0;
+}
+.bg-cGreen{
+    background: #98CD69;
+}
+
+/*文章*/
+.sections{
+    margin-bottom: 50px;
+}
+.section{
+    padding:0 25px 0 0;
+    width: 50%;
+    display: inline-block;
+    max-height: 620px;
+    overflow: auto;
+    float: left;
+}
+.section .nav,.section .nav li,.section .nav li a{
+    height: 85px;
+    line-height: 85px;
+    font-size:21px;
+    border-bottom: none;
+    text-align: center;
+    padding: 0;
+}
+.section .nav li{
+    margin-right: 60px;
+    position: relative;
+}
+.section .nav li:not(:first-child)::before{
+    position: absolute;
+    left: -30px;
+    top: 33px;
+    content:'';
+    width: 2px;
+    height: 20px;
+    background: black;
+}
+.section .nav>li.active>a, .section .nav>li>a:focus, .section .nav>li>a:hover{
+    border-bottom: 3px solid #1492FF;
+    background: none;
+    color: #1492FF;
+}
+.section .tab-pane li{
+    margin: 25px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.section1-content1-title{
+    font-size: 17px;
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+}
+.section1-content1-title:hover{
+    color: #23527c;
+}
+.section1-content1-tip{
+    font-size: 13px;
+    max-width: 90px;
+    min-width: 70px;
+}

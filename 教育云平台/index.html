@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
+    <title>教育云平台</title>
+    <link href="css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/zui.min.css" rel="stylesheet">
+    <link href="css/swiper.min.css" rel="stylesheet">
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+</head>
+<body>
+<!-- 提示IE7及更早版本的用户 -->
+<!--[if lt IE 8]>
+    <div class="alert alert-danger">您正在使用 <strong>过时的</strong> 浏览器. 是时候 <a href="http://browsehappy.com/">更换一个更好的浏览器</a> 来提升用户体验.</div>
+<![endif]-->
+
+<!--头部标题-->
+<nav class="container header">
+    <div class="bg"></div>
+    <div class="row">
+        <div class="col-md-3 col-sm-4 col-xs-4 title">
+            <img src="static/images/logo.png">
+        </div>
+        <div class="col-md-7 col-sm-4 col-xs-4 visible-lg visible-md ">
+            <div class="navLists">
+                <div class="active navList"><a href="#">首页</a></div>
+                <div class="navList"><a href="#">资源</a></div>
+                <div class="navList"><a href="#">应用</a></div>
+                <div class="navList"><a href="#">智慧教学</a></div>
+                <div class="navList"><a href="#">智慧学习</a></div>
+                <div class="navList"><a href="#">智慧管理</a></div>
+                <div class="navList"><a href="#">智慧测评</a></div>
+            </div>
+        </div>
+        <div class="col-md-7 col-sm-4 col-xs-4 visible-xs visible-sm navListSm">
+            <!-- 按钮组 -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-navicon"></i>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">资源</a></li>
+                    <li><a href="#">应用</a></li>
+                    <li><a href="#">智慧教学</a></li>
+                    <li><a href="#">智慧学习</a></li>
+                    <li><a href="#">智慧管理</a></li>
+                    <li><a href="#">智慧测评</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-4 login">
+            <button class="btn btn-primary" type="button">登录&nbsp;|&nbsp;注册</button>
+        </div>
+    </div>
+</nav>
+
+<!--轮播-->
+<div class="swiper-container lb">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide gsjj">
+            <div class="cloud cloudBig"></div>
+            <div class="bookTree"></div>
+            <div class="cloud cloudMid"></div>
+            <div class="cloud cloudMall"></div>
+            <div class="gsjj-title">
+                <p>让教育变得更简单</p>
+                <p>Make education easier</p>
+            </div>
+            <div class="paperPlane"></div>
+            <div class="paperPlane2"></div>
+            <div class="sunny"></div>
+            <div class="bookDeer">
+                <div class="airport"></div>
+            </div>
+            <div class="bookLight">
+                <div class="bl-person"></div>
+            </div>
+        </div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+</div>
+
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/zui.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script type="text/javascript">
+    // 动态更改rem
+    let el = document.documentElement;
+    // 根据宽度更改html元素的fontSize
+    let refRem = (width) =>{
+        console.log(width);
+        if (width >= 1920){
+            el.style.fontSize = '20px'
+        } else if(width >= 1600){
+            el.style.fontSize = '19px'
+        } else if(width >= 1440){
+            el.style.fontSize = '18px'
+        } else if(width >= 1366){
+            el.style.fontSize = '17px'
+        } else if(width >= 1200){
+            el.style.fontSize = '16px'
+        } else if(width >= 1024){
+            el.style.fontSize = '15px'
+        } else{
+            el.style.fontSize = '14px'
+        }
+    };
+    refRem(el.getBoundingClientRect().width)
+    // 可视区域变化是触发
+    window.addEventListener("resize",() => {
+        refRem(el.getBoundingClientRect().width)
+    },false);
+    //浏览器后退/前进时重新计算 一条会话历史记录被执行时
+    window.addEventListener("pageshow",() => {
+        refRem(el.getBoundingClientRect().width)
+    },false);
+
+
+    // 初始化swiper
+    var mySwiper = new Swiper ('.lb', {
+        direction: 'vertical', // 垂直切换选项
+        pagination:{
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        mousewheel: true, // 开启鼠标滚轮控制
+    })
+</script>
+</body>
+</html>

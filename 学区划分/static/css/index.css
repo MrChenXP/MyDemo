@@ -1,0 +1,110 @@
+.xqhf{
+    height: 100vh;
+    overflow: hidden;
+    background: white !important;
+}
+/*上面学校和表格*/
+.xqhf-top{
+    position: relative;
+    height: 200px;
+    border-bottom: 1px solid #dddddd;
+    font-size: 0;
+    transition: height .5s;
+}
+/* 左侧区域 */
+.xqhf-left{
+    width: 280px;
+    min-width: 280px;
+    height: 100%;
+    border-right: 1px solid #dddddd;
+    display: inline-block;
+    position: relative;
+    font-size: 16px;
+}
+.xqhf-left-xxs{
+    height: 100%;
+    padding-bottom: 50px;
+    overflow: auto;
+    padding-top: 3px;
+}
+.xqhf-left-xx{
+    font-size: 14px;
+    padding: 2px 5px 0;
+}
+.xqhf-left-gn{
+    background: white;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: auto;
+}
+.xqhf-right-bg{
+    display: inline-block;
+    width: calc(100% - 280px);
+    height: 100%;
+    padding: 10px;
+    position: relative;
+    font-size: 16px;
+    overflow: auto;
+}
+.xqhf-right-bg-table{
+    width: 100%;
+    height: calc(100% - 20px);
+    margin-bottom: 20px;
+    overflow: auto;
+}
+.xqhf-right-bg-gn{
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    width: 200px;
+    margin-left: -100px;
+}
+.xqhf-bg-ss{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    background: #dddddd;
+    width: 30px;
+    height: 15px;
+    font-size: 12px;
+    border-radius:15px 15px 0 0;
+}
+.xqhf-bg-ss i{
+    position: absolute;
+    right: 9px;
+    bottom: 0;
+}
+.xqhf-bg-ss:hover i{
+    color: #3280fc;
+}
+.xqhf-bg-kz{
+    bottom: -15px;
+    border-radius: 0 0 15px 15px;
+}
+.xqhf-bg-kz i{
+    top: 0;
+}
+.xqhf-bg-kzsh{
+    height:  0;
+    min-height: 0;
+    transition:height 0.5s;
+}
+.xqhf-bg-kzsh .xqhf-left{
+    overflow: hidden;
+}
+.xqhf-right-bg{
+    padding: 0;
+}
+/* 下面区域 */
+.xqhf-bottom{
+    height: calc(100% - 200px);
+    width: 100%;
+}
+.xqhf-bottom-dt{
+    width: 100%;
+    padding: 10px;
+    overflow: auto;
+}

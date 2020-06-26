@@ -1,0 +1,89 @@
+@charset "UTF-8";
+body {
+  background-color: white !important;
+  color: #333333; }
+
+/*开始抽签*/
+.cq-header-bzt {
+  height: 100px;
+  padding: 20px;
+  background: whitesmoke;
+  display: flex;
+  align-items: center; }
+  .cq-header-bzt .list {
+    width: 232px;
+    height: 60px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #E4E6E9;
+    font-size: 14px; }
+    .cq-header-bzt .list .num {
+      font-size: 30px;
+      font-family: Impact;
+      margin-right: 10px; }
+  .cq-header-bzt .active {
+    color: white;
+    background: url(../images/cq-button-bg.png); }
+  .cq-header-bzt .jt {
+    margin: 0 10px;
+    width: 30px;
+    height: 2px;
+    background: #E4E6E9;
+    position: relative; }
+    .cq-header-bzt .jt::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: -4px;
+      width: 0px;
+      height: 0px;
+      border-left: 9px solid #E4E6E9;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent; }
+
+.cq-footer {
+  padding: 20px; }
+  .cq-footer .szrs {
+    font-size: 14px;
+    height: 35px;
+    line-height: 35px; }
+    .cq-footer .szrs input {
+      width: 60px;
+      height: 100%;
+      padding: 0 10px;
+      border-radius: 5px;
+      border: 1px solid #e4e6e9;
+      margin-right: 6px; }
+  .cq-footer .xyb {
+    display: block;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    background: #18B6F0;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+    color: white; }
+    .cq-footer .xyb:hover {
+      text-decoration: none; }
+
+/*导入抽签名单*/
+.import-draw .xzdr {
+  margin-bottom: 20px;
+  display: flex; }
+  .import-draw .xzdr .an {
+    width: 100px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 5px;
+    margin-right: 20px;
+    font-size: 14px;
+    color: white;
+    text-align: center; }
+  .import-draw .xzdr .xz {
+    background: #40BD7E; }
+  .import-draw .xzdr .dr {
+    background: #18B6F0; }

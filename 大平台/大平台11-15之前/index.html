@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>大平台</title>
+    <link href="./css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="./css/zui.min.css" rel="stylesheet">
+    <link href="./css/reset.css" rel="stylesheet">
+    <link href="./css/common.css" rel="stylesheet">
+    <link href="./css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<header class="content-fluid header">
+    <div class="lists content">
+        <div class="list">您好，<span class="name">一夕</span></div>
+        <span class="list dropdown toggleJg">
+              <span class="dropdown-toggle" data-toggle="dropdown">
+                  深圳市 <i class="fa fa-angle-down"></i>
+              </span>
+              <ul class="dropdown-menu">
+                <li><a href="#">广州</a></li>
+                <li><a href="#">深圳</a></li>
+              </ul>
+        </span>
+        <div class="list">密码修改</div>
+        <div class="list"><i class="fa fa-bell-o"></i>&nbsp;通知</div>
+        <div class="list"><i class="fa fa-power-off"></i>&nbsp;退出登录</div>
+        <div class="list"><i class="fa fa-cubes"></i>&nbsp;全部功能</div>
+    </div>
+</header>
+
+<!--常用应用区-->
+<div class="cyyy content-fluid">
+        <div class="title"><div class="title-bg"></div>顺德招生服务平台</div>
+        <div class="cyyy-body content">
+            <div class="cyyy-yy cyyy-yy-plus" f_id='tjyy0' url ='./pages/applys.html'>
+                <div class="cyyy-yy-logo">
+                    <div class="cyyy-yy-icon bg-blue"><i class="fa fa-snowflake-o"></i></div>
+                    <div class="cyyy-yy-title">智能云平台</div>
+                </div>
+            </div>
+            <div class="cyyy-yy cyyy-yy-plus" f_id='tjyy1' url ='./pages/applys.html'>
+                <div class="cyyy-yy-logo">
+                    <div class="cyyy-yy-icon bg-purple"><i class="fa fa-google-wallet"></i></div>
+                    <div class="cyyy-yy-title">广东省顺德市智慧教育职能履职大数据监控平台</div>
+                </div>
+            </div>
+            <div class="cyyy-yy cyyy-yy-plus" f_id='tjyy2' url ='./pages/applys.html'>
+                <div class="cyyy-yy-logo">
+                    <div class="cyyy-yy-icon bg-fen"><i class="fa fa-thermometer-quarter"></i></div>
+                    <div class="cyyy-yy-title">广东省顺德市智慧教育职能履职大数据监控平台</div>
+                </div>
+            </div>
+            <div class="cyyy-yy cyyy-yy-plus" f_id='tjyy3' url ='./pages/applys.html'>
+                <div class="cyyy-yy-logo">
+                    <div class="cyyy-yy-icon bg-danLan"><i class="fa fa-spinner"></i></div>
+                    <div class="cyyy-yy-title">广东省智慧教育监控平台</div>
+                </div>
+            </div>
+            <div class="cyyy-yy cyyy-yy-plus" f_id='tjyy' url ='./pages/applys.html'>
+                <div class="cyyy-yy-logo">
+                    <div class="cyyy-yy-icon bg-gray"><i class="fa fa-plus"></i></div>
+                    <div class="cyyy-yy-title">我的全部应用</div>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+<footer class="content-fluid footer clearfix">
+    <div class="footer-toLeft footer-move"><i class="fa fa-angle-left"></i></div>
+    <div class="footer-body clearfix"></div>
+    <div class="footer-toRight footer-move"><i class="fa fa-angle-right"></i></div>
+</footer>
+
+<script src="./js/jquery-1.10.2.min.js"></script>
+<script src="./js/zui.min.js"></script>
+<script src="./js/index.js"></script>
+<script type="text/javascript">
+    // 可视区域变化是触发 浏览器后退/前进时重新计算 一条会话历史记录被执行时
+    $(window).on("pageshow resize",() => {
+        refRem(); // 动态更改rem
+        showLeftRight(); // 点击左右按钮偏移功能标签页
+    });
+    refRem(); // 动态更改rem
+    showLeftRight(); // 点击左右按钮偏移功能标签页
+
+    // 点击应用弹框
+    $('.cyyy .cyyy-yy').on('click',function () {
+        alertIframe($(this));
+    });
+</script>
+</body>
+</html>

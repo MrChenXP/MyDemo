@@ -1,0 +1,432 @@
+body{
+    background: #F5F6FA !important;
+}
+/* 步骤条 */
+.bzt{
+    height: 108px;
+    padding: 20px 0;
+    display: flex;
+    display: -ms-flexbox;
+    justify-content: center;
+}
+.bzt-item{
+    width: 60px;
+    margin-right: 90px;
+    font-size:14px;
+    text-align: center;
+    display: inline-block;
+}
+.bzt-item:last-child{
+    margin-right: 0;
+}
+.bzt-item-bh{
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 auto;
+    background:rgba(0,0,0,0.25);
+    border-radius: 50%;
+    font-weight:500;
+    color:rgba(255,255,255,1);
+    position: relative;
+}
+.bzt-item-active .bzt-item-bh{
+    background: url(../static/images/dxsq-icons.png);
+    background-position: 0 0;
+}
+.bzt-item-complete .bzt-item-bh{
+    background: url(../static/images/dxsq-icons.png);
+    background-position: 0 -59px;
+ }
+.bzt-item-bh::after{
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 40px;
+    width:100px;
+    height:1px;
+    background:rgba(0,0,0,0.15);
+}
+.bzt-item-active .bzt-item-bh::after,.bzt-item-complete .bzt-item-bh::after{
+    background: #1890FF;
+}
+.bzt-item:last-child .bzt-item-bh::after{
+    display: none;
+}
+.bzt-item-title{
+    margin-top: 16px;
+    font-weight:400;
+    color:rgba(0,0,0,0.65);
+}
+.bzt-item-active .bzt-item-title{
+    font-weight:500;
+    color:rgba(0,0,0,0.85);
+}
+
+/*  填写区域 */
+.txqy-parent{
+    margin-top: 16px;
+    display: flex;
+    display: -ms-flexbox;
+    font-size: 0;
+}
+.txqy{
+    width: 920px;
+    margin-right: 20px;
+    padding: 20px;
+    background: white;
+    border-radius:2px;
+    display: inline-block;
+    vertical-align: top;
+}
+.txqy-title{
+    font-size:16px;
+    height:24px;
+    font-weight:500;
+    color:rgba(0,0,0,1);
+    line-height:24px;
+}
+.txqy-item{
+    margin-top: 20px;
+    height: 60px;
+}
+.txqy-item-title{
+    height:22px;
+    font-size:14px;
+    font-weight:400;
+    color:rgba(0,0,0,0.85);
+    line-height:22px;
+}
+.txqy-item-content{
+    margin-top: 5px;
+}
+.txqy-xyb{
+    margin-top: 20px;
+    padding: 0 16px;
+    height:40px;
+    background:rgba(24,144,255,1);
+    border-radius:2px;
+    line-height: 40px;
+    text-align: center;
+    font-size:16px;
+}
+.txqy-xyb a{
+    text-decoration: none;
+    color:rgba(255,255,255,1);
+}
+.syb{
+    background:rgba(255,255,255,1);
+    border:1px solid rgba(217,217,217,1);
+    margin-right: 16px;
+}
+.syb a{
+    color:rgba(0,0,0,0.65);
+}
+.zpTxwcd{
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+}
+.zpTxwcd-item{
+    padding: 20px;
+    background: white;
+    border-radius:2px;
+}
+.zpTxwcd-title{
+    height:18px;
+    font-size:14px;
+    font-weight:500;
+    color:rgba(0,0,0,1);
+    line-height:18px;
+}
+.zpTxwcd-zp{
+    margin: 20px 20px 8px;
+    padding: 5px;
+    border-radius:2px;
+    border:1px solid rgba(0,0,0,0.15);
+    height:146px;
+}
+.zpTxwcd-zp img{
+    width: 100%;
+    height: 100%;
+}
+.zpTxwcd-tip{
+    color:rgba(0,0,0,0.45);
+    line-height:18px;
+    font-size:14px;
+}
+.txwcd{
+    margin-top: 20px;
+}
+.zpTxwcd-title-sj{
+    color: #1890FF;
+}
+.txwcd .progress{
+    margin: 20px 0 0;
+    height: 10px;
+    background:rgba(24,144,255,0.15);
+}
+.txwcd .progress .progress-bar{
+    background: #1890FF;
+}
+
+/* ==================督学类别========================= */
+.dxlb-txqy-content{
+    display: flex;
+    display: -ms-flexbox;
+}
+.dxlb-txqy-item{
+    width:116px;
+    height:70px;
+    border-radius:2px;
+    line-height: 70px;
+    text-align: center;
+    font-size:14px;
+    font-weight:400;
+    color:rgba(0,0,0,0.65);
+    border:1px solid rgba(0,0,0,0.15);
+    margin-right: 14px;
+    position: relative;
+    display: inline-block;
+}
+.dxlb-txqy-item:nth-child(3){
+    margin-right: 32px;
+}
+.dxlb-txqy-item:nth-child(3)::after{
+    content: '';
+    width: 1px;
+    height: 50px;
+    background: rgba(0,0,0, 0.15);
+    position: absolute;
+    top: 10px;
+    right: -17px;
+}
+.dxlb-txqy-item-acitve{
+    color: #1890FF;
+    border:1px solid rgba(24,144,255,1);
+    font-weight:500;
+}
+.dxlb-txqy-badge{
+    background: url(../static/images/dxsq-icons.png);
+    background-position: 0 -116px;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.dxlb-txqy-tip{
+    margin-top: 16px;
+    height:24px;
+    font-size:14px;
+    font-weight:400;
+    color:rgba(224,32,32,0.65);
+    line-height:24px;
+}
+/* ================工作经验============== */
+.gzjy-zygz{
+    height: auto;
+}
+.gzjy-add{
+    height:32px;
+    line-height:32px;
+    text-align: center;
+}
+.gzjy-add-content{
+    border:1px dotted rgba(0,0,0,0.25);
+    border-radius:2px;
+    font-size:14px;
+    color:rgba(0,0,0,0.65);
+}
+.gzjy-fgx{
+    margin-bottom: 0;
+}
+
+/* ==================附加信息================= */
+.fjxx-txqy-item{
+    height: auto;
+    padding: 25px 0;
+    margin-top: 0;
+    border-bottom: 1px solid #E6E6E6;
+}
+.fjxx-txqy-item-head{
+    display: flex;
+    display: -ms-flexbox;
+    justify-content: space-between;
+    line-height:20px;
+    font-size:14px;
+}
+.fjxx-txqy-item-title{
+    color:rgba(0,0,0,0.65);
+    display: inline-block;
+}
+.fjxx-txqy-item-add{
+    min-width: 50px;
+    color:rgba(24,144,255,0.65);
+    display: inline-block;
+    float: right;
+}
+.fjxx-txqy-item-content-row{
+    margin: 20px 0 0;
+    padding-bottom: 20px;
+    border: 1px dotted rgba(0,0,0,0.15);
+    border-radius:2px;
+}
+
+/* =================预览提交=========== */
+.yltj .txqy{
+    width: 100%;
+}
+.yltj-item{
+    padding: 20px 0;
+    border-bottom: 1px solid #E6E6E6;
+}
+.yltj-item-title{
+    font-size:14px;
+    font-weight:600;
+    color:rgba(0,0,0,0.85);
+    line-height:20px;
+}
+.yltj-item-title-change{
+    width:50px;
+    height:20px;
+    background:rgba(237,240,242,1);
+    border-radius:3px;
+    font-size: 12px;
+    font-weight: 400;
+    color:rgba(0,0,0,0.65);
+    text-align: center;
+}
+.yltj-item-body-row{
+    margin-top:15px;
+    font-size:14px;
+    line-height:20px;
+    display: flex;
+    display: -ms-flexbox;
+}
+.yltj-item-body-row-title{
+    color:rgba(0,0,0,0.65);
+    min-width: 100px;
+    display: inline-block;
+}
+.yltj-item-body-row-val{
+    color:rgba(0,0,0,0.85);
+    display: inline-block;
+}
+/* 个人照片 */
+.yltj-grzp .yltj-item-body-row{
+    width:120px;
+    height:144px;
+    background: white;
+    border: 1px solid rgba(0,0,0,0.35);
+    border-radius:2px;
+    padding: 5px;
+    position: relative;
+}
+.yltj-grzp .yltj-item-body-row img{
+    width: 110px;
+    height: 134px;
+}
+.yltj-grzp .yltj-item-body-row .yltj-grzp-cxsc{
+    display: none;
+    text-align: center;
+    width:119px;
+    height:142px;
+    line-height: 144px;
+    background:rgba(0,0,0,0.35);
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.yltj-grzp .yltj-item-body-row:hover .yltj-grzp-cxsc{
+    display: block;
+}
+/* 督学类别 */
+.yltj-dxlb .yltj-item-body-row{
+    line-height: 28px;
+}
+.yltj-dxlb .yltj-item-body-row-val{
+    display: flex;
+    display: -ms-flexbox;
+}
+.yltj-dxlb-lb{
+    width:88px;
+    height:28px;
+    background:rgba(255,255,255,1);
+    border:1px dotted rgba(0,0,0,0.15);
+    font-size:14px;
+    color:rgba(24,144,255,1);
+    line-height:28px;
+    text-align: center;
+    margin-right: 15px;
+    display: inline-block;
+}
+/* 工作经验 */
+.yltj-item-body-row-val-textarea{
+    width: 100%;
+}
+/* 附加信息 */
+.yltj-fjxx .yltj-fjxx-fjxxTitle{
+    font-size:14px;
+    font-weight:500;
+    color:rgba(0,0,0,0.85);
+    line-height:20px;
+    padding-left: 25px;
+    position: relative;
+}
+.yltj-fjxx .yltj-fjxx-fjxxTitle::before{
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    position: absolute;
+    top: 6px;
+    left: 10px;
+    background:rgba(24,144,255,0.45);
+    border:1px solid rgba(24,144,255,1);
+}
+/* 预览提交-成功 */
+.yltj-scccess{
+    height:660px;
+}
+.yltj-scccess-img{
+    margin: 155px auto 0;
+    width:70px;
+    height:70px;
+    background: url(../static/images/dxsq-icons.png);
+    background-position: 0 -156px;
+}
+.yltj-scccess-tip{
+    margin: 29px auto 0;
+    text-align: center;
+    font-size:24px;
+    font-weight:500;
+    color:rgba(0,0,0,0.85);
+    line-height:32px;
+}
+.yltj-scccess-gn{
+    display: flex;
+    display: -ms-flexbox;
+    justify-content: center;
+    text-align: center;
+}
+.yltj-scccess-gn .txqy-xyb{
+    display: inline-block;
+}
+/* =================自我评价===================== */
+.zwpj .txqy{
+    width: 100%;
+}
+.zwpj-item{
+    font-size:14px;
+    line-height:24px;
+    color:rgba(0,0,0,0.45);
+    height: auto;
+}
+.zwpj-item-biao{
+    color:rgba(0,0,0,0.65);
+}
+.zwpj-qzp{
+    color: #1890FF;
+}

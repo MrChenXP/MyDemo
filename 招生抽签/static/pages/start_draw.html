@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>入学抽签</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link type="text/css" rel="stylesheet" href="../js/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link type="text/css" rel="stylesheet" href="../css/zui.css" />
+    <link type="text/css" rel="stylesheet" href="../css/default.css" />
+    <link rel="stylesheet" href="../css/index.css"/>
+    <link rel="stylesheet" href="../css/start_draw.css"/>
+</head>
+<body class="kw-container-fluid">
+    <!-- 顶部步骤条 -->
+    <header class="cq-header-bzt">
+        <div class="list"><span class="num">1</span><span>设置中签人数</span></div>
+        <div class="jt"></div>
+        <div class="list"><span class="num">2</span><span>导入抽签名单</span></div>
+        <div class="jt"></div>
+        <div class="list active"><span class="num">3</span><span>开始/停止抽签</span></div>
+    </header>
+    
+    <!-- 开始停止抽签 -->
+    <footer class="cq-footer">
+        <div class="szrs">
+            <div class="cqzs">
+                抽签组数：<input type="text" />组
+                <div class="qr cursor">确认</div>
+            </div>
+            <div class="kscq cursor">开始第<span class="zs">1</span>组抽签</div>
+        </div>
+        <div class="zqrmd">
+            <div class="zqrzs-lists">
+                <div class="zqrzs-list active">1</div>
+                <div class="zqrzs-list">3</div>
+                <div class="zqrzs-list">4</div>
+            </div>
+            <div class="zqrmd-body">
+                <div class="zqrmd-body-header">
+                    第<span class="zs">1</span>组中签人名单：
+                </div>
+                <div class="zqrmd-body-lists">
+                    <div class="zqrmd-body-list">
+                        <span class="num">11</span>
+                        <span class="name">赵云</span>
+                    </div>
+                    <div class="zqrmd-body-list">
+                        <span class="num">11</span>
+                        <span class="name">赵云</span>
+                    </div>
+                    <div class="zqrmd-body-list">
+                        <span class="num">11</span>
+                        <span class="name">赵云</span>
+                    </div>
+                    <div class="zqrmd-body-list">
+                        <span class="num">11</span>
+                        <span class="name">赵云</span>
+                    </div>
+                    <div class="zqrmd-body-list">
+                        <span class="num">11</span>
+                        <span class="name">赵云</span>
+                    </div>
+                    <div class="zqrmd-body-list">
+                        <span class="num">11</span>
+                        <span class="name">赵云</span>
+                    </div>
+                    <div class="zqrmd-body-list">
+                        <span class="num">11</span>
+                        <span class="name">赵云</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- 抽签装置 -->
+    <div class="hidden cqym">
+        <!-- 遮罩层 -->
+        <div class="cq-mask"></div>
+        <!-- 抽签操作区域 -->
+        <div class="cq-body">
+            <!-- 左边抽签名单和完成按钮 -->
+            <div class="cq-md-wc">
+                <!-- 完成按钮 -->
+                <div class="wc">完成</div>
+                <div class="md-content">
+                    <div class="md-title">第<span class="zs">1</span>组抽签名单</div>
+                    <div class="md-lists ">
+                        <div class="list"><span class="num">1</span><span class="name">张</span></div>
+                        <div class="list"><span class="num">1</span><span class="name">张</span></div>
+                        <div class="list"><span class="num">1</span><span class="name">张</span></div>
+                        <div class="list"><span class="num">1</span><span class="name">张</span></div>
+                        <div class="list"><span class="num">1</span><span class="name">张</span></div>
+                        <div class="list"><span class="num">1</span><span class="name">张</span></div>
+                        <div class="list"><span class="num">1</span><span class="name">张</span></div>
+                        <div class="list"><span class="num">1</span><span class="name">张</span></div>
+                    </div>
+                </div>
+            </div>
+            <!-- 右边操作按钮 -->
+            <div class="cz" id="cz">
+                <!-- 开始，停止，下一组 -->
+                <div class="ks-tz-xyz">开始</div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <script src="../js/zui.js"></script>
+    <script type="text/javascript" src="../js/start_drawing.js"></script>
+    <script type="text/javascript">
+        
+    </script>
+</body>
+</html>

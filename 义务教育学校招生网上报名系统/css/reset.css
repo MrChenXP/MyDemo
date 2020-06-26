@@ -1,0 +1,26 @@
+/*===================样式重置================================*/
+html, body, div, span, h1, h2, h3,h4, h5, h6, p, a, img, ol, ul, li,input,iframe{
+    margin: 0;
+    padding: 0;
+    font-weight: normal;    /*字体继承*/
+    box-sizing: border-box;
+    color:#333333;
+}
+html{
+    font-family: "Microsoft YaHei";
+    box-sizing: border-box;
+}
+:focus,input {
+    outline: none;  /*元素周边没有虚拟线*/
+}
+img, iframe {
+    border: none; /*无边框*/
+}
+
+ol, ul {
+    list-style: none; /*列表修饰符*/
+}
+a,a:link,a:visited,a:hover,a:active{
+    text-decoration: none;
+    color:#333333;
+}

@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>东莞招生</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link type="text/css" rel="stylesheet" href="../js/plugins/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../css/zui.css" />
+    <link type="text/css" rel="stylesheet" href="../css/default.css" />
+    <link type="text/css" rel="stylesheet" href="../css/loginzs2020/logincms.css" />
+    <link type="text/css" rel="stylesheet" href="../css/loginzs2020/bm.css" />
+</head>
+<body class="dgzs-bm">
+    <!-- 头部标题 -->
+    <header class="kw-container-fluid dgzs-header">
+        <div class="kw-container">
+            <div class="left">
+                <p class="title font-bold">东莞义务教育阶段招生系统</p>
+                <p class="title-py visible-lg">DONGGUAN YIWU JIAOYU JIEDUAN ZHAOSHENG XITONG</p>
+            </div>
+            <div class="right">
+                <div class="name cursor visible-lg"><i class="fa fa-user"></i>&nbsp;小明</div>
+                <div class="logout cursor visible-lg"><i class="fa fa-sign-out"></i>&nbsp;退出登录</div>
+                <div class="btn-group hidden-lg">
+                    <button id="btnGroupDrop1" type="button" class="btn dropdown-toggle" data-toggle="dropdown">小明 <span class="caret"></span></button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="btnGroupDrop1">
+                      <li><a href="#">退出登录</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- 中间区 基本资料  -->
+    <div class="dgzs-zjq hidden"> 
+        <div class="content kw-container clearfix">
+            <!-- 步骤条 -->
+            <div class="bzts">
+                <div class="bzts-icon">
+                    <div class="bzt bzt-1 active">1</div>
+                    <div class="bzt bzt-2">2</div>
+                    <div class="bzt bzt-3">3</div>
+                </div>
+                <div class="bzts-text">
+                    <div class="bzt-text active">基本资料</div>
+                    <div class="bzt-text">监护人信息</div>
+                    <div class="bzt-text">填写志愿</div>
+                </div>
+            </div>
+            <!--基本资料  -->
+            <div class="txqy">
+                <div class="dgzs-list">
+                    <div class="title">报名类型</div>
+                    <input type="text" placeholder="请填写"/>
+                </div>
+                <div class="dgzs-list">
+                    <div class="title">报名类型</div>
+                    <input type="text" placeholder="请填写"/>
+                </div>
+                <div class="dgzs-list">
+                    <div class="title">报名类型</div>
+                    <input type="text" placeholder="请填写"/>
+                </div>
+            </div>
+            <!-- 下一步 -->
+            <div class="xyb pull-right cursor">下一步</div>
+        </div>
+    </div>
+    
+    <!-- 中间区 监护人信息  -->
+    <div class="dgzs-zjq hidden"> 
+        <div class="content kw-container clearfix">
+            <!-- 步骤条 -->
+            <div class="bzts">
+                <div class="bzts-icon">
+                    <div class="bzt bzt-1">1</div>
+                    <div class="bzt bzt-2 active">2</div>
+                    <div class="bzt bzt-3">3</div>
+                </div>
+                <div class="bzts-text">
+                    <div class="bzt-text">基本资料</div>
+                    <div class="bzt-text active">监护人信息</div>
+                    <div class="bzt-text">填写志愿</div>
+                </div>
+            </div>
+            <!--监护人信息  -->
+            <div class="txqy">
+                <div class="dgzs-list">
+                    <div class="title">报名类型</div>
+                    <input type="text" placeholder="请填写"/>
+                </div>
+                <div class="dgzs-list">
+                    <div class="title">报名类型</div>
+                    <input type="text" placeholder="请填写"/>
+                </div>
+                <div class="dgzs-list">
+                    <div class="title">报名类型</div>
+                    <input type="text" placeholder="请填写"/>
+                </div>
+            </div>
+            <!-- 下一步 -->
+            <div class="xyb pull-right cursor">下一步</div>
+        </div>
+    </div>
+    
+    <!-- 中间区 填写志愿 -->
+    <div class="dgzs-zjq txzy">
+        <div class="content kw-container clearfix">
+            <!-- 步骤条 -->
+            <div class="bzts">
+                <div class="bzts-icon">
+                    <div class="bzt bzt-1">1</div>
+                    <div class="bzt bzt-2">2</div>
+                    <div class="bzt bzt-3 active">3</div>
+                </div>
+                <div class="bzts-text">
+                    <div class="bzt-text">基本资料</div>
+                    <div class="bzt-text">监护人信息</div>
+                    <div class="bzt-text active">填写志愿</div>
+                </div>
+            </div>
+            <!--填写志愿  -->
+            <div class="txqy">
+                <div class="txqy-xinxi">
+                    <span class="title font-bold">新生户籍：</span>
+                    <span class="xshj-tip">东莞户籍</span>
+                </div>
+                <div class="txqy-xinxi">
+                    <span class="title font-bold">申请志愿：</span>
+                    <span class="sqzy-tip">
+                        <div class="checkbox-primary gb"><input type="checkbox" id="1"><label for="1">申请公办学校</label></div>
+                        <div class="checkbox-primary mb"><input type="checkbox" id="1"><label for="1">申请民办学校</label></div>
+                        <div class="checkbox-primary gb"><input type="checkbox" id="1"><label for="1">申请公办学校</label></div>
+                        <div class="checkbox-primary mb"><input type="checkbox" id="1"><label for="1">申请民办学校</label></div>
+                    </span>
+                </div>
+                <!-- 公办学校 -->
+                <div class="gbxx sqzytx">
+                    <div class="gb-title font-bold">
+                        <span>公办学校</span>
+                        <span class="delete cursor">删除</span>
+                    </div>
+                    <div class="tx-list first">
+                        <div class="tx-title font-bold">申请志愿</div>
+                        <div class="tx-qu">后端配</div>
+                    </div>
+                    <div class="tx-list">
+                        <div class="tx-title font-bold">扩展资料</div>
+                        <div class="tx-qu">后端配</div>
+                    </div>
+                    <div class="tx-list">
+                        <div class="tx-title font-bold">证件资料</div>
+                        <div class="zjzl-list">
+                            <div class="zjzl-title font-bold zjzl-scwj">
+                                儿童及其父母户口簿<span class="isbc">（必传）</span>
+                                <div class="xzscwj">
+                                    <input type="file" class="scinput" />
+                                    上传文件
+                                </div>
+                                <i class="fa fa-exclamation-circle xzscwj-icon"></i>
+                                <span class="sm">（首页及儿童、父母所在页）</span>
+                            </div>
+                            <div class="sc-files">
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="zjzl-list">
+                            <div class="zjzl-title font-bold zjzl-scwj">
+                                计划免疫接种证明<span class="isbc">（必传）</span>
+                                <div class="xzscwj">
+                                    <input type="file" class="scinput" />
+                                    上传文件
+                                </div>
+                                <i class="fa fa-exclamation-circle xzscwj-icon"></i>
+                                <span class="sm">（首页及儿童、父母所在页）</span>
+                            </div>
+                            <div class="sc-files">
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 民办学校 -->
+                <div class="mbxx sqzytx">
+                    <div class="gb-title font-bold">
+                        <span>公办学校</span>
+                        <span class="delete cursor">删除</span>
+                    </div>
+                    <div class="tx-list first">
+                        <div class="tx-title font-bold">申请志愿</div>
+                        <div class="tx-qu">后端配</div>
+                    </div>
+                    <div class="tx-list">
+                        <div class="tx-title font-bold">扩展资料</div>
+                        <div class="tx-qu">后端配</div>
+                    </div>
+                    <div class="tx-list">
+                        <div class="tx-title font-bold">证件资料</div>
+                        <div class="zjzl-list">
+                            <div class="zjzl-title font-bold zjzl-scwj">
+                                儿童及其父母户口簿<span class="isbc">（必传）</span>
+                                <div class="xzscwj">
+                                    <input type="file" class="scinput" />
+                                    上传文件
+                                </div>
+                                <i class="fa fa-exclamation-circle xzscwj-icon"></i>
+                                <span class="sm">（首页及儿童、父母所在页）</span>
+                            </div>
+                            <div class="sc-files">
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="zjzl-list">
+                            <div class="zjzl-title font-bold zjzl-scwj">
+                                计划免疫接种证明<span class="isbc">（必传）</span>
+                                <div class="xzscwj">
+                                    <input type="file" class="scinput" />
+                                    上传文件
+                                </div>
+                                <i class="fa fa-exclamation-circle xzscwj-icon"></i>
+                                <span class="sm">（首页及儿童、父母所在页）</span>
+                            </div>
+                            <div class="sc-files">
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 公办学校 -->
+                <div class="gbxx sqzytx">
+                    <div class="gb-title font-bold">
+                        <span>公办学校</span>
+                        <span class="delete cursor">删除</span>
+                    </div>
+                    <div class="tx-list first">
+                        <div class="tx-title font-bold">申请志愿</div>
+                        <div class="tx-qu">后端配</div>
+                    </div>
+                    <div class="tx-list">
+                        <div class="tx-title font-bold">扩展资料</div>
+                        <div class="tx-qu">后端配</div>
+                    </div>
+                    <div class="tx-list">
+                        <div class="tx-title font-bold">证件资料</div>
+                        <div class="zjzl-list">
+                            <div class="zjzl-title font-bold zjzl-scwj">
+                                儿童及其父母户口簿<span class="isbc">（必传）</span>
+                                <div class="xzscwj">
+                                    <input type="file" class="scinput" />
+                                    上传文件
+                                </div>
+                                <i class="fa fa-exclamation-circle xzscwj-icon"></i>
+                                <span class="sm">（首页及儿童、父母所在页）</span>
+                            </div>
+                            <div class="sc-files">
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="zjzl-list">
+                            <div class="zjzl-title font-bold zjzl-scwj">
+                                计划免疫接种证明<span class="isbc">（必传）</span>
+                                <div class="xzscwj">
+                                    <input type="file" class="scinput" />
+                                    上传文件
+                                </div>
+                                <i class="fa fa-exclamation-circle xzscwj-icon"></i>
+                                <span class="sm">（首页及儿童、父母所在页）</span>
+                            </div>
+                            <div class="sc-files">
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 民办学校 -->
+                <div class="mbxx sqzytx">
+                    <div class="gb-title font-bold">
+                        <span>公办学校</span>
+                        <span class="delete cursor">删除</span>
+                    </div>
+                    <div class="tx-list first">
+                        <div class="tx-title font-bold">申请志愿</div>
+                        <div class="tx-qu">后端配</div>
+                    </div>
+                    <div class="tx-list">
+                        <div class="tx-title font-bold">扩展资料</div>
+                        <div class="tx-qu">后端配</div>
+                    </div>
+                    <div class="tx-list">
+                        <div class="tx-title font-bold">证件资料</div>
+                        <div class="zjzl-list">
+                            <div class="zjzl-title font-bold zjzl-scwj">
+                                儿童及其父母户口簿<span class="isbc">（必传）</span>
+                                <div class="xzscwj">
+                                    <input type="file" class="scinput" />
+                                    上传文件
+                                </div>
+                                <i class="fa fa-exclamation-circle xzscwj-icon"></i>
+                                <span class="sm">（首页及儿童、父母所在页）</span>
+                            </div>
+                            <div class="sc-files">
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="zjzl-list">
+                            <div class="zjzl-title font-bold zjzl-scwj">
+                                计划免疫接种证明<span class="isbc">（必传）</span>
+                                <div class="xzscwj">
+                                    <input type="file" class="scinput" />
+                                    上传文件
+                                </div>
+                                <i class="fa fa-exclamation-circle xzscwj-icon"></i>
+                                <span class="sm">（首页及儿童、父母所在页）</span>
+                            </div>
+                            <div class="sc-files">
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                                <div class="sc-files-list">
+                                    <span>户口本.jpg</span>
+                                    <div class="wj-close cursor"><i class="fa fa-close"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- 下一步 -->
+            <div class="xyb pull-right cursor">确认提交</div>
+        </div>
+    </div>
+    
+    <!-- 底部版权区 -->
+    <footer class="dgzs-footer col-999 visible-lg">
+        技术支持：深圳开维教育信息技术股份有限公司
+    </footer>
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script src="../js/zui.js"></script>   
+ <!-- ZUI 标准版压缩后的 CSS 文件 -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/zui/1.9.1/css/zui.min.css">
+ <!-- ZUI Javascript 依赖 jQuery -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/zui/1.9.1/lib/jquery/jquery.js"></script>
+ <!-- ZUI 标准版压缩后的 JavaScript 文件 -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/zui/1.9.1/js/zui.min.js"></script>
+</body>
+</html>

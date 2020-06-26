@@ -1,0 +1,347 @@
+body{
+    background: url("../images/bg.png") center center no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+	font-family: 'PingFang SC',"Helvetica Neue",Helvetica,Tahoma,Arial,'Microsoft Yahei','Hiragino Sans GB','WenQuanYi Micro Hei',sans-serif;
+}
+/*----头部----*/
+.zs-header{
+    height: 70px;
+    background:rgba(61,147,247,1);
+    font-weight:600;
+    color: white;
+    font-size:22px;
+    line-height: 70px;
+}
+.zs-header .container,.zs-login-body{
+    padding: 0;
+}
+.zs-lists ul{
+    height: 70px;
+    display: flex;
+    margin: 0;
+}
+.zs-lists li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:18px;
+    margin-left: 30px;
+    line-height: 70px;
+    opacity: 0.85;
+}
+.zs-lists li:hover{
+    opacity: 1;
+}
+.zs-list-icon1{
+    margin-top: 5px;
+    width: 22px;
+    height: 22px;
+    background: url(../images/icons.png) -210px 0;
+}
+.zs-list-icon2{
+    margin-top: 5px;
+    width: 22px;
+    height: 22px;
+    background: url(../images/icons.png) -270px 0;
+}
+.zs-list-icon3{
+    margin-top: 5px;
+    width: 22px;
+    height: 22px;
+    background: url(../images/icons.png) -330px 0;
+}
+.zs-list-icon4{
+    margin-top: 5px;
+    width: 22px;
+    height: 22px;
+    background: url(../images/icons.png) -388px 0;
+}
+/*----下方登录块----*/
+.zs-login-body{
+    background: white;
+    margin-top: 40px;
+    height: 687px;
+    display: flex;
+    box-shadow:0 2px 12px 0 rgba(240,244,247,1);
+    border-radius:6px;
+    border:1px solid rgba(0,0,0,0.05);
+}
+.zs-login-img{
+    width: 708px;
+    height: 100%;
+    background:rgba(24,148,255,0.05);
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+.zs-login-img img{
+    width: 690px;
+    height: 511px;
+}
+/*----右侧登录区域----*/
+.zs-login-input{
+    width: 450px;
+    height: 100%;
+    margin: 0 auto;
+}
+.zs-bm{
+    width:352px;
+    height:50px;
+    background: url("../images/wbm-default.png") 100% 100%;
+    border-radius:5px;
+    margin: 60px auto;
+    font-size:18px;
+    font-weight:600;
+    color: white;
+    line-height:50px;
+}
+.zs-bm:hover{
+    background: url("../images/wbm-default-hover.png") 100% 100%;
+}
+@keyframes leftRight{
+    0%{left: -3px;}
+    25%{left: 0;}
+    50%{left: 3px;}
+    75%{left: 0;}
+    100%{left: -3px;}
+}
+.zs-bm-icon{
+    width: 29px;
+    height: 24px;
+    display: inline-block;
+    background: url("../images/icons.png") -138px 0;
+    top: 5px;
+    position: relative;
+    animation: leftRight 0.5s infinite;
+}
+.zs-title{
+    width: 352px;
+    padding-left: 10px;
+    border-left: 4px solid #3D93F7;
+    font-weight:600;
+    line-height: 22px;
+    color:rgba(58,58,58,1);
+    font-size:22px;
+    margin: 0 auto 30px;
+}
+.zs-login-input .nav-tabs{
+    border: none !important;
+    line-height: 22px;
+    font-weight:600;
+    font-size:18px;
+    text-align: center;
+    width: 352px;
+    margin: 0 auto 30px;
+}
+.zs-login-input .nav-tabs li{
+    width: 50%;
+    margin: 0;
+}
+.zs-login-input .nav-tabs li:first-child{
+    border-right: 2px solid #EEEEEE;
+}
+.zs-login-input .nav-tabs a{
+    border: none !important;
+    color:rgba(155,155,155,1);
+    padding: 0;
+    margin: 0;
+}
+.zs-login-input .nav-tabs .active a,.zs-login-input .nav-tabs a:hover{
+    color:rgba(61,147,247,1) !important;
+    background: none;
+}
+/*填写区域*/
+.zs-login-input  input:focus::-webkit-input-placeholder{
+    color:rgba(58,58,58,0.3);
+}
+.zs-input{
+    width:352px;
+    height:48px;
+    background:rgba(246,246,246,1);
+    border-radius:4px;
+    margin: 0 auto 24px;
+    font-size:16px;
+    position: relative;
+}
+.zs-input label{
+    margin: 0;
+    height: 100%;
+    display: flex;
+    position: relative;
+}
+.zs-input input{
+    height: 100%;
+    margin: 0 0 0 40px;
+    width: 307px;
+    padding: 5px;
+    border: none;
+    background:rgba(246,246,246,1);
+    color:rgba(58,58,58,1);
+    outline: none;
+}
+.zs-input  input::placeholder {
+    color:rgba(58,58,58,0.55)
+}
+.zs-zh-icon{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 15px;
+    left: 16px;
+    background: url("../images/icons.png");
+    background-position: 0 0 ;
+}
+.zs-zh input:focus+span{
+    background-position: 0 -35px ;
+}
+.zs-mm-icon{display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 16px;
+    width: 18px;
+    height: 24px;
+    background: url(../images/icons.png);
+    background-position: -45px -1px;
+}
+.zs-mm input:focus+span{
+    background-position: -45px -36px ;
+}
+.zs-yzm{
+    background: white;
+}
+.zs-yzm label{
+    /*margin-left: 62px;*/
+    background: rgba(246,246,246,1);
+    border-radius: 4px;
+    width: 233px;
+}
+.zs-yzm input{
+    width: 193px;
+}
+.zs-yzm-icon{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 15px;
+    left: 16px;
+    background: url("../images/icons.png");
+    background-position: -90px 0 ;
+}
+.zs-yzm input:focus+span{
+    background-position: -90px -35px ;
+}
+.zs-yzm-img{
+    width: 109px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.zs-yzm-img img{
+    width: 100%;
+    height: 100%;
+}
+.zs-submit{
+    margin: 0 auto 30px;
+    background:rgba(61,147,247,1);
+    border-radius:24px;
+    width:352px;
+    height:48px;
+    line-height: 48px;
+    text-align: center;
+    font-size:16px;
+    font-weight:600;
+    color:rgba(255,255,255,1);
+}
+.zs-submit:hover{
+    background:rgba(81,131,229,1);
+}
+.zs-wjmm{
+    font-size:14px;
+    line-height:20px;
+    margin: 0 auto;
+    width: 352px;
+}
+.zs-wjmm .pull-left{
+    color:rgba(61,147,247,1);
+}
+.zs-wjmm .pull-left:hover{
+    color:rgba(81,131,229,1);
+    text-decoration: underline;
+}
+.zs-wjmm .pull-right{
+    color:rgba(155,155,155,1);
+}
+/*扫码区域*/
+.zs-sm{
+    width: 285px;
+    margin: 0 auto;
+    padding: 5px;
+    position: relative;
+}
+.zs-sm .zs-sm-boder{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+}
+.zs-sm .zs-sm-boder:nth-child(1){
+    top: 0;
+    left: 0;
+    border-left: 5px #5183E5 solid;
+    border-top: 5px #5183E5 solid;
+}
+.zs-sm .zs-sm-boder:nth-child(2){
+    top: 0;
+    right: 0;
+    border-right: 5px #5183E5 solid;
+    border-top: 5px #5183E5 solid;
+}
+.zs-sm .zs-sm-boder:nth-child(3){
+    bottom: 0;
+    left: 0;
+    border-left: 5px #5183E5 solid;
+    border-bottom: 5px #5183E5 solid;
+}
+.zs-sm .zs-sm-boder:nth-child(4){
+    bottom: 0;
+    right: 0;
+    border-right: 5px #5183E5 solid;
+    border-bottom: 5px #5183E5 solid;
+}
+.zs-ewm{
+    width: 275px;
+    height: 275px;
+    padding: 30px;
+}
+.zs-ewm img{
+    width: 100%;
+    height: 100%;
+}
+.zs-sm-login{
+    font-size:16px;
+    margin-top: 20px;
+}
+.zs-sm-login span:nth-child(1){
+    color:rgba(106,106,106,1);
+}
+.zs-sm-login span:nth-child(2){
+    color:rgba(61,147,247,1);
+    text-decoration: underline;
+}
+.zs-sm-login span:nth-child(2):hover{
+    color:rgba(81,131,229,1);
+}
+/*适应手机端 小于992时，改变登录区上下间距 借用zui样式*/
+.device-mobile .zs-login-body{
+    height: auto;
+}
+.device-mobile .zs-login-input .zs-bm{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.device-mobile .zs-login-input .zs-title,.device-mobile .zs-login-input .nav,.device-mobile .zs-login-input .zs-input,.device-mobile .zs-login-input .zs-submit,.device-mobile .zs-login-input .zs-wjmm  {
+    margin-bottom: 10px;
+}

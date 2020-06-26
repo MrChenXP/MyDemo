@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>容桂街道户籍生幼升小招生系统</title>
+    <link href="https://libs.cdnjs.net/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- ZUI 标准版压缩后的 CSS 文件 -->
+    <link rel="stylesheet" href="https://libs.cdnjs.net/zui/1.8.1/css/zui.min.css">
+    <!--  kwm4的css文件,请勿直接复制此文件,请在kwm4svn同步此文件，使用那个同步后的文件  -->
+    <link href="./static/css/default.css" rel="stylesheet">
+    <link href="./static/css/index.css" rel="stylesheet">
+</head>
+<body>
+<!--头部-->
+<header class="zs-header">
+    <div class="container clearfix">
+        <div class="pull-left text-ellipsis">容桂街道户籍生幼升小招生系统</div>
+        <div class="pull-right zs-lists visible-lg">
+            <ul>
+                <li class="cursor"><div class="zs-list-icon1"></div>&nbsp;政策解读</li>
+                <li class="cursor"><div class="zs-list-icon2"></div>&nbsp;学校信息</li>
+                <li class="cursor"><div class="zs-list-icon3"></div>&nbsp;操作指南</li>
+                <li class="cursor"><div class="zs-list-icon4"></div>&nbsp;常见问题</li>
+            </ul>
+        </div>
+    </div>
+</header>
+<!--登录块-->
+<div class="zs-login-body container">
+    <div class="zs-login-img hidden-xs hidden-sm ">
+        <img src="static/images/login-img.png" alt="图片">
+    </div>
+    <div class="zs-login-input">
+        <div class="zs-bm cursor tac">
+            <span class="zs-bm-icon"></span>
+            <span>未报名？点击报名</span>
+        </div>
+        <div class="zs-title">已报名登录</div>
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-tab href="#zhmm">帐号密码登录</a></li>
+            <li><a data-tab href="#sm">微信扫码登录</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="zhmm">
+                <form>
+                    <div class="zs-zh zs-input">
+                        <label for="zs-zh">
+                            <input type="text" id="zs-zh" placeholder="请填写登录账号" />
+                            <span class="zs-zh-icon"></span>
+                        </label>
+                    </div>
+                    <div class="zs-mm zs-input">
+                        <label for="zs-mm">
+                            <input type="text" id="zs-mm" placeholder="请填写登录密码" />
+                            <span class="zs-mm-icon"></span>
+                        </label>
+                    </div>
+                    <div class="zs-yzm zs-input">
+                        <label for="zs-yzm">
+                            <input type="text" id="zs-yzm" placeholder="请填写验证码" />
+                            <span class="zs-yzm-icon"></span>
+                        </label>
+                        <div class="zs-yzm-img cursor">
+                            <img src="static/images/yzm.png" alt="验证码"/>
+                        </div>
+                    </div>
+                    <div class="zs-submit cursor">登录</div>
+                    <div class="zs-wjmm clearfix ">
+                        <span class="pull-left cursor">忘记密码</span>
+                        <span class="pull-right">推荐浏览器：谷歌浏览器</span>
+                    </div>
+                </form>
+            </div>
+            <div class="tab-pane" id="sm">
+                <div class="zs-sm">
+                    <span class="zs-sm-boder"></span>
+                    <span class="zs-sm-boder"></span>
+                    <span class="zs-sm-boder"></span>
+                    <span class="zs-sm-boder"></span>
+                    <div class="zs-ewm">
+                        <img src="static/images/ewm.png" alt="二维码">
+                    </div>
+                </div>
+                <div class="zs-sm-login tac">
+                    <span>我已扫码，</span>
+                    <span class="cursor">点击登录</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ZUI Javascript 依赖 jQuery -->
+<script type="text/javascript" src="https://libs.cdnjs.net/jquery/3.4.1/jquery.js"></script>
+<!-- ZUI 标准版压缩后的 JavaScript 文件 -->
+<script type="text/javascript" src="https://libs.cdnjs.net/zui/1.8.1/js/zui.min.js"></script>
+</body>
+</html>

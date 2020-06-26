@@ -1,0 +1,580 @@
+body{
+    background: #F5F6FA !important;
+}
+/* 步骤条 */
+.bzt{
+    height: 108px;
+    padding: 20px 0;
+    display: flex;
+    display: -ms-flexbox;
+    justify-content: center;
+}
+.bzt-item{
+    width: 60px;
+    margin-right: 90px;
+    font-size:14px;
+    text-align: center;
+    display: inline-block;
+}
+.bzt-item:last-child{
+    margin-right: 0;
+}
+.bzt-item-bh{
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 auto;
+    background:rgba(0,0,0,0.25);
+    border-radius: 50%;
+    font-weight:bold;
+    color:rgba(255,255,255,1);
+    position: relative;
+}
+.bzt-item-active .bzt-item-bh{
+    background: url(../static/images/dxsq-icons.png);
+    background-position: 0 0;
+}
+.bzt-item-complete .bzt-item-bh{
+    background: url(../static/images/dxsq-icons.png);
+    background-position: 0 -59px;
+ }
+.bzt-item-bh::after{
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 40px;
+    width:100px;
+    height:1px;
+    background:rgba(0,0,0,0.15);
+}
+.bzt-item-active .bzt-item-bh::after,.bzt-item-complete .bzt-item-bh::after{
+    background: #1890FF;
+}
+.bzt-item:last-child .bzt-item-bh::after{
+    display: none;
+}
+.bzt-item-title{
+    margin-top: 16px;
+    font-weight:400;
+    color:rgba(0,0,0,0.65);
+}
+.bzt-item-active .bzt-item-title{
+    font-weight:bold;
+    color:rgba(0,0,0,0.85);
+}
+
+/*  填写区域 */
+.txqy-parent{
+    margin-top: 16px;
+    display: flex;
+    display: -ms-flexbox;
+    font-size: 0;
+}
+.txqy{
+    width: 920px;
+    margin-right: 20px;
+    padding: 20px;
+    background: white;
+    border-radius:2px;
+    display: inline-block;
+    vertical-align: top;
+}
+.txqy-title{
+    font-size:16px;
+    height:24px;
+    font-weight:bold;
+    color:rgba(0,0,0,1);
+    line-height:24px;
+}
+.txqy-item{
+    margin-top: 20px;
+    height: 60px;
+}
+.txqy-item-title{
+    height:22px;
+    font-size:14px;
+    font-weight:400;
+    color:rgba(0,0,0,0.85);
+    line-height:22px;
+}
+.txqy-item-content{
+    margin-top: 5px;
+}
+.txqy-xyb{
+    margin-top: 20px;
+    height:40px;
+    background:rgba(24,144,255,1);
+    border-radius:2px;
+    line-height: 40px;
+    text-align: center;
+    font-size:16px;
+}
+.txqy-xyb a{
+    text-decoration: none;
+    color:rgba(255,255,255,1);
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 0 16px;
+}
+.syb{
+    background:rgba(255,255,255,1);
+    border:1px solid rgba(217,217,217,1);
+    margin-right: 16px;
+}
+.syb a{
+    color:rgba(0,0,0,0.65);
+}
+.zpTxwcd{
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+}
+.zpTxwcd-item{
+    padding: 20px;
+    background: white;
+    border-radius:2px;
+}
+.zpTxwcd-title{
+    height:18px;
+    font-size:14px;
+    font-weight:bold;
+    color:rgba(0,0,0,1);
+    line-height:18px;
+}
+.zpTxwcd-zp{
+    margin: 20px 20px 8px;
+    padding: 5px;
+    border-radius:2px;
+    border:1px solid rgba(0,0,0,0.15);
+    height:146px;
+}
+.zpTxwcd-zp img{
+    width: 100%;
+    height: 100%;
+}
+.zpTxwcd-tip{
+    color:rgba(0,0,0,0.45);
+    line-height:18px;
+    font-size:14px;
+}
+.zpTxwcd-sc{
+    text-align: center;
+    font-size:14px;
+    color:rgba(24,144,255,1);
+    line-height:18px;
+    margin-bottom: 16px;
+}
+/* ==================督学类别========================= */
+.dxlb-txqy-content{
+    display: flex;
+    display: -ms-flexbox;
+}
+.dxlb-txqy-item{
+    width:116px;
+    height:70px;
+    border-radius:2px;
+    line-height: 70px;
+    text-align: center;
+    font-size:14px;
+    font-weight:400;
+    color:rgba(0,0,0,0.65);
+    border:1px solid rgba(0,0,0,0.15);
+    margin-right: 14px;
+    position: relative;
+    display: inline-block;
+}
+.dxlb-txqy-item:nth-child(3){
+    margin-right: 32px;
+}
+.dxlb-txqy-item:nth-child(3)::after{
+    content: '';
+    width: 1px;
+    height: 50px;
+    background: rgba(0,0,0, 0.15);
+    position: absolute;
+    top: 10px;
+    right: -17px;
+}
+.dxlb-txqy-item-acitve{
+    color: #1890FF;
+    border:1px solid rgba(24,144,255,1);
+    font-weight:bold;
+}
+.dxlb-txqy-badge{
+    background: url(../static/images/dxsq-icons.png);
+    background-position: 0 -116px;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.dxlb-txqy-tip{
+    font-size:14px;
+    font-weight:bold;
+    color:rgba(0,0,0,0.85);
+    line-height:24px;
+    margin-top: 20px;
+}
+.dxlb-txqy-tip-text{
+    font-weight:400;
+    color:rgba(0,0,0,0.65);
+}
+.dxlb-txqy-error{
+    margin-top: 16px;
+    height:24px;
+    font-size:14px;
+    font-weight:400;
+    color:rgba(224,32,32,0.65);
+    line-height:24px;
+}
+/* ================工作经验============== */
+.gzjh-txqy-title-add{
+    color:rgba(24,144,255,1);
+    line-height:22px;
+    font-size:14px;
+}
+.gzjh-txqy-title-add .fa{
+    margin-right: 8px;
+}
+.gzjy-txqy-wsj{
+    margin: 60px auto;
+    text-align: center;
+    font-size:14px;
+    color:rgba(0,0,0,0.65);
+    line-height:22px;
+}
+.gzjy-txqy-wsj img{
+    margin: 0 auto 17px;
+    width: 46px;
+    height: 35px;
+}
+.gzjy-txqy-ysj{
+    font-size: 14px;
+}
+.gzjy-txqy-ysj-item{
+    margin-top: 16px;
+    padding: 8px 16px 16px;
+    border-radius:2px;
+    border:1px dotted rgba(0,0,0,0.15);
+    line-height:24px;
+}
+.gzjy-txqy-ysj-title{
+    font-weight:bold;
+    color:rgba(0,0,0,0.85);
+}
+.gzjy-txqy-ysj-title-gn{
+    color:rgba(24,144,255,1);
+}
+.gzjy-txqy-ysj-title-gn span{
+    margin-left: 20px;
+    display: none;
+}
+.gzjy-txqy-ysj-title-gn span i{
+    margin-right: 8px;
+}
+.gzjy-txqy-ysj-row{
+    margin-top: 8px;
+}
+.gzjy-txqy-ysj-row-name{
+    font-weight:bold;
+}
+.gzjy-txqy-ysj-item:hover{
+    background:rgba(242,245,249,1);
+}
+.gzjy-txqy-ysj-item:hover .gzjy-txqy-ysj-title-gn span{
+    display: inline;
+}
+.dxsq-addTc{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    height: 100%;
+    width: 100%;
+    background:rgba(0,0,0,0.25);
+}
+.dxsq-addTc-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -300px 0 0 -250px;
+    width: 500px;
+    height:600px;
+    background:rgba(255,255,255,1);
+    padding: 24px;
+}
+.dxsq-addTc-title{
+    font-size:16px;
+    font-weight:bold;
+    color:rgba(0,0,0,0.85);
+    line-height:24px;
+}
+.dxsq-addTc-title .fa{
+    color:rgba(0,0,0,0.65);
+}
+.dxsq-addTc-body{
+    height: 472px;
+    overflow-y: auto;
+}
+.dxsq-addTc-body-item{
+    margin-top: 20px;
+    font-size: 14px;
+}
+.dxsq-addTc-body-item-name{
+    font-weight:bold;
+    color:rgba(0,0,0,0.85);
+    line-height:22px;
+    margin-bottom: 8px;
+}
+
+.dxsq-addTc-gn{
+    height: 32px;
+    margin-top: 24px;
+}
+.dxsq-addTc-gn-button{
+    width:65px;
+    height:32px;
+    color: rgba(0,0,0,0.65);
+    background:rgba(255,255,255,1);
+    border-radius:2px;
+    border:1px solid rgba(0,0,0,0.15);
+    margin-left: 8px;
+    text-align: center;
+    line-height: 32px;
+}
+.dxsq-addTc-gn-save{
+    background:rgba(24,144,255,1);
+    color: white;
+}
+
+/* ==================附加信息================= */
+.fjxx-txqy-item{
+    height: auto;
+    padding: 25px 0;
+    margin-top: 0;
+    border-bottom: 1px solid #E6E6E6;
+}
+.fjxx-txqy-item-head{
+    display: flex;
+    display: -ms-flexbox;
+    justify-content: space-between;
+    line-height:20px;
+    font-size:14px;
+}
+.fjxx-txqy-item-title{
+    color:rgba(0,0,0,1);
+    display: inline-block;
+}
+.fjxx-txqy-item-add{
+    min-width: 50px;
+    color:rgba(24,144,255,1);
+    display: inline-block;
+    float: right;
+}
+.fjxx-txqy-item-content-body{
+    margin: 20px 0 0;
+    padding: 0 16px 8px;
+    border: 1px dotted rgba(0,0,0,0.15);
+    border-radius:2px;
+}
+.fjxx-txqy-item-content-body-row{
+    font-size:14px;
+    color:rgba(0,0,0,0.85);
+    line-height:22px;
+    margin-top: 8px;
+}
+.fjxx-txqy-item-content-body-row-name{
+    color:rgba(0,0,0,0.85);
+}
+.fjxx-txqy-item-content-body-row-left{
+    width: 50%;
+}
+.fjxx-txqy-item-content-body-row-right .fjxx-scxg{
+    color:rgba(24,144,255,1);
+    margin-left: 20px;
+    display: none;
+}
+.fjxx-txqy-item-content-body-row-right .fjxx-scxg .fa{
+    margin-right: 8px;
+}
+.fjxx-txqy-item-content-body-row-tip{
+    color:rgba(0,0,0,0.65);
+}
+.fjxx-txqy-item-content-body:hover{
+    background:rgba(242,245,249,1);
+}
+.fjxx-txqy-item-content-body:hover .fjxx-scxg{
+    display: inline;
+}
+/* =================预览提交=========== */
+.yltj .txqy{
+    width: 100%;
+}
+.yltj-item{
+    padding: 20px 0;
+    border-bottom: 1px solid #E6E6E6;
+}
+.yltj-item-title{
+    font-size:14px;
+    font-weight:600;
+    color:rgba(0,0,0,0.85);
+    line-height:20px;
+}
+.yltj-item-title-change{
+    width:50px;
+    height:20px;
+    background:rgba(237,240,242,1);
+    border-radius:3px;
+    font-size: 12px;
+    font-weight: 400;
+    color:rgba(0,0,0,0.65);
+    text-align: center;
+}
+.yltj-item-body-row{
+    margin-top:15px;
+    font-size:14px;
+    line-height:20px;
+    display: flex;
+    display: -ms-flexbox;
+}
+.yltj-item-body-row-title{
+    color:rgba(0,0,0,0.65);
+    min-width: 100px;
+    display: inline-block;
+}
+.yltj-item-body-row-val{
+    color:rgba(0,0,0,0.85);
+    display: inline-block;
+}
+/* 个人照片 */
+.yltj-grzp .yltj-item-body{
+    display: inline-block;
+}
+.yltj-grzp .yltj-item-body-row{
+    width:120px;
+    height:144px;
+    background: white;
+    border: 1px solid rgba(0,0,0,0.35);
+    border-radius:2px;
+    padding: 5px;
+    position: relative;
+}
+.yltj-grzp .yltj-item-body-row img{
+    width: 110px;
+    height: 134px;
+}
+.yltj-grzp .yltj-item-body-row .yltj-grzp-cxsc{
+    display: none;
+    text-align: center;
+    width:119px;
+    height:142px;
+    line-height: 144px;
+    background:rgba(0,0,0,0.35);
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.yltj-grzp .yltj-item-body-row:hover .yltj-grzp-cxsc{
+    display: block;
+}
+/* 督学类别 */
+.yltj-dxlb{
+    margin-left: 200px;
+    vertical-align:top;
+    width: 760px;
+}
+.yltj-dxlb .yltj-item-body-row{
+    line-height: 28px;
+    height: auto;
+    border: none;
+    width: auto;
+    display: block;
+}
+.yltj-dxlb .yltj-item-body-row-val{
+    display: flex;
+    display: -ms-flexbox;
+}
+.yltj-dxlb-lb{
+    margin-top: 16px;
+    width:88px;
+    height: 32px;
+    background:rgba(255,255,255,1);
+    border:1px dotted #1890FF;
+    font-size:14px;
+    color:rgba(24,144,255,1);
+    line-height: 32px;
+    text-align: center;
+    margin-right: 15px;
+    display: inline-block;
+}
+/* 工作经验 */
+.yltj-item-body-row-val-textarea{
+    width: 100%;
+}
+/* 附加信息 */
+.yltj-fjxx .yltj-fjxx-fjxxTitle{
+    font-size:14px;
+    font-weight:bold;
+    color:rgba(0,0,0,0.85);
+    line-height:20px;
+    padding-left: 25px;
+    position: relative;
+}
+.yltj-fjxx .yltj-fjxx-fjxxTitle::before{
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    position: absolute;
+    top: 6px;
+    left: 10px;
+    background:rgba(24,144,255,0.45);
+    border:1px solid rgba(24,144,255,1);
+}
+/* 预览提交-成功 */
+.yltj-scccess{
+    height:660px;
+}
+.yltj-scccess-img{
+    margin: 155px auto 0;
+    width:70px;
+    height:70px;
+    background: url(../static/images/dxsq-icons.png);
+    background-position: 0 -156px;
+}
+.yltj-scccess-tip{
+    margin: 29px auto 0;
+    text-align: center;
+    font-size:24px;
+    font-weight:bold;
+    color:rgba(0,0,0,0.85);
+    line-height:32px;
+}
+.yltj-scccess-gn{
+    display: flex;
+    display: -ms-flexbox;
+    justify-content: center;
+    text-align: center;
+}
+.yltj-scccess-gn .txqy-xyb{
+    display: inline-block;
+}
+/* =================自我评价===================== */
+.zwpj .txqy{
+    width: 100%;
+}
+.zwpj-item{
+    font-size:14px;
+    line-height:24px;
+    color:rgba(0,0,0,0.45);
+    height: auto;
+}
+.zwpj-item-biao{
+    color:rgba(0,0,0,0.65);
+}
+.zwpj-qzp{
+    color: #1890FF;
+}
